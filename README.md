@@ -12,10 +12,6 @@ Wareframe:
 
 1- Home - Kevin
 2- Detalle de producto - Gabriel
-3- Carrito de compras - Ignacio
+3- Carrito de compras - Ignacio ok.
 4- Formulario de registro - Daniel
-5- Formulario de Login - Facundo
-
-
-
-
+5- Formulario de Login - Facundo ok.
