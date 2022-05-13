@@ -10,7 +10,7 @@ Paginas referentes: Ubisoft - Steam - Playstation store - Blizzard
 Wareframe:
 
 1- Home - Kevin
-2- Detalle de producto - Gabriel
+2- Detalle de producto - Gabriel ok.
 3- Carrito de compras - Ignacio ok.
 4- Formulario de registro - Daniel ok.
 5- Formulario de Login - Facundo ok.
