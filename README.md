@@ -7,7 +7,6 @@ Kevin Breit: Ex estudiante de ingenieria industrial. En mis tiempos libres me gu
 
 Paginas referentes: Ubisoft - Steam - Playstation store - Blizzard
 
-
 Wareframe:
 
 1- Home - Kevin
