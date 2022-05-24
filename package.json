@@ -1,0 +1,23 @@
+{
+  "name": "grupo_9_games",
+  "version": "1.0.0",
+  "description": "Destino: MarketPlace destinado a la venta de juegos en diferentes plataformas.\r Audiencia: a toda persona\r Breve descripcion del equipo: \r Jankauskas Ignacio: Estudiante de ingeniera mecanica, siempre estuve interesado en la tecnologia. En mis tiempos libres me gusta jugar al Counter. \r Daniel López: Trabajando en transporte publico de pasajeros, ex jugador del cs 1.5/1.6, Dota2 y Fifa/Pes.\r Kevin Breit: Ex estudiante de ingenieria industrial. En mis tiempos libres me gusta jugar al NK 20.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ijankauskas/grupo_9_games.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ijankauskas/grupo_9_games/issues"
+  },
+  "homepage": "https://github.com/ijankauskas/grupo_9_games#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

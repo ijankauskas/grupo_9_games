@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'roboto';
+    box-sizing: border-box;
+}
+
+.encabezado{
+    background-color: rgb(50, 50, 50);
+}
+
+.encabezado section{
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.burger-menu{
+    text-align: center;
+}
+
+.burger-menu i{
+    color: white;
+    margin: 16px;
+    font-size: 18px;
+    padding: 8px;
+}
+
+.logo{
+    width: 25%;
+    text-align: center;
+}
+
+nav{
+    background-color: #417a9b;  
+    padding: 15px;
+}
+
+ul{
+    list-style:none;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    border-top: 10px;
+    border-bottom: 10px;
+}
+
+nav ul li div{
+    display: flex;
+}
+
+.input{
+    color: black;
+    width: 100%;
+    background-color: white;
+    border: solid 1px black;
+}
+
+.submit{
+    color: black;
+    background-color: white;
+    border: solid 1px black;
+}
+
+main{
+    background-color: #2A475E;
+}
+
+h2{
+    font-size: 14px;
+    color: white;
+    padding-bottom: 5px;
+}
+
+.destacados{
+    width: 100%;
+    padding-top: 30px;
+    border: solid 5px #2A475E;
+}
+
+.destacados img{
+    width: 100%;
+    padding-bottom: 25px;
+}
+
+.ofertas-especiales{
+    display: flex;
+    justify-content: space-around;
+}
+
+.ofertas-especiales img{
+    width: 33%;
+}
+
+footer{
+    padding: 5px;
+    background-color: black;
+}
+
+.pie-pagina{
+    color: white;
+}
+
+.iconos{
+    display: flex;
+    justify-content: space-around;
+}
