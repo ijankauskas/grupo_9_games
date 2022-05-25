@@ -17,18 +17,19 @@
 
 .burger-menu{
     text-align: center;
+    font-size: 30px;
 }
 
 .burger-menu i{
     color: white;
-    margin: 16px;
-    font-size: 18px;
-    padding: 8px;
+    margin: 10px;
+    font-size: 30px;
 }
 
 .logo{
-    width: 25%;
-    text-align: center;
+    width: 15%;
+    max-width: 100px;
+    margin: auto;
 }
 
 nav{
@@ -40,7 +41,7 @@ ul{
     list-style:none;
 }
 
-nav ul li a{
+a{
     color: white;
     text-decoration: none;
     border-top: 10px;
@@ -66,28 +67,40 @@ nav ul li div{
 
 main{
     background-color: #2A475E;
+    display: flex;
+}
+
+.explorador{
+    display: none;
 }
 
 h2{
-    font-size: 14px;
+    font-size: 20px;
     color: white;
     padding-bottom: 5px;
 }
 
 .destacados{
-    width: 100%;
+    width: 100%;    
+    max-width: 800px;
     padding-top: 30px;
     border: solid 5px #2A475E;
+    margin: auto;
+}
+
+.destacados article img{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 .destacados img{
     width: 100%;
-    padding-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .ofertas-especiales{
     display: flex;
     justify-content: space-around;
+    margin: auto;
 }
 
 .ofertas-especiales img{
@@ -106,4 +119,32 @@ footer{
 .iconos{
     display: flex;
     justify-content: space-around;
+}
+
+@media(min-width: 910px){
+    nav ul{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+@media(min-width:1100px){
+    .explorador h2{
+        font-size: 20px;
+        padding-left: 10px;
+        color: #b2b2bf;
+    }
+
+    .explorador{
+        padding-top: 30px;
+        display: block;
+    }
+    
+    .explorador ul{
+        padding: 10px;
+    }
+    .explorador ul li{
+        padding: 5px;
+    }
 }
