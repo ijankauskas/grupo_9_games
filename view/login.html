@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/2da8e91210.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="encabezado">
+            <section>
+                <div class="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <img src="/imagenes/imagen-logo.jpg" alt="imagen del logo" class="logo">
+            </section>
+        </div>
+    </header>
+    <main>
+        <div class="login-body">
+            <div class="login-box">
+                <div class="login-paddin">
+                    <p class="login-tittle">Iniciar sesión</p>
+                    <form action="/login" method="post">
+                        <div class="input-login">
+                            <label for="nombre">Nombre de la cuenta</label></BR>
+                            <input type="text" name="nombre" id="nombre"> 
+                        </div>
+                        <div class="input-login">
+                            <label for="contraseña">Contraseña</label></br>
+                            <input type="text" name="contraseña" id="contraseña">
+                        </div>
+                        <button type="submit" class="submit-iniciar-sesion">
+                            <span>Iniciar sesión</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
