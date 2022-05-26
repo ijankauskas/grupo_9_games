@@ -37,6 +37,10 @@ nav{
     padding: 15px;
 }
 
+.barra li{
+    margin: 10px 10px 10px 0px;
+}
+
 ul{
     list-style:none;
 }
@@ -82,14 +86,14 @@ h2{
 
 .destacados{
     width: 100%;    
-    max-width: 800px;
+    max-width: 900px;
     padding-top: 30px;
     border: solid 5px #2A475E;
     margin: auto;
 }
 
 .destacados article img{
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.415);
 }
 
 .destacados img{
@@ -98,13 +102,76 @@ h2{
 }
 
 .ofertas-especiales{
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
+    display: none;
 }
 
 .ofertas-especiales img{
     width: 33%;
+}
+
+.banner-iniciar-sesion{
+    background-color: rgba( 0,0,0,0.2);
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    color: #b2b2bf;
+    margin-bottom: 60px;
+}
+
+.button-iniciar-sesion{
+    background-color: green;
+    padding: 3px;
+    border: solid 1px black;
+    border-radius: 7px;
+}
+
+.button-iniciar-sesion span{
+    padding: 0px 15px;
+    font-size: 15px;
+    line-height: 60px;
+}
+
+.otros-juegos .juegos article{
+    background-color: #303030;
+    margin: 5px 0 5px 0
+}
+
+.otros-juegos .juegos img{
+    margin: 0;
+}
+
+.main-class{
+    padding: 5px;
+    color: white;
+}
+
+.plataformas{
+    color: #b2b2bf;
+    display: flex;
+}
+
+.plataformas p i{
+    margin: 12px 7px 0px 0px;
+}
+
+.descuento-precio{
+    color: #b2b2bf;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 5px;
+}
+
+.descuento{
+    font-size: 26px;
+    background-color: #4c6b22;
+    color: #a4d007;
+    padding: 0px 5px;
+}
+
+.precio{
+    background-color: black;
+    font-size: 26px;
+    padding: 0px 5px;
 }
 
 footer{
@@ -121,7 +188,30 @@ footer{
     justify-content: space-around;
 }
 
+@media (min-width: 360px){
+
+    .ofertas-especiales{
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .juegos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .juegos article{
+        width: 100%;
+    }
+}
+
 @media(min-width: 910px){
+    .juegos article{
+        width: 45%;
+    }
+
     nav ul{
         display: flex;
         justify-content: space-evenly;
@@ -146,5 +236,9 @@ footer{
     }
     .explorador ul li{
         padding: 5px;
+    }
+
+    .juegos article{
+        width: 30%;
     }
 }
