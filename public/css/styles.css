@@ -33,8 +33,9 @@
 }
 
 nav{
-    background-color: #417a9b;  
+    background: linear-gradient(90deg, rgba(35, 109, 193, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%);  
     padding: 15px;
+    border: solid 1px rgba(0, 0, 0, 0.2);
 }
 
 .barra li{
@@ -70,7 +71,7 @@ nav ul li div{
 }
 
 main{
-    background-color: #2A475E;
+    background-color: #15171E;
     display: flex;
 }
 
@@ -88,7 +89,8 @@ h2{
     width: 100%;    
     max-width: 900px;
     padding-top: 30px;
-    border: solid 5px #2A475E;
+    border-left: solid 10px #15171E;
+    border-right: solid 10px #15171E;
     margin: auto;
 }
 
@@ -119,10 +121,11 @@ h2{
 }   
 
 .button-iniciar-sesion{
-    padding: 3px;
+    padding: 6px;
     border: solid 1px black;
-    border-radius: 7px;
-    background: linear-gradient( to right, #75b022 5%, #588a1b 95%)
+    border-radius: 5px;
+    background: linear-gradient( to right, #75b022 5%, #588a1b 95%);
+    text-shadow: 1px 1px 0px rgb(0 0 0 / 30%);
 }
 
 .button-iniciar-sesion span{
@@ -133,8 +136,8 @@ h2{
 
 .otros-juegos .juegos article{
     background-color: #303030;
-    margin: 5px 0 5px 0;
-    box-shadow: 0px 0px 10px rgba(149, 149, 149, 0.5);
+    margin: 10px 0 10px 0;
+    box-shadow: 0px 0px 5px rgba(149, 149, 149, 0.5);
 }
 
 .otros-juegos .juegos img{
@@ -189,6 +192,85 @@ footer{
     justify-content: space-around;
 }
 
+.login-body{
+    width: 90%;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.login-body .login-box{
+    margin: 40px 20px 20px 20px;
+}
+
+.login-body .login-box .login-paddin .login-tittle{ 
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 34px;
+    margin-bottom: 35px;
+    font-weight: 100;
+}
+
+.login-paddin .input-login{
+    padding-bottom: 18px;
+}
+
+.input-login label{
+    color:  #b8b6b4;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
+.input-login input{
+    margin-top: 5px;
+    background: #6c6e72;
+    width: 100%;
+    border-radius: 3px;
+    padding: 8px 6px;
+    box-shadow: 0;
+    border: solid 1px #6c6e72;
+    outline: none;
+    color: #b8b6b4;
+}
+
+.login-paddin .button-submit{
+    text-align: center;
+}
+
+.login-paddin .button-submit button{
+    border-radius: 5px;
+    background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
+    text-shadow: 1px 1px 0px rgb(0 0 0 / 30%);
+    background-position: 25%;
+    background-size: 330% 100%;
+    width: 90%;
+    padding: 8px 0px;
+    border: solid 1px black;
+}
+
+.login-paddin .button-submit button span{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+
+.login-footer p{
+    color: #b8b6b4;
+    text-align: center;
+}
+
+.login-body .inicia-con{
+    margin: 39px 0 27px;
+}
+
+.login-footer .login-footer-icon{
+    display: flex;
+    justify-content: center;
+}
+
 @media (min-width: 360px){
 
     .ofertas-especiales{
@@ -206,32 +288,6 @@ footer{
     .juegos article{
         width: 100%;
     }
-}
-
-.login-body{
-    width: 90%;
-    display: flex;
-    border: solid 1px white;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-}
-
-.login-body .login-box{
-    border: solid 1px red;
-}
-
-.login-body .login-box .login-paddin .login-tittle{
-    text-transform: uppercase;
-    color: white;
-    text-align: center;
-    letter-spacing: 2px;
-    font-size: 34px;
-    margin-bottom: 35px;
-}
-
-.login-paddin .input-login{
-    border: solid 1px black;
 }
 
 @media(min-width: 910px){

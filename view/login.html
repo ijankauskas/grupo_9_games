@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/2da8e91210.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,300&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -35,13 +35,21 @@
                         </div>
                         <div class="input-login">
                             <label for="contraseña">Contraseña</label></br>
-                            <input type="text" name="contraseña" id="contraseña">
+                            <input type="password" name="contraseña" id="contraseña">
                         </div>
-                        <button type="submit" class="submit-iniciar-sesion">
-                            <span>Iniciar sesión</span>
-                        </button>
+                        <div class="button-submit">
+                            <button type="submit" class="submit-iniciar-sesion"><span>Iniciar sesión</span></button>
+                        </div>
                     </form>
                 </div>
+                <div class="login-footer">
+                    <p class="inicia-con">O inicia sesion con</p>
+                    <div class="login-footer-icon">
+                        <p class="icon-facebook"><i class="fa-brands fa-facebook"></i></p>
+                        <p class="icon-google"><i class="fa-brands fa-google"></i></p>
+                        <p class="icon-apple"><i class="fa-brands fa-apple"></i></p>
+                    </div>
+                </div>    
             </div>
         </div>
     </main>
