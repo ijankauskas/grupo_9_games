@@ -71,6 +71,16 @@ nav ul li div{
 
 main{
     background-color: #15171E;
+}
+
+main .video-principal{
+    padding-top: 5px;
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+
+.todo{
     display: flex;
 }
 
