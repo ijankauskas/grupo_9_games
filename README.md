@@ -14,3 +14,6 @@ Wareframe:
 3- Carrito de compras - Ignacio ok.
 4- Formulario de registro - Daniel ok.
 5- Formulario de Login - Facundo ok.
+
+Enlace al Tablero de Trabajo.
+https://trello.com/invite/b/n73U3gU3/649f8bdcfdc2cd12c20236861bfbbc6c/acme
