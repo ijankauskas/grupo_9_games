@@ -92,9 +92,10 @@ input{
     color: black;
     background-color: rgba(96, 133, 155, 0.979);
     position: absolute;
-    right: 4px;
-    top: 4px;
     bottom: 4px;
+    top: 4px;
+    right: 4px;
+    outline: none;
     border: none;
 }
 

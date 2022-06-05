@@ -1,0 +1,17 @@
+.total{
+    width: 90%;
+    display: flex;
+}
+
+.cart{
+    display: flex;
+    border: solid 1px red;
+}
+
+.cart .venta{
+    display: flex;
+}
+
+img{
+    width: 30%;
+}
