@@ -440,6 +440,14 @@ footer .copyright{
         color: #66c0f4;
     }
 
+    .button-iniciar-sesion:hover{
+        background: #a4d007;
+    }
+
+    .login-paddin .button-submit button:hover{
+    background: #47bfff 5%;
+    }
+
     .juegos article{
         width: 32%;
     }

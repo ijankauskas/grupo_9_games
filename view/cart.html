@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compras</title>
+    <title>Carro de compras</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/styles-cart.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
@@ -45,32 +45,74 @@
     </header>
     <main>
         <div class="total">
-            <div>
+            <div class="cart-left">
+                <h1>Tu carro de compras</h1>
                 <section class="cart">
                     <article class="venta">
                         <div class="foto-venta">
-                            <a href="   "><img src="/imagenes/counter-strike.jpg"></a>
+                            <a href=""><img src="/imagenes/counter-strike.jpg"></a>
                         </div>
-                        <p>Counter Strike Global Ofensive</p>
                         <div class="main-venta">
-                            <p class="cart-plataform"><i class="fa-solid fa-desktop"></i></p>
+                            <div class="title">
+                                <p>Counter Strike: Global Ofensive</p>
+                                <p class="cart-plataform"><i class="fa-solid fa-desktop"></i></p>
+                            </div>
                             <div>
-                                <p class="price">$1.400</p>
-                                <a class="remove_link" href="">Remove</a>
+                                <p class="price">ARS $1.400</p>
+                                <a class="remove_link" href="">Remover</a>
                             </div>
                         </div>
                     </article>
                 </section>
+                <section class="cart-suma">
+                    <div class="price-sum">
+                        <p>Total estimado</p>
+                        <p>ARS $1.400</p>
+                    </div>
+                    <div class="button-buy">
+                        <a href="#" class="button-iniciar-sesion"><span>Comprar para mi</span></a>
+                        <a href="#" class="button-iniciar-sesion"><span>Comprar como regalo</span></a>
+                    </div>
+                </section>
+                <p class="anuncio-iva">Todos los precios incluyen IVA</p>
+                <a href=""><p class="remove-all">Eliminar todos los articulos</p></a>
             </div>
             <section class="recomendados-cart">
                 <div class="recomendado-game">
-                    <a href=""><img src="/imagenes/elden-ring.jpg" alt=""></a>
+                    <a href="">
+                        <img src="/imagenes/minecraft.jpeg" alt="">
+                        <div class="main-class">
+                            <h3>Minecraft</h3>
+                            <div class="descuento-precio">
+                                <p class="descuento">67%</p>
+                                <p class="precio">3.750$</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="recomendado-game">
-                    <a href=""><img src="/imagenes/gran-turismo.jpg" alt=""></a>
+                    <a href="">
+                        <img src="/imagenes/gran-turismo.jpg" alt="">
+                        <div class="main-class">
+                            <h3>Gran Turismo</h3>
+                            <div class="descuento-precio">
+                                <p class="descuento">20%</p>
+                                <p class="precio">12.400$</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="recomendado-game">
-                    <a href=""><img src="/imagenes/nba-2k20.jpg" alt=""></a>
+                    <a href="">
+                        <img src="/imagenes/nba-2k20.jpg" alt="">
+                        <div class="main-class">
+                            <h3>NBA 2K20</h3>
+                            <div class="descuento-precio">
+                                <p class="descuento">50%</p>
+                                <p class="precio">5.500$</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </section>
         </div>
