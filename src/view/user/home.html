@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Acme</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/2da8e91210.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="encabezado">
+            <section>
+                <div class="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <img src="/imagenes/imagen-logo.jpg" alt="imagen del logo" class="logo">
+            </section>
+        </div>
+        <nav>
+            <ul class="barra">
+                <li><a href="#">Tienda</a></li>
+                <li><a href="#">Oferta</a></li>
+                <li><a href="#">Historial</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><div class="store-search">
+                    <form action="buscador" method="get">
+                        <div class="searchbox">
+                            <label for="">
+                                <input type="text" placeholder="buscar..."></input>
+                            </label>
+                            <button type="submit" class="submit"><span><i class="fa fa-search"></i></span></button>
+                        </div>
+                    </form>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <div class="todo">
+        <div class="explorador">
+            <h2>Explorar por categorias</h2>
+            <ul>
+                <li><a href="www.facebook.com">Lo mas vendidos</a></li>
+                <li><a href="#">Novedades</a></li>
+                <li><a href="#">Proximamente</a></li>
+                <li><a href="#">Ofertas </a></li>
+            </ul>
+            <h2>Explorar por genero</h2>
+            <ul>
+                <li><a href="">Accion</a></li>
+                <li><a href="">Arcade</a></li>
+                <li><a href="">Aventura</a></li>
+                <li><a href="">Carreras</a></li>
+                <li><a href="">Deportes</a></li>
+                <li><a href="">Estrategia</a></li>
+                <li><a href="">Infantil</a></li>
+                <li><a href="">Roll</a></li>
+                <li><a href="">Terror</a></li>
+            </ul>
+            <h2>Explorar por la plataforma</h2>
+            <ul>
+                <li><a href="">Mobile</a></li>
+                <li><a href="">Nintendo Switch</a></li>
+                <li><a href="">PC</a></li>
+                <li><a href="">Playstation</a></li>
+                <li><a href="">Xbox One</a></li>
+            </ul>
+        </div>
+        <section class="destacados">
+            <h2>DESTACADOS</h2>
+            <article>
+                <a href="/productDetail">
+                    <video loop muted autoplay class="video-principal">
+                        <source src="/imagenes/trailer-fifa22.mp4" type="video/mp4">
+                    </video>
+                </a>
+                <a href="/productDetail"><img src="/imagenes/fifa-2022.jpg" class="foto-principal"></a>
+            </article>
+            <h2>OFERTAS ESPECIALES</h2>
+            <div class="ofertas-especiales">
+                <img src="/imagenes/counter-strike.jpg" alt="">
+                <img src="/imagenes/dota-2.jpg" alt="">
+                <img src="/imagenes/nba-2k20.jpg" alt="">
+            </div>
+            <div class="banner-iniciar-sesion">
+                <p>Inicia sesion para ver recomendaciones personalizadas</p>
+                <a href="/login" class="button-iniciar-sesion"><span>Iniciar sesion</span></a>
+                <p>O <a href="/register">registrate</a> y unete a Acme games</p>
+            </div>
+            <section class="otros-juegos">
+                <h2>OTROS JUEGOS</h2>
+                <div class="juegos">
+                    <article>
+                        <a href="">
+                        <img src="/imagenes/world-of-warcraft.jpg" alt="">
+                        <div class="main-class">
+                            <h3>World of Warcraft</h3>
+                            <div class="plataformas"> 
+                                <p><i class="fa-solid fa-desktop"></i></p> 
+                            </div>
+                            <div class="descuento-precio">
+                                <p class="descuento">40%</p>
+                                <p class="precio">5.000$</p>
+                            </div>
+                        </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                        <img src="/imagenes/gran-turismo.jpg" alt="">
+                        <div class="main-class">
+                            <h3>Gran Turismo</h3>
+                            <div class="plataformas">
+                                <p><i class="fa-solid fa-desktop"></i></p>
+                                <p><i class="fa-brands fa-playstation"></i></p>
+                                <p><i class="fa-brands fa-xbox"></i></p>
+                            </div>
+                            <div class="descuento-precio">
+                                <p class="descuento">20%</p>
+                                <p class="precio">12.400$</p>
+                            </div>
+                        </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                        <img src="/imagenes/stardew-valley.jpg" alt="">
+                        <div class="main-class">
+                            <h3>Stardew Valley</h3>
+                            <div class="plataformas">
+                                <p><i class="fa-solid fa-desktop"></i></p>
+                                <p><i class="fa-brands fa-playstation"></i></p>
+                                <p><i class="fa-brands fa-xbox"></i></p>
+                                <p><i class="fa-brands fa-apple"></i></p>
+                                <p><i class="fa-brands fa-android"></i></p>
+                            </div>
+                            <div class="descuento-precio">
+                                <p class="descuento">67%</p>
+                                <p class="precio">3.750$</p>
+                            </div>
+                        </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                        <img src="/imagenes/league-of-legends.jpg" alt="">
+                        <div class="main-class">
+                            <h3>League Of Legends</h3>
+                            <div class="plataformas">
+                                <p><i class="fa-solid fa-desktop"></i></p>
+                            </div>
+                            <div class="descuento-precio">
+                                <p class="descuento">67%</p>
+                                <p class="precio">3.750$</p>
+                            </div>
+                        </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                        <img src="/imagenes/terraria.jpg" alt="">
+                        <div class="main-class">
+                            <h3>Terraria</h3>
+                            <div class="plataformas">
+                                <p><i class="fa-solid fa-desktop"></i></p>
+                                <p><i class="fa-brands fa-playstation"></i></p>
+                                <p><i class="fa-brands fa-xbox"></i></p>
+                                <p><i class="fa-brands fa-apple"></i></p>
+                                <p><i class="fa-brands fa-android"></i></p>
+                            </div>
+                            <div class="descuento-precio">
+                                <p class="descuento">67%</p>
+                                <p class="precio">3.750$</p>
+                            </div>
+                        </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                        <img src="/imagenes/minecraft.jpeg" alt="">
+                        <div class="main-class">
+                            <h3>Minecraft </h3>
+                            <div class="plataformas">
+                                <p><i class="fa-solid fa-desktop"></i></p>
+                                <p><i class="fa-brands fa-playstation"></i></p>
+                                <p><i class="fa-brands fa-xbox"></i></p>
+                                <p><i class="fa-brands fa-apple"></i></p>
+                                <p><i class="fa-brands fa-android"></i></p>
+                            </div>
+                            <div class="descuento-precio">
+                                <p class="descuento">67%</p>
+                                <p class="precio">3.750$</p>
+                            </div>
+                        </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                        <img src="/imagenes/left-for-dead-2.jpg" alt="">
+                        <div class="main-class">
+                            <h3>Left For Dead 2</h3>
+                            <div class="plataformas">
+                                <p><i class="fa-solid fa-desktop"></i></p>
+                                <p><i class="fa-brands fa-playstation"></i></p>
+                                <p><i class="fa-brands fa-xbox"></i></p>
+                            </div>
+                            <div class="descuento-precio">
+                                <p class="descuento">25%</p>
+                                <p class="precio">129$</p>
+                            </div>
+                        </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                        <img src="/imagenes/elden-ring.jpg" alt="">
+                        <div class="main-class">
+                            <h3>Elden Ring</h3>
+                            <div class="plataformas">
+                                <p><i class="fa-solid fa-desktop"></i></p>
+                                <p><i class="fa-brands fa-playstation"></i></p>
+                                <p><i class="fa-brands fa-xbox"></i></p>
+                            </div>
+                            <div class="descuento-precio">
+                                <p class="descuento">10%</p>
+                                <p class="precio">4.999$</p>
+                            </div>
+                        </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                        <img src="/imagenes/raft.jpg" alt="">
+                        <div class="main-class">
+                            <h3>Raft</h3>
+                            <div class="plataformas">
+                                <p><i class="fa-solid fa-desktop"></i></p>
+                                <p><i class="fa-brands fa-playstation"></i></p>
+                                <p><i class="fa-brands fa-xbox"></i></p>
+                            </div>
+                            <div class="descuento-precio">
+                                <p class="descuento">15%</p>
+                                <p class="precio">224$</p>
+                            </div>
+                        </div>
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </div>
+    </main>
+    <footer>
+        <div class="pie-pagina">
+            <p>Visita otros canales de ACME GAMES</p>
+            <div class="iconos">
+                <a href=""><p class="icon-facebook"><i class="fa-brands fa-facebook"></i></p></a>
+                <a href=""><P class="icon-twitter"><i class="fa-brands fa-twitter"></i></P></a>
+                <a href=""><P class="icon-instagram"><i class="fa-brands fa-instagram"></i></P></a>
+            </div>
+        </div>
+        <div class="segunda-parte-footer">
+            <div class="contaco">
+                <a href=""><p>Contacto</p></a>
+                <a href=""><p>Soporte</p></a>
+                <a href=""><p>Legal</p></a>
+                <a href=""><p>Ofertas de Trabajo</p></a>
+            </div>
+            <div class="privacidad">
+                <a href=""><p>Privacidad</p></a>
+                <a href=""><p>Empresa</p></a>
+                <a href=""><p>Oficina</p></a>
+                <a href=""><p>Politica de cancelacion</p></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>2022 ACME GAMES corporation. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
