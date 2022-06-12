@@ -68,6 +68,7 @@ h1{
 .remove-all{
     text-align: right;
     color: gray;
+    padding-bottom: 20px;
 }
 
 .cart-suma .button-buy{
