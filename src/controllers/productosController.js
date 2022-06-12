@@ -1,9 +1,13 @@
 const path = require('path');
 
 const productosController = {
-    mostrar: (req, res)=>{
-        res.sendFile(path.join(__dirname,'../view/user/productDetail.html'))
+    listar: (req, res)=>{
+        res.sendFile(path.join(__dirname,'../view/products/productDetail.html'))
     },
+
+    detalle: (req, res)=>{
+        res.sendFile(path.join(__dirname,'../view/products/productDetail.html'))
+    }
 };
 
 module.exports = productosController;
