@@ -66,8 +66,12 @@ h3{
     padding: 0 15px;
 }
 
-.button-seguircomprando button{
+.button-seguircomprando{
     margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.button-seguircomprando a{
     border-radius: 5px;
     background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
     text-shadow: 1px 1px 0px rgb(0 0 0 / 30%);
@@ -75,13 +79,12 @@ h3{
     background-size: 330% 100%;
     width: 35%;
     border: solid 1px black;
+    padding: 8px 40px;
 }
 
-.button-seguircomprando button span{
+.button-seguircomprando span{
     color: white;
     font-size: 15px;
-    display: flex;
-    justify-content: center;
     padding: 8px 0px;
 }
 
@@ -103,7 +106,7 @@ h3{
         width: 34%;
     }
 
-    .button-seguircomprando button:hover{
+    .button-seguircomprando a:hover{
         background: #47bfff 5%;
     }
 }

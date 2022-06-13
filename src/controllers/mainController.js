@@ -2,19 +2,19 @@ const path = require('path');
 
 const mainController = {
     home: (req, res)=>{
-        res.sendFile(path.join(__dirname,'../view/user/home.html'))
+        res.render('./user/home');
     },
 
     login: (req, res)=>{
-        res.sendFile(path.join(__dirname,'../view/user/login.html'))
+        res.render('./user/login');
     },
 
     register: (req, res)=>{
-        res.sendFile(path.join(__dirname,'../view/user/register.html'))
+        res.render('./user/register');
     },
 
     cart: (req, res)=>{
-        res.sendFile(path.join(__dirname,'../view/user/cart.html'))
+        res.render('./user/cart');
     },
 }
 
