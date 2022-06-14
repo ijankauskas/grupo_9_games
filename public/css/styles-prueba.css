@@ -1,0 +1,27 @@
+.imagenes-banner{
+    height: 500px;
+    overflow: hidden;
+}
+
+.imagenes-banner div img{
+    width: 100%;
+}
+
+.otras-ofertas{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.otras-ofertas div{
+    width: 30%;
+}
+
+#videos{
+    width: 5%;
+}
+
+.otras-ofertas div img{
+    width: 100%;
+    height: 100%;
+}

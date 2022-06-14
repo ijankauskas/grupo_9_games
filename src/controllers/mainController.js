@@ -16,6 +16,14 @@ const mainController = {
     cart: (req, res)=>{
         res.render('./user/cart');
     },
+
+    prueba: (req, res)=>{
+        res.render('./user/prueba');
+    },
+
+    foto: (req, res)=>{
+        res.render('./user/prueba');
+    },
 }
 
 module.exports = mainController;
