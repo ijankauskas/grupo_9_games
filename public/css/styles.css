@@ -164,6 +164,7 @@ h2{
 .ofertas-especiales div{
     width: 32%;
     margin-bottom: 25px;
+    overflow: hidden;
 }
 
 .ofertas-especiales div img{
@@ -367,6 +368,10 @@ footer .copyright{
         display: block;
     }
 
+    .ofertas-especiales div img:hover{
+        transform: scale(1.1);
+    }
+
     .ofertas-especiales div:active{
         border: solid 2px #47bfff;
     }
@@ -387,9 +392,6 @@ footer .copyright{
         box-shadow: 0px 0px 5px rgba(149, 149, 149, 0.5);
         border-radius: 10px;
         transform: scale(1.01);
-    }
-
-    .otros-juegos .juegos article:hover img{
     }
 
 }
