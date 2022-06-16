@@ -192,17 +192,22 @@ h2{
     padding: 0px 15px;
     font-size: 15px;
     line-height: 60px;
+    white-space: nowrap;
 }
 
-.otros-juegos .juegos article{
+.juegos article{
     background-color: #303030;
     margin: 10px 0 10px 0;
     transition: 0.5s;
     overflow: hidden;
 }
 
-.otros-juegos .juegos img{
+.juegos img{
+    width: 100%;
     margin: 0;
+    transition: 0.5s;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .main-class{
@@ -381,14 +386,14 @@ footer .copyright{
     }
 
     .login-paddin .button-submit button:hover{
-    background: #47bfff 5%;
+        background: #47bfff 5%;
     }
 
     .juegos article{
         width: 32%;
     }
 
-    .otros-juegos .juegos article:hover{
+    .juegos article:hover{
         box-shadow: 0px 0px 5px rgba(149, 149, 149, 0.5);
         border-radius: 10px;
         transform: scale(1.01);

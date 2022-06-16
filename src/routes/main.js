@@ -14,6 +14,4 @@ router.get('/cart', mainController.cart);
 
 router.get('/prueba', mainController.prueba);
 
-router.get('/prueba/:idPrueba', mainController.prueba);
-
 module.exports = router;
