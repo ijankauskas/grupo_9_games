@@ -1,0 +1,132 @@
+.create-paddin .input-create{
+    padding-bottom: 9px;
+}
+
+.input-create label{
+    color:  #b8b4b4;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
+.input-create input{
+    margin-top: 5px;
+    background: #6c6e72;
+    width: 100%;
+    border-radius: 3px;
+    padding: 8px 6px;
+    box-shadow: 0;
+    border: solid 1px #6c6e72;
+    outline: none;
+    color: #b8b5b4;
+}
+
+.checkbox-create{
+    color:#b8b4b4;
+    text-align: center;
+    overflow:hidden;
+    float:left;
+    padding:6px;
+    margin-right:6px;
+}
+  
+.create-body{
+    width: 90%;
+    display: flex;
+    justify-content: left;
+    margin: auto;
+}
+
+.create-body .create-box{
+    padding-bottom: 550px;
+    margin: 40px 20px 20px 20px;
+}
+
+.create-body .create-box .create-paddin .create-tittle{ 
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 34px;
+    margin-bottom: 35px;
+    font-weight: 100;
+}
+
+.create-paddin .input-create{
+    padding-bottom: 18px;
+}
+
+.input-create label{
+    color:  #b8b6b4;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
+.input-create input{
+    margin-top: 5px;
+    background: #6c6e72;
+    width: 100%;
+    border-radius: 3px;
+    padding: 8px 6px;
+    box-shadow: 0;
+    border: solid 1px #6c6e72;
+    outline: none;
+    color: #b8b6b4;
+}
+
+.create-paddin .button-submit{
+    text-align: center;
+}
+
+.button-submit button{
+    margin-top: 25px;
+    border-radius: 5px;
+    background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
+    text-shadow: 1px 1px 0px rgb(0 0 0 / 30%);
+    background-position: 25%;
+    background-size: 330% 100%;
+    width: 90%;
+    padding: 8px 0px;
+    border: solid 1px black;
+}
+
+.button-submit button span{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+
+.create-footer p{
+    color: #b8b6b4;
+    text-align: center;
+}
+
+.create-body .inicia-con{
+    margin: 39px 0 27px;
+}
+
+.create-footer .create-footer-icon{
+    display: flex;
+    justify-content: center;
+}
+
+.create-footer .create-footer-icon p{
+    padding: 15px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 12px;
+}
+
+.create-footer .create-footer-icon .icon-facebook{
+    color: white;
+    background-color: #1877F2;
+}
+
+.create-footer .create-footer-icon .icon-google{
+    background-color: white;
+}
+
+.create-footer .create-footer-icon .icon-apple{
+    background-color: white;
+    color: black;
+}
+

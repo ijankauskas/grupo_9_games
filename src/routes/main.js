@@ -12,4 +12,8 @@ router.get('/register', mainController.register);
 
 router.get('/cart', mainController.cart);
 
+router.get('/create', mainController.create);
+
+router.get('/edit', mainController.edit);
+
 module.exports = router;

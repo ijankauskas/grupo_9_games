@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Formulario para Agregar Productos</title>
+    <link rel="stylesheet" href="/css/styles-edit.css">
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <div class="edit-body">
+            <div class="edit-box">
+                <div class="edit-paddin">
+                    <p class="edit-tittle">AGREGAR UN NUEVO PRODUCTO</p>
+                    <form action="/edit" method="post">
+                        <div class="input-edit">
+                            <label for="name">Nombre del Juego</label></BR>
+                            <input type="text" name="name" id="name"> 
+                        </div>
+                        <div class="input-edit">
+                            <label for="description">Descripción del Juego</label></BR>
+                            <input type="text" name="description" id="description">
+                        </div>
+                        <div class="input-edit">
+                            <label for="category">Categoria</label></BR>
+                            <input type="text" name="category" id="category"> 
+                        </div>
+                        <div class="checkbox-edit">
+                            <label for="nombre">
+                                <input type="checkbox" name="edit">Playstation</input>
+                            </label>
+                        </div>
+                        <div class="checkbox-edit">
+                            <label for="nombre">
+                                <input type="checkbox" name="edit">X Box</input>
+                            </label>
+                        </div>
+                        <div class="checkbox-edit">
+                            <label for="nombre">
+                                <input type="checkbox" name="edit">PC</input>
+                            </label>
+                        </div>
+                        <div class="checkbox-edit">
+                            <label for="nombre">
+                                <input type="checkbox" name="edit">Nintendo</input>
+                            </label>
+                        </div>
+                        <div class="input-edit">
+                            <label for="image">Adjuntar imágenes</label></BR>
+                            <input type="file" multiple  name="image" id="image"> 
+                        </div>
+                        <div class="input-edit">
+                            <label for="price">Precio</label></BR>
+                            <input type="number" name="price" id="price"> 
+                        </div>
+                        <div class="button-submit">
+                            <button type="submit" class="submit-agregar-producto" ><span>Agregar Producto</span></button>
+                        </div>
+                        
+                    </form>
+                </div>         
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>
