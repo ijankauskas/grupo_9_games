@@ -9,12 +9,14 @@
     <div class="juegos">
         <% for(let juegos of producto) { %>
             <article>
-                <a href="">
+                <a href="/producDetail">
                 <img src="<%= juegos.imagenLogo %>" alt="">
                 <div class="main-class">
                     <h3><%= juegos.nombre %></h3>
                     <div class="plataformas"> 
-                        <p><%= juegos.compatibilidad %></p> 
+                        <% for(let compatibilidad of juegos.compatibilidad) { %>
+                            <p><i class="<%= compatibilidad %>"></i></p>
+                        <%} %>
                     </div>
                     <div class="descuento-precio">
                         <p class="descuento"><%= juegos.descuento %></p>
