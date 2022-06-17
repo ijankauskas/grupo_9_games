@@ -6,7 +6,14 @@ const productosController = {
     },
 
     detalle: (req, res)=>{
-        res.render('./products/productDetail');
+        let productoFinal;
+        let idProducto= req.params.idProducto
+        for(let producto of listaProductos){
+            if(idProducto == producto.id){
+                productoFinal = producto;
+            }
+        }
+        res.render('./user/prueba', {producto: productoFinal});
     }
 };
 

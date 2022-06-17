@@ -1,57 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/head') %> 
+    <%- include('../partials/head') %>
     <title>Bienvenido a Acme</title>
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
     <div class="todo">
-        <div class="explorador">
-            <h2>Explorar por categorias</h2>
-            <ul>
-                <li><a href="www.facebook.com">Lo mas vendidos</a></li>
-                <li><a href="#">Novedades</a></li>
-                <li><a href="#">Proximamente</a></li>
-                <li><a href="#">Ofertas </a></li>
-            </ul>
-            <h2>Explorar por genero</h2>
-            <ul>
-                <li><a href="">Accion</a></li>
-                <li><a href="">Arcade</a></li>
-                <li><a href="">Aventura</a></li>
-                <li><a href="">Carreras</a></li>
-                <li><a href="">Deportes</a></li>
-                <li><a href="">Estrategia</a></li>
-                <li><a href="">Infantil</a></li>
-                <li><a href="">Roll</a></li>
-                <li><a href="">Terror</a></li>
-            </ul>
-            <h2>Explorar por la plataforma</h2>
-            <ul>
-                <li><a href="">Mobile</a></li>
-                <li><a href="">Nintendo Switch</a></li>
-                <li><a href="">PC</a></li>
-                <li><a href="">Playstation</a></li>
-                <li><a href="">Xbox One</a></li>
-            </ul>
-        </div>
+        <%- include('../partials/nav-explorador') %>
         <section class="destacados">
             <h2>DESTACADOS</h2>
-            <article>
-                <a href="/productDetail">
-                    <video loop muted autoplay class="video-principal">
-                        <source src="/imagenes/trailer-fifa22.mp4" type="video/mp4">
-                    </video>
-                </a>
+            <div class="banner">
                 <a href="/productDetail"><img src="/imagenes/fifa-2022.jpg" class="foto-principal"></a>
-            </article>
+                <div class="imagenes-banner">
+                    <div id="videos">
+                        <a href="/productDetail">
+                            <video loop muted autoplay class="video-principal">
+                                <source src="/imagenes/trailer-fifa22.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </div>
+                    <div id="cs">
+                        <a href="/productDetail"><img src="/imagenes/gran-turismo.jpg" alt=""></a>
+                    </div>
+                    <div id="dota">
+                        <a href="/productDetail"><img src="/imagenes/dota-2.jpg" alt=""></a>
+                    </div>
+                    <div id="nba">
+                        <a href="/productDetail"><img src="/imagenes/nba-2k20.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
             <h2>OFERTAS ESPECIALES</h2>
             <div class="ofertas-especiales">
-                <img src="/imagenes/counter-strike.jpg" alt="">
-                <img src="/imagenes/dota-2.jpg" alt="">
-                <img src="/imagenes/nba-2k20.jpg" alt="">
+                <div>
+                    <a href="#cs"><img src="/imagenes/gran-turismo.jpg"></a>
+                </div>
+                <div>
+                    <a href="#dota"><img src="/imagenes/dota-2.jpg"></a>
+                </div>
+                <div>
+                    <a href="#nba"><img src="/imagenes/nba-2k20.jpg"></a>
+                </div>
             </div>
             <div class="banner-iniciar-sesion">
                 <p>Inicia sesion para ver recomendaciones personalizadas</p>

@@ -2,62 +2,80 @@
 <html lang="en">
 <head>
     <title>Formulario para Agregar Productos</title>
-    <link rel="stylesheet" href="/css/styles-edit.css">
+    <link rel="stylesheet" href="/css/styles-create.css">
     <%- include('../partials/head') %>
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
-        <div class="edit-body">
-            <div class="edit-box">
-                <div class="edit-paddin">
-                    <p class="edit-tittle">AGREGAR UN NUEVO PRODUCTO</p>
-                    <form action="/edit" method="post">
-                        <div class="input-edit">
+        <div class="create-body">
+            <div class="create-box">
+                <div class="create-paddin">
+                    <p class="create-tittle">AGREGAR UN NUEVO PRODUCTO</p>
+                    <form action="/create" method="post">
+                        <div class="input-create">
                             <label for="name">Nombre del Juego</label></BR>
                             <input type="text" name="name" id="name"> 
                         </div>
-                        <div class="input-edit">
+                        <div class="input-create">
                             <label for="description">Descripción del Juego</label></BR>
                             <input type="text" name="description" id="description">
                         </div>
-                        <div class="input-edit">
-                            <label for="category">Categoria</label></BR>
+                        <div class="input-create">
+                            <label for="category">Plataforma</label></BR>
                             <input type="text" name="category" id="category"> 
                         </div>
-                        <div class="checkbox-edit">
+                        <div class="checkbox-create">
                             <label for="nombre">
-                                <input type="checkbox" name="edit">Playstation</input>
+                                <input type="checkbox" name="create">Playstation</input>
                             </label>
                         </div>
-                        <div class="checkbox-edit">
+                        <div class="checkbox-create">
                             <label for="nombre">
-                                <input type="checkbox" name="edit">X Box</input>
+                                <input type="checkbox" name="create">Xbox</input>
                             </label>
                         </div>
-                        <div class="checkbox-edit">
+                        <div class="checkbox-create">
                             <label for="nombre">
-                                <input type="checkbox" name="edit">PC</input>
+                                <input type="checkbox" name="create">PC</input>
                             </label>
                         </div>
-                        <div class="checkbox-edit">
+                        </BR></BR>
+                    </BR></BR><div class="input-create">
+                            <label for="category">Formato</label></BR>
+                            <input type="text" name="category" id="category"> 
+                        </div>
+                        <div class="checkbox-create">
                             <label for="nombre">
-                                <input type="checkbox" name="edit">Nintendo</input>
+                                <input type="checkbox" name="create">Físico</input>
                             </label>
                         </div>
-                        <div class="input-edit">
-                            <label for="image">Adjuntar imágenes</label></BR>
+                        <div class="checkbox-create">
+                            <label for="nombre">
+                                <input type="checkbox" name="create">Digital</input>
+                            </label>
+                        </div></BR></BR>
+                    </BR></BR> <div class="checkbox-create">
+                         <label for="text">Género</label></BR>
+                            <select name="combo" multiple>
+                              <option>Acción</option>
+                              <option>Deportes</option>
+                              <option>Aventura</option>
+                              <option>Terror</option>
+                            </select>
+                          </div></BR></BR></BR></BR></BR></BR>
+                        </BR></BR> <div class="input-create">
+                        <label for="image">Adjuntar imágenes</label></BR>
                             <input type="file" multiple  name="image" id="image"> 
                         </div>
-                        <div class="input-edit">
+                        <div class="input-create">
                             <label for="price">Precio</label></BR>
                             <input type="number" name="price" id="price"> 
                         </div>
                         <div class="button-submit">
                             <button type="submit" class="submit-agregar-producto" ><span>Agregar Producto</span></button>
                         </div>
-                        
-                    </form>
+                        </form>
                 </div>         
             </div>
         </div>

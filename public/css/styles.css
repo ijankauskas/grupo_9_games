@@ -48,8 +48,7 @@ ul{
 a{
     color: white;
     text-decoration: none;
-    border-top: 10px;
-    border-bottom: 10px;
+
 }
 
 nav ul li div{
@@ -118,7 +117,7 @@ main{
 h2{
     font-size: 20px;
     color: white;
-    padding-bottom: 5px;
+    margin: 25px 0 10px 0;
 }
 
 .destacados{
@@ -134,17 +133,42 @@ h2{
     box-shadow: 0px 0px 10px rgba(149, 149, 149, 1);
 }
 
+.banner{
+    width: 100%;
+    border-bottom: 20px;
+}
+
+.imagenes-banner{
+    display: none;
+    height: 500px;
+    overflow: hidden;
+}
+
+.imagenes-banner div img{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
 .destacados img{
     width: 100%;
-    margin-bottom: 25px;
+    transition: 0.5s;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .ofertas-especiales{
     display: none;
 }
 
-.ofertas-especiales img{
-    width: 33%;
+.ofertas-especiales div{
+    width: 32%;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.ofertas-especiales div img{
+    width: 100%;
 }
 
 .banner-iniciar-sesion{
@@ -168,16 +192,22 @@ h2{
     padding: 0px 15px;
     font-size: 15px;
     line-height: 60px;
+    white-space: nowrap;
 }
 
-.otros-juegos .juegos article{
+.juegos article{
     background-color: #303030;
     margin: 10px 0 10px 0;
-    box-shadow: 0px 0px 5px rgba(149, 149, 149, 0.5);
+    transition: 0.5s;
+    overflow: hidden;
 }
 
-.otros-juegos .juegos img{
+.juegos img{
+    width: 100%;
     margin: 0;
+    transition: 0.5s;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .main-class{
@@ -285,6 +315,10 @@ footer .copyright{
     .juegos article{
         width: 100%;
     }
+
+    .login-paddin .button-submit button:hover{
+        cursor: pointer;
+    }
 }
 
 @media(min-width: 768px){
@@ -310,7 +344,7 @@ footer .copyright{
         padding-top: 5px;
         display: block;
         margin: auto;
-        width: 90%;
+        width: 100%;
     }
 
     .explorador h2{
@@ -335,16 +369,35 @@ footer .copyright{
         color: #66c0f4;
     }
 
+    .imagenes-banner{
+        display: block;
+    }
+
+    .ofertas-especiales div img:hover{
+        transform: scale(1.1);
+    }
+
+    .ofertas-especiales div:active{
+        border: solid 2px #47bfff;
+    }
+
     .button-iniciar-sesion:hover{
         background: #a4d007;
     }
 
     .login-paddin .button-submit button:hover{
-    background: #47bfff 5%;
+        background: #47bfff 5%;
     }
 
     .juegos article{
         width: 32%;
     }
-    
+
+    .juegos article:hover{
+        box-shadow: 0px 0px 5px rgba(149, 149, 149, 0.5);
+        border-radius: 10px;
+        transform: scale(1.01);
+    }
+
 }
+

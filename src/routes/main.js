@@ -16,4 +16,6 @@ router.get('/create', mainController.create);
 
 router.get('/edit', mainController.edit);
 
+router.get('/prueba', mainController.prueba);
+
 module.exports = router;
