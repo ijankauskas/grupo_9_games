@@ -11,12 +11,12 @@
         <%- include('../partials/nav-explorador') %>
         <div class="product-detail">
             <div class="contenedor-1">
-                <h1 class="nombre-producto">FIFA 2022</h1>
+                <h1 class="nombre-producto"><%= producto.nombre %></h1>
                 <div class="body-product">
                     <div class="body-product-right">
-                        <img src="/imagenes/fifa2022-2.jpg">
+                        <img src="<%= producto.imagenLogo %>">
                         <div class="precio-carrito">
-                            <p>ARS$5.499,00</p>
+                            <p>ARS <%= producto.precio %></p>
                             <div class="button-addcart">
                                 <a href="#" class="button-iniciar-sesion"><span>Añadir al Carrito</span></a>
                             </div>
@@ -47,37 +47,37 @@
                         <div class="imagen-visual">
                             <div class="imagenes-visuales">
                                 <div id="fifa2022-6">
-                                    <img src="/imagenes/fifa2022-6.jpg" alt="">
+                                    <img src="<%= producto.imagenes[0] %>" alt="">
                                 </div>
                                 <div id="fifa2022-5">
-                                    <img src="/imagenes/fifa2022-5.jpg" alt="">
+                                    <img src="<%= producto.imagenes[1] %>" alt="">
                                 </div>
                                 <div id="fifa2022-3">
-                                    <img src="/imagenes/fifa2022-3.jpg" alt="">
+                                    <img src="<%= producto.imagenes[2] %>" alt="">
                                 </div>
                                 <div id="fifa2022-4">
-                                    <img src="/imagenes/fifa2022-4.jpg" alt="">
+                                    <img src="<%= producto.imagenes[3] %>" alt="">
                                 </div>
                                 <div id="fifa2022-7">
-                                    <img src="/imagenes/fifa2022-7.jpg" alt="">
+                                    <img src="<%= producto.imagenes[4] %>" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="mas-imagenes">
                             <div>
-                                <a href="#fifa2022-6"><img src="/imagenes/fifa2022-6.jpg" alt=""></a>
+                                <a href="#fifa2022-6"><img src="<%= producto.imagenes[0] %>" alt=""></a>
                             </div>
                             <div>
-                                <a href="#fifa2022-5"><img src="/imagenes/fifa2022-5.jpg" alt=""></a>
+                                <a href="#fifa2022-5"><img src="<%= producto.imagenes[1] %>" alt=""></a>
                             </div>
                             <div>
-                                <a href="#fifa2022-3"><img src="/imagenes/fifa2022-3.jpg" alt=""></a>
+                                <a href="#fifa2022-3"><img src="<%= producto.imagenes[2] %>" alt=""></a>
                             </div>
                             <div>
-                                <a href="#fifa2022-4"><img src="/imagenes/fifa2022-4.jpg" alt=""></a>
+                                <a href="#fifa2022-4"><img src="<%= producto.imagenes[3] %>" alt=""></a>
                             </div>
                             <div>
-                                <a href="#fifa2022-7"><img src="/imagenes/fifa2022-7.jpg" alt=""></a>
+                                <a href="#fifa2022-7"><img src="<%= producto.imagenes[4] %>" alt=""></a>
                             </div>
                         </div>
                     </div>

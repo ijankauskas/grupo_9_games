@@ -53,33 +53,15 @@
                 <p>Presionar para agregar un nuevo producto</p>
                 <a href="/create" class="button-create-producto"><span>Agregar Producto</span></a>
             </div>
-
             <div class="banner-iniciar-sesion">
                 <p>Presionar para editar un producto</p>
                 <a href="/edit" class="button-edit-producto"><span>Editar Producto</span></a>
             </div>
-            
             <section class="otros-juegos">
                 <h2>OTROS JUEGOS</h2>
-                <div class="juegos">
-                    <% for(let juegos of producto) { %>
-                        <article>
-                            <a href="/producDetail">
-                            <img src="<%= juegos.imagenLogo %>" alt="">
-                            <div class="main-class">
-                                <h3><%= juegos.nombre %></h3>
-                                <div class="plataformas"> 
-                                    <% for(let compatibilidad of juegos.compatibilidad) { %>
-                                        <p><i class="<%= compatibilidad %>"></i></p>
-                                    <%} %>
-                                </div>
-                                <div class="descuento-precio">
-                                    <p class="descuento"><%= juegos.descuento %></p>
-                                    <p class="precio"><%= juegos.precio %></p>
-                                </div>
-                            </div>
-                            </a>
-                        </article>
+                <div class="juegos">    
+                    <% for(let producto of productos) { %>
+                        <%- include('../partials/juego-exposicion', {producto: producto}) %>
                     <%} %>
                 </div>
             </section>

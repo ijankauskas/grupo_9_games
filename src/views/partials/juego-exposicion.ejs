@@ -1,14 +1,16 @@
 <article>
-    <a href="">
-    <img src="<%= juegos.imagenLogo %>" alt="">
+    <a href="/productDetail/<%= producto.id %>">
+    <img src="<%= producto.imagenLogo %>" alt="">
     <div class="main-class">
-        <h3><%= juegos.nombre %></h3>
+        <h3><%= producto.nombre %></h3>
         <div class="plataformas"> 
-            <p><%= juegos.compatibilidad %></p> 
+            <% for(let compatibilidad of producto.compatibilidad) { %>
+                <p><i class="<%= compatibilidad %>"></i></p>
+            <%} %>
         </div>
         <div class="descuento-precio">
-            <p class="descuento"><%= juegos.descuento %></p>
-            <p class="precio"><%= juegos.precio %></p>
+            <p class="descuento"><%= producto.descuento %></p>
+            <p class="precio"><%= producto.precio %></p>
         </div>
     </div>
     </a>

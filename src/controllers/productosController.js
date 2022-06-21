@@ -1,4 +1,6 @@
 const path = require('path');
+const listaProductos = require('../views/products/listaProductos');
+
 
 const productosController = {
     listar: (req, res)=>{
@@ -13,7 +15,7 @@ const productosController = {
                 productoFinal = producto;
             }
         }
-        res.render('./user/prueba', {producto: productoFinal});
+        res.render('./products/productDetail', {producto: productoFinal});
     }
 };
 

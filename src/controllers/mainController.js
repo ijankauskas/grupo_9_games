@@ -1,9 +1,9 @@
 const path = require('path');
-const listaProductos = require('../views/products/listaProductos')
+const listaProductos = require('../views/products/listaProductos');
 
 const mainController = {
     home: (req, res)=>{
-        res.render('./user/home', {producto: listaProductos});
+        res.render('./user/home', {productos: listaProductos});
     },
 
     login: (req, res)=>{
