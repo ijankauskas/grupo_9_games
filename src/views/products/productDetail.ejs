@@ -26,19 +26,19 @@
                             <ul>
                                 <li>Requires a 64-bit processor and operating system<br></li>
                                 <li> 
-                                    <strong>OS:</strong> Windows 10 - 64-Bit<br>
+                                    <strong>OS:</strong> <%= producto.so%><br>
                                 </li>
                                 <li>  
-                                    <strong>Processor:</strong> Intel Core i3-6100 @ 3.7GHz or AMD Athlon X4 880K @4GHz<br>
+                                    <strong>Processor:</strong> <%= producto.procesador %><br>
                                 </li>
                                 <li> 
-                                    <strong>Memory:</strong> 8 GB RAM<br>
+                                    <strong>Memory:</strong> <%= producto.memoria %><br>
                                 </li>
                                 <li> 
-                                    <strong>Graphics:</strong> NVIDIA GTX 660 2GB or AMD Radeon HD 7850 2GB<br>
+                                    <strong>Graphics:</strong> <%= producto.graficos %><br>
                                 </li>
                                 <li> 
-                                    <strong>Storage:</strong> 50 GB available space<br>
+                                    <strong>Storage:</strong> <%= producto.almacenamiento %><br>
                                 </li>
                             </ul>
                         </div>
@@ -91,39 +91,29 @@
             <div class="contenedor-2">
                 <div class="detalle-producto">
                     <h2>ACERCA DE ESTE JUEGO</h2>
-                    <BR>
-                    <h3>Powered by Football™. EA SPORTS™ FIFA 22 acerca aún más el juego a la realidad gracias a mejoras significativas en la jugabilidad y una nueva temporada de novedades en todos los modos.</h3>
-                    <BR>
-                    <h2>¿Qué es FIFA?</h2>
-                    <BR>   
-                    <h3>Juega al juego del mundo con más de 17 000 jugadores, más de 700 equipos, más de 90 estadios y más de 30 ligas de todo el mundo.</h3>
-                    <BR>
-                    <h2>MODOS DE JUEGO</h2>
-                    <BR>
-                    <h3>Modo Carrera :vive tus sueños con FIFA 22, ya sea como mánager o como futbolista. Crea el club más nuevo de FIFA, diseña tus equipaciones y tu estadio y decide si quieres competir con la élite o ascender desde las divisiones inferiores mientras encaminas a tu club hacia la gloria. También puedes probar tus habilidades como futbolista con un modo Carrera de jugador más inmersivo, que te dará más formas de progresar, alcanzar tus objetivos y sumergirte en tu viaje Pro mediante el juego.</h3>
-                    <BR>
-                    <h3>VOLTA FOOTBALL: vuelve a conquistar las calles con VOLTA FOOTBALL. Crea tu futbolista, elige tu equipación y exprésate a tu manera, por tu cuenta o con tu plantilla, en las calles y pistas de fútbol de todo el mundo. Consigue recompensas por tu habilidad con el balón gracias al nuevo estilo de juego rediseñado y juega cada temporada a eventos únicos que tienen lugar en emplazamientos especiales, al tiempo que desbloqueas nuevo equipamiento mediante un nuevo sistema de progreso en la temporada, que te permite ganar XP en todas las recompensas que se ofrecen en VOLTA FOOTBALL sin importar el modo al que juegues.</h3>
-                    <BR>
-                    <h3>FIFA Ultimate Team : Participa en el modo más popular de FIFA, FIFA Ultimate Team. Crea el equipo de tus sueños con miles de futbolistas del mundo del fútbol. Crea tu propio club dentro y fuera del campo y dales equipamiento personalizado, insignias y un estadio de FUT completo en el que poder dejar tu huella, y haz que equipo juegue partidos contra la IA u otros jugadores de la comunidad FUT. Además, da la bienvenida a algunos de los jugadores más memorables del fútbol en forma de nuevos héroes de FUT: ¡algunas de estas leyendas del fútbol ahora regresan al campo!</h3>
+                    <% for(let descripcion of producto.descripcion) { %>
+                        <h3><%= descripcion%></h3>
+                        <br>
+                    <% } %>
                 </div>
                 <div class="system">
                     <p>SYSTEM REQUIREMENTS</p>
                     <ul>
                         <li>Requires a 64-bit processor and operating system<br></li>
                         <li> 
-                            <strong>OS:</strong> Windows 10 - 64-Bit<br>
+                            <strong>OS:</strong>  <%= producto.so%><br>
                         </li>
                         <li>  
-                            <strong>Processor:</strong> Intel Core i3-6100 @ 3.7GHz or AMD Athlon X4 880K @4GHz<br>
+                            <strong>Processor:</strong> <%= producto.procesador %><br>
                         </li>
                         <li> 
-                            <strong>Memory:</strong> 8 GB RAM<br>
+                            <strong>Memory:</strong> <%= producto.memoria %><br>
                         </li>
                         <li> 
-                            <strong>Graphics:</strong> NVIDIA GTX 660 2GB or AMD Radeon HD 7850 2GB<br>
+                            <strong>Graphics:</strong> <%= producto.graficos %><br>
                         </li>
                         <li> 
-                            <strong>Storage:</strong> 50 GB available space<br>
+                            <strong>Storage:</strong> <%= producto.almacenamiento %><br>
                         </li>
                     </ul>
                 </div>
