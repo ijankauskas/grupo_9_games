@@ -16,7 +16,7 @@ let listaProductos=[
         Con una interfaz actualizada y mejoras de accesibilidad, entrar en Warcraft nunca ha sido más sencillo.				
         
         Ademas descubre millones de partidas creadas por los jugadores, incluidas partidas tipo tower defense, MOBA, ARPG, supervivencia y mucho más. O crea las tuyas propias con un mejorado Editor del mundo.				
-		
+				
         REQUISITOS DEL SISTEMA				
         MÍNIMO:				
         Requiere un procesador y un sistema operativo de 64 bits.			
