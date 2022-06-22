@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+
+main img{
+    width: 100%;
+}
+
 .encabezado{
     background-color: rgb(50, 50, 50);
 }

@@ -3,6 +3,10 @@ main{
     background-color: white;
 }
 
+main img{
+    width: 100%;
+}
+
 .product-detail {
     margin:auto;
     max-width: 70%;

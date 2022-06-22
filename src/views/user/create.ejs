@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Formulario para Agregar Productos</title>
+    <title>Agregar Producto</title>
     <link rel="stylesheet" href="/css/styles-create.css">
     <%- include('../partials/head') %>
 </head>
@@ -18,54 +18,61 @@
                             <input type="text" name="name" id="name"> 
                         </div>
                         <div class="input-create">
-                            <label for="description">Descripción del Juego</label></BR>
-                            <input type="text" name="description" id="description">
+                            <label for="name">Descripcion del Juego</label></BR>
+                            <textarea type="text" name="name" id="name"></textarea>
+                        </div>
+                        <p>Plataformas</p>
+                        <div class="plataformas">
+                            <div class="checkbox-create">
+                                <label for="nombre">
+                                    <input type="checkbox" name="formulario" value="terminos">Playstation</input>
+                                </label>
+                            </div>
+                            <div class="checkbox-create">
+                                <label for="nombre">
+                                    <input type="checkbox" name="formulario" value="recibir">Xbox</input>
+                                </label>
+                            </div>
+                            <div class="checkbox-create">
+                                <label for="nombre">
+                                    <input type="checkbox" name="formulario" value="recibir">Pc</input>
+                                </label>
+                            </div>
+                            <div class="checkbox-create">
+                                <label for="nombre">
+                                    <input type="checkbox" name="formulario" value="recibir">Android</input>
+                                </label>
+                            </div>
+                            <div class="checkbox-create">
+                                <label for="nombre">
+                                    <input type="checkbox" name="formulario" value="recibir">Ios</input>
+                                </label>
+                            </div>
+                        </div>
+                        <p>Formato</p>
+                        <div class="plataformas">
+                            <div class="checkbox-create">
+                                <label for="nombre">
+                                    <input type="checkbox" name="formulario" value="terminos">Fisico</input>
+                                </label>
+                            </div>
+                            <div class="checkbox-create">
+                                <label for="nombre">
+                                    <input type="checkbox" name="formulario" value="recibir">Digital</input>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="checkbox-create">
+                            <label for="text">Género:</label>
+                                <select name="combo" >
+                                <option>Acción</option>
+                                <option>Deportes</option>
+                                <option>Aventura</option>
+                                <option>Terror</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="input-create">
-                            <label for="category">Plataforma</label></BR>
-                            <input type="text" name="category" id="category"> 
-                        </div>
-                        <div class="checkbox-create">
-                            <label for="nombre">
-                                <input type="checkbox" name="create">Playstation</input>
-                            </label>
-                        </div>
-                        <div class="checkbox-create">
-                            <label for="nombre">
-                                <input type="checkbox" name="create">Xbox</input>
-                            </label>
-                        </div>
-                        <div class="checkbox-create">
-                            <label for="nombre">
-                                <input type="checkbox" name="create">PC</input>
-                            </label>
-                        </div>
-                        </BR></BR>
-                    </BR></BR><div class="input-create">
-                            <label for="category">Formato</label></BR>
-                            <input type="text" name="category" id="category"> 
-                        </div>
-                        <div class="checkbox-create">
-                            <label for="nombre">
-                                <input type="checkbox" name="create">Físico</input>
-                            </label>
-                        </div>
-                        <div class="checkbox-create">
-                            <label for="nombre">
-                                <input type="checkbox" name="create">Digital</input>
-                            </label>
-                        </div></BR></BR>
-                    </BR></BR> <div class="checkbox-create">
-                         <label for="text">Género</label></BR>
-                            <select name="combo" multiple>
-                              <option>Acción</option>
-                              <option>Deportes</option>
-                              <option>Aventura</option>
-                              <option>Terror</option>
-                            </select>
-                          </div></BR></BR></BR></BR></BR></BR>
-                        </BR></BR> <div class="input-create">
-                        <label for="image">Adjuntar imágenes</label></BR>
                             <input type="file" multiple  name="image" id="image"> 
                         </div>
                         <div class="input-create">
@@ -75,7 +82,7 @@
                         <div class="button-submit">
                             <button type="submit" class="submit-agregar-producto" ><span>Agregar Producto</span></button>
                         </div>
-                        </form>
+                    </form>
                 </div>         
             </div>
         </div>
@@ -83,3 +90,8 @@
     <%- include('../partials/footer') %>
 </body>
 </html>
+
+<div class="input-create">
+    <label for="name">Nombre del Juego</label></BR>
+    <input type="text" name="name" id="name"> 
+</div>

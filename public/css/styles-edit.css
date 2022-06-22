@@ -51,6 +51,12 @@
     font-weight: 100;
 }
 
+p{
+    color: #b8b6b4;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
 .create-paddin .input-create{
     padding-bottom: 18px;
 }
