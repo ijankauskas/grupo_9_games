@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>Bienvenido a Acme</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+    <div class="todo">
+        <%- include('../partials/nav-explorador') %>
+        <section class="destacados" id="encontrados">
+            <section class="otros-juegos">
+                <h2>Encontrados</h2>
+                <div class="juegos">    
+                    <% for(let producto of productos) { %>
+                        <%- include('../partials/juego-exposicion', {producto: producto}) %>
+                    <%} %>
+                </div>
+            </section>
+        </section>
+    </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

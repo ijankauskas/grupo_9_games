@@ -329,6 +329,12 @@ footer .copyright{
     }
 }
 
+#encontrados{
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media(min-width: 768px){
     .juegos article{
         width: 49%;

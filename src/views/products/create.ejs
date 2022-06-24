@@ -12,14 +12,14 @@
             <div class="create-box">
                 <div class="create-paddin">
                     <p class="create-tittle">AGREGAR UN NUEVO PRODUCTO</p>
-                    <form action="/create" method="post">
+                    <form action="/productDetail/create" method="POST">
                         <div class="input-create">
-                            <label for="name">Nombre del Juego</label></BR>
-                            <input type="text" name="name" id="name"> 
+                            <label for="nombre">Nombre del Juego</label></BR>
+                            <input type="text" name="nombre" id="nombre"> 
                         </div>
                         <div class="input-create">
-                            <label for="name">Descripcion del Juego</label></BR>
-                            <textarea type="text" name="name" id="name"></textarea>
+                            <label for="descripcion">Descripcion del Juego</label></BR>
+                            <textarea type="text" name="descripcion" id="descripcion"></textarea>
                         </div>
                         <p>Plataformas</p>
                         <div class="plataformas">
@@ -65,22 +65,22 @@
                         <div class="checkbox-create">
                             <label for="text">Género:</label>
                                 <select name="combo" >
-                                <option>Acción</option>
-                                <option>Deportes</option>
-                                <option>Aventura</option>
-                                <option>Terror</option>
+                                    <option>Acción</option>
+                                    <option>Deportes</option>
+                                    <option>Aventura</option>
+                                    <option>Terror</option>
                                 </select>
                             </div>
                         </div>
                         <div class="input-create">
-                            <input type="file" multiple  name="image" id="image"> 
+                            <input type="file" multiple  name="imagenLogo" id="imagenLogo"> 
                         </div>
                         <div class="input-create">
-                            <label for="price">Precio</label></BR>
-                            <input type="number" name="price" id="price"> 
+                            <label for="precio">Precio</label></BR>
+                            <input type="number" name="precio" id="precio"> 
                         </div>
                         <div class="button-submit">
-                            <button type="submit" class="submit-agregar-producto" ><span>Agregar Producto</span></button>
+                            <button type="submit" class="submit-agregar-producto"><span>Agregar Producto</span></button>
                         </div>
                     </form>
                 </div>         

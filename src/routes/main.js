@@ -5,16 +5,12 @@ const router = express.Router();
 const path = require('path');
 
 router.get('/', mainController.home);
+router.get('/search', mainController.search);
 
 router.get('/login', mainController.login);
 
 router.get('/register', mainController.register);
 
 router.get('/cart', mainController.cart);
-
-router.get('/create', mainController.create);
-
-router.get('/edit', mainController.edit);
-
 
 module.exports = router;
