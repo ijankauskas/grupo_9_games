@@ -11,19 +11,15 @@
         <div class="create-body">
             <div class="create-box">
                 <div class="create-paddin">
-                    <p class="create-tittle">EDITAR UN PRODUCTO</p>
-                    <form action="/create" method="post">
-                        <div class="input-create">
-                            <label for="name">Id Del Juego</label></BR>
-                            <input type="text" name="name" id="name"> 
-                        </div>
+                    <p class="create-tittle">EDITAR <%= producto.nombre %> id:<%= producto.id %></p>
+                    <form action="/productDetail/edit/<%= producto.id %>?_method=PUT" method="post">
                         <div class="input-create">
                             <label for="name">Nombre del Juego</label></BR>
                             <input type="text" name="name" id="name"> 
                         </div>
                         <div class="input-create">
                             <label for="name">Descripcion del Juego</label></BR>
-                            <textarea type="text" name="name" id="name"></textarea>
+                            <textarea type="text" name="descripcion" id="descripcion"></textarea>
                         </div>
                         <p>Plataformas</p>
                         <div class="plataformas">
@@ -68,13 +64,12 @@
                         </div>
                         <div class="checkbox-create">
                             <label for="text">Género:</label>
-                                <select name="combo" >
+                            <select name="combo" >
                                 <option>Acción</option>
                                 <option>Deportes</option>
                                 <option>Aventura</option>
                                 <option>Terror</option>
-                                </select>
-                            </div>
+                            </select>
                         </div>
                         <div class="input-create">
                             <input type="file" multiple  name="image" id="image"> 

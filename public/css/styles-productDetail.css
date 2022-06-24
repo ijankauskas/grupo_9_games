@@ -58,6 +58,7 @@ main img{
 .mas-imagenes div{
     margin-right: 10px;
     overflow: hidden;
+    width: 18%;
 }
 
 .mas-imagenes img{

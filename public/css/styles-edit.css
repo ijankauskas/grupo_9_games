@@ -28,7 +28,7 @@
     padding:6px;
     margin-right:6px;
 }
-  
+
 .create-body{
     width: 90%;
     display: flex;
@@ -41,7 +41,7 @@
     margin: 40px 20px 20px 20px;
 }
 
-.create-body .create-box .create-paddin .create-tittle{ 
+.create-body .create-box .create-tittle{ 
     text-transform: uppercase;
     color: white;
     text-align: center;

@@ -26,7 +26,7 @@
                 "Ademas descubre millones de partidas creadas por los jugadores, incluidas partidas tipo tower defense, MOBA, ARPG, supervivencia y mucho más. O crea las tuyas propias con un mejorado Editor del mundo."
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Windows 10 (November 2019 Update or higher), 8 or 7 (64-bit with the latest updates; some functionality not supported on Windows 7 and 8).",
         "procesador": "Core i5 2.8GHz or equivalent.",
         "memoria": "8 GB de RAM.",
@@ -64,7 +64,7 @@
                 "Con más de 420 autos disponibles en Brand Central y la concesionaria de autos usados desde el primer día, Gran Turismo 7 recrea la apariencia y el manejo de vehículos clásicos y superautos vanguardistas con un nivel de detalle sin precedentes. Cada auto tiene una sensación de conducción diferente y única en más de 90 pistas en diferentes condiciones climáticas, incluidas las pistas clásicas de la historia de GT."
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Windows 7 or later.",
         "procesador": "Intel Core i5 2.6GHz or similar.",
         "memoria": "6 GB de RAM.",
@@ -120,7 +120,7 @@
                 "Explora grandes y misteriosas cuevas! Encuentra monstruos peligrosos y tesoros valiosos."
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Windows Vista or greater.",
         "procesador": "'2 Ghz.'",
         "memoria": "2 GB de RAM.",
@@ -149,7 +149,7 @@
                 "Desarrollado por Airship Syndicate y con el estilo del legendario guionista de cómics Joe Madureira, los creadores de Battle Chasers y Darksiders, Ruined King: A League of Legends Story™ es el primer juego de Riot Forge y os invita a adentraros en el universo de League of Legends. En este trepidante RPG por turnos, podréis configurar vuestro equipo y controlar a un variado elenco de campeones de League of Legends, explorar la ajetreada ciudad de Aguas Estancadas y las misteriosas Islas de la Sombra, y probar el sistema de iniciativa de filas."
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Requiere un procesador y un sistema operativo de 64 bits.",
         "procesador": "Intel Core i5-2300, AMD A8-5600k.",
         "memoria": "8 GB de RAM.",
@@ -192,7 +192,7 @@
                 "Y por último, desafía a tus amigos, o forma equipo con ellos, en emocionantes batallas mientras defiendes tu aldea y lideras a tus aliados para derrotar a tus oponentes."
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Windows 10 (November 2019 Update or higher), 8 or 7 (64-bit with the latest updates; some functionality not supported on Windows 7 and 8).",
         "procesador": "Core i5 2.8GHz or equivalent.",
         "memoria": "8 GB de RAM.",
@@ -230,7 +230,7 @@
                 "Pondrás a prueba estas armas contra tres espantosos y formidables nuevos infectados especiales (o jugarás como ellos en el modo Enfrentamiento). También te encontrarás con cinco nuevos infectados comunes no comunes, incluyendo a los aterradores embarrados. AI Director 2.0 lleva la jugabilidad frenética y repleta de acción de L4D a un nivel superior."
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Windows® 7 32/64-bit / Vista 32/64 / XP.",
         "procesador": "'Pentium 4 3.0GHz.'",
         "memoria": "2 GB de RAM.",
@@ -268,7 +268,7 @@
                 "En el modo multijugador, en el que te puedes conectar directamente con otros jugadores y viajar juntos, el juego incluye un elemento online asíncrono único que te permite sentir la presencia de otros."
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Windows 10.",
         "procesador": "INTEL CORE I5-8400 or AMD RYZEN 3 3300X.",
         "memoria": "12 GB de RAM.",
@@ -309,7 +309,7 @@
                 "¡Supera los desafíos, descubre la historia de sus habitantes anteriores y encuentra tu camino hacia el próximo destino!"
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Windows 7 or later.",
         "procesador": "Intel Core i5 2.6GHz or similar.",
         "memoria": "6 GB de RAM.",
@@ -350,7 +350,7 @@
                 "Pero ten cuidado, aún te aguardan más desafíos... ¿Estás preparado para la tarea?"
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Windows XP / Vista / 7.",
         "procesador": "1.6 GHz.",
         "memoria": "512 MB de RAM.",
@@ -387,7 +387,7 @@
                 "VOLTA FOOTBALL: Vuelve a conquistar las calles con VOLTA FOOTBALL. Crea tu futbolista, elige tu equipación y exprésate a tu manera, por tu cuenta o con tu plantilla, en las calles y pistas de fútbol de todo el mundo. Consigue recompensas por tu habilidad con el balón gracias al nuevo estilo de juego rediseñado y juega cada temporada a eventos únicos que tienen lugar en emplazamientos especiales, al tiempo que desbloqueas nuevo equipamiento mediante un nuevo sistema de progreso en la temporada, que te permite ganar XP en todas las recompensas que se ofrecen en VOLTA FOOTBALL sin importar el modo al que juegues."
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Windows 10 - 64-Bit.",
         "procesador": " 'Intel Core i3-6100 @ 3.7GHz or AMD Athlon X4 880K @4GHz.",
         "memoria": "8 GB de RAM.",
@@ -420,7 +420,7 @@
                 "Los dragones, perdidos desde hace tiempo en los pasajes de los Pergaminos antiguos, han regresado a Tamriel y está en juego el futuro del Imperio. Como Sangre de Dragón, el héroe de la profecía nacido con el poder de la Voz, eres el único que puede enfrentarse a ellos."
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Windows 7/8.1/10 (64-bit versions).",
         "procesador": "Intel Core i5-6600K or AMD Ryzen 5 1400 or better.",
         "memoria": "'8 GB de RAM.",
@@ -453,7 +453,7 @@
                 "El equilibrio competitivo es la joya de la corona de Dota, y para garantizar que todo el mundo juegue en un campo de batalla equilibrado, el contenido principal del juego está disponible para todos los jugadores. Los fans pueden coleccionar objetos cosméticos para los héroes y divertidos complementos para el mundo en que estos habitan, pero todo lo necesario para jugar ya está ahí antes de que te unas a tu primera partida."
             ]
         ],
-        "MÍNIMO": "Requiere un procesador y un sistema operativo de 64 bits.",
+        "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
         "so": "Windows 7 o posterior.",
         "procesador": "Intel o AMD de doble núcleo a 2,8 GHz.",
         "memoria": "4 GB de RAM.",

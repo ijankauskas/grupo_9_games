@@ -18,66 +18,96 @@
                             <input type="text" name="nombre" id="nombre"> 
                         </div>
                         <div class="input-create">
-                            <label for="descripcion">Descripcion del Juego</label></BR>
-                            <textarea type="text" name="descripcion" id="descripcion"></textarea>
+                            <label for="nombre">Imagen logo</label></BR>
+                            <input type="file" name="imagenLogo" id="imagenLogo"> 
+                        </div>
+                        <div class="input-create">
+                            <label for="nombre">Imagenes</label></BR>
+                            <input type="file" name="imagenes" accept=".jpg" id="imagenes" multiple> 
                         </div>
                         <p>Plataformas</p>
                         <div class="plataformas">
                             <div class="checkbox-create">
                                 <label for="nombre">
-                                    <input type="checkbox" name="formulario" value="terminos">Playstation</input>
+                                    <input type="checkbox" name="compatibilidad" value="fa-solid fa-desktop">Pc
                                 </label>
                             </div>
                             <div class="checkbox-create">
                                 <label for="nombre">
-                                    <input type="checkbox" name="formulario" value="recibir">Xbox</input>
+                                    <input type="checkbox" name="compatibilidad" value="fa-brands fa-playstation">Playstation
+                                </label>
+                            </div>
+                            <div class="checkbox-create">
+                                <label for="nombre">                            
+                                    <input type="checkbox" name="compatibilidad" value="fa-brands fa-xbox">Xbox
                                 </label>
                             </div>
                             <div class="checkbox-create">
                                 <label for="nombre">
-                                    <input type="checkbox" name="formulario" value="recibir">Pc</input>
+                                    <input type="checkbox" name="compatibilidad" value="fa-brands fa-apple">Ios
                                 </label>
                             </div>
                             <div class="checkbox-create">
                                 <label for="nombre">
-                                    <input type="checkbox" name="formulario" value="recibir">Android</input>
+                                    <input type="checkbox" name="compatibilidad" value="fa-brands fa-android">Android
                                 </label>
                             </div>
-                            <div class="checkbox-create">
-                                <label for="nombre">
-                                    <input type="checkbox" name="formulario" value="recibir">Ios</input>
-                                </label>
-                            </div>
-                        </div>
-                        <p>Formato</p>
-                        <div class="plataformas">
-                            <div class="checkbox-create">
-                                <label for="nombre">
-                                    <input type="checkbox" name="formulario" value="terminos">Fisico</input>
-                                </label>
-                            </div>
-                            <div class="checkbox-create">
-                                <label for="nombre">
-                                    <input type="checkbox" name="formulario" value="recibir">Digital</input>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="checkbox-create">
-                            <label for="text">Género:</label>
-                                <select name="combo" >
-                                    <option>Acción</option>
-                                    <option>Deportes</option>
-                                    <option>Aventura</option>
-                                    <option>Terror</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="input-create">
-                            <input type="file" multiple  name="imagenLogo" id="imagenLogo"> 
                         </div>
                         <div class="input-create">
                             <label for="precio">Precio</label></BR>
                             <input type="number" name="precio" id="precio"> 
+                        </div>
+                        <div class="input-create">
+                            <label for="precio">Descuento</label></BR>
+                            <input type="number" name="descuento" id="descuento"> 
+                        </div>
+                        <div class="input-create">
+                            <label for="descripcion">Descripcion del Juego</label></BR>
+                            <textarea type="text" name="descripcion" id="descripcion"></textarea>
+                        </div>
+                        <p>Formato</p>
+                        <div class="checkbox-create">
+                            <label for="text">Género:</label>
+                            <select name="genero">
+                                <option>Accion</option>
+                                <option>Arcade</option>
+                                <option>Aventura</option>
+                                <option>Carerras</option>
+                                <option>Deportes</option>
+                                <option>Estrategia</option>
+                                <option>Infantil</option>
+                                <option>Roll</option>
+                                <option>Terror</option>
+                            </select>
+                        </div>
+                        <div class="checkbox-create">
+                            <label for="text">Caregoria:</label>
+                            <select name="caregoria">
+                                <option>MasVendido</option>
+                                <option>Novedades</option>
+                                <option>Proximamente</option>
+                                <option>Oferta</option>
+                            </select>
+                        </div><br><br>
+                        <div class="input-create">
+                            <label for="nombre">Sistema Operativo</label></BR>
+                            <input type="text" name="os" id="os"> 
+                        </div>
+                        <div class="input-create">
+                            <label for="nombre">Procesador</label></BR>
+                            <input type="text" name="procesador" id="procesador"> 
+                        </div>
+                        <div class="input-create">
+                            <label for="nombre">Memoria RAM</label></BR>
+                            <input type="text" name="memoria" id="memoria"> 
+                        </div>
+                        <div class="input-create">
+                            <label for="nombre">Graficos</label></BR>
+                            <input type="text" name="graficos" id="graficos"> 
+                        </div>
+                        <div class="input-create">
+                            <label for="nombre">Almacenamiento</label></BR>
+                            <input type="text" name="almacenamiento" id="almacenamiento"> 
                         </div>
                         <div class="button-submit">
                             <button type="submit" class="submit-agregar-producto"><span>Agregar Producto</span></button>

@@ -36,6 +36,16 @@ const productosController = {
         let JSONNuevoProducto = JSON.stringify(productos);
         fs.writeFileSync(listaProductos, JSONNuevoProducto)
 		res.render('./products/create');
+    },
+
+    editar: (req, res)=>{
+        res.render('./products/edit' ,{producto: productosController.buscarProducto(req.params.idProducto)});
+    },
+
+    update: (req, res)=>{
+        let id = req.params.idProducto
+        let productoModificiado = req.body
+        res.send(req.body);
     }
 
 };
