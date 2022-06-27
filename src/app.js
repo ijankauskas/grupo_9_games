@@ -1,3 +1,4 @@
+//requires
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
 const express = require('express');
@@ -11,6 +12,7 @@ const rutasMain = require('./routes/main')
 
 const app = express();
 
+//configuracion
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
@@ -20,9 +22,11 @@ app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs')
 
+//rutas
 app.use('/', rutasMain)
 
-app.use('/productDetail', rutasProductos);
+app.use('/product', rutasProductos);
+
 
 app.listen(3000, ()=>{
     console.log('servidor corriendo')

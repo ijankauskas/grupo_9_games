@@ -27,9 +27,6 @@ const mainController = {
         res.render('./user/register');
     },
 
-    cart: (req, res)=>{
-        res.render('./user/cart');
-    },
 }
 
 module.exports = mainController;

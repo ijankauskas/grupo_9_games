@@ -32,6 +32,7 @@ const productosController = {
     nuevoProducto: (req, res)=>{
 		let nuevoProducto = req.body;
         nuevoProducto.id = productos[productos.length -1].id +1;
+        nuevoProducto.imagenLogo = '/imagenes/' + req.file.filename
         productos.push(nuevoProducto);
         let JSONNuevoProducto = JSON.stringify(productos);
         fs.writeFileSync(listaProductos, JSONNuevoProducto)
@@ -44,9 +45,22 @@ const productosController = {
 
     update: (req, res)=>{
         let id = req.params.idProducto
-        let productoModificiado = req.body
-        res.send(req.body);
-    }
+        let productosNuevos = productos;
+        let i=0;
+        for(let producto of productos){
+            if(producto.id== id){
+                productosNuevos[i]= req.body
+            }
+            i++
+        }
+        let JSONNuevoProducto = JSON.stringify(productosNuevos);
+        fs.writeFileSync(listaProductos, JSONNuevoProducto)
+        res.redirect('/product/detail/'+ id)
+    },
+
+    cart: (req, res)=>{
+        res.render('./products/cart');
+    },
 
 };
 
