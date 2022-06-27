@@ -1,3 +1,4 @@
+const { render } = require('ejs');
 const fs = require('fs');
 const path = require('path');
 
@@ -30,13 +31,22 @@ const productosController = {
     },
 
     nuevoProducto: (req, res)=>{
-		let nuevoProducto = req.body;
+        if(req.file) {
+            let nuevoProducto = req.body;
+        imagenes = req.files
+        nuevoProducto.imagenes = [];
+        for(let i = 0 ; i< imagenes.length ; i++){
+            nuevoProducto.imagenes.push('/imagenes/' + imagenes[i].filename)
+        }
         nuevoProducto.id = productos[productos.length -1].id +1;
-        nuevoProducto.imagenLogo = '/imagenes/' + req.file.filename
         productos.push(nuevoProducto);
         let JSONNuevoProducto = JSON.stringify(productos);
         fs.writeFileSync(listaProductos, JSONNuevoProducto)
-		res.render('./products/create');
+		res.redirect('/product/detail/'+ nuevoProducto.id)
+        } else {
+            res.render('./products/create')
+        }
+		
     },
 
     editar: (req, res)=>{

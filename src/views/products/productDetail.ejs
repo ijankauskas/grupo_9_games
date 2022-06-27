@@ -46,39 +46,19 @@
                     <div class="body-product-left">
                         <div class="imagen-visual">
                             <div class="imagenes-visuales">
-                                <div id="fifa2022-6">
-                                    <img src="<%= producto.imagenes[0] %>" alt="">
+                                <% for(let i=0 ; i<producto.imagenes.length ; i++) { %>
+                                <div id="img<%= i %>">
+                                    <img src="<%= producto.imagenes[i] %>" alt="">
                                 </div>
-                                <div id="fifa2022-5">
-                                    <img src="<%= producto.imagenes[1] %>" alt="">
-                                </div>
-                                <div id="fifa2022-3">
-                                    <img src="<%= producto.imagenes[2] %>" alt="">
-                                </div>
-                                <div id="fifa2022-4">
-                                    <img src="<%= producto.imagenes[3] %>" alt="">
-                                </div>
-                                <div id="fifa2022-7">
-                                    <img src="<%= producto.imagenes[4] %>" alt="">
-                                </div>
+                                <% } %>
                             </div>
                         </div>
                         <div class="mas-imagenes">
+                            <% for(let i=0 ; i<producto.imagenes.length ; i++) { %>
                             <div>
-                                <a href="#fifa2022-6"><img src="<%= producto.imagenes[0] %>" alt=""></a>
+                                <a href="#img<%= i %>"><img src="<%= producto.imagenes[i] %>" alt=""></a>
                             </div>
-                            <div>
-                                <a href="#fifa2022-5"><img src="<%= producto.imagenes[1] %>" alt=""></a>
-                            </div>
-                            <div>
-                                <a href="#fifa2022-3"><img src="<%= producto.imagenes[2] %>" alt=""></a>
-                            </div>
-                            <div>
-                                <a href="#fifa2022-4"><img src="<%= producto.imagenes[3] %>" alt=""></a>
-                            </div>
-                            <div>
-                                <a href="#fifa2022-7"><img src="<%= producto.imagenes[4] %>" alt=""></a>
-                            </div>
+                            <% } %>
                         </div>
                     </div>
                 </div>
