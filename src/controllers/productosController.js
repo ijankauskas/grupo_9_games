@@ -31,22 +31,20 @@ const productosController = {
     },
 
     nuevoProducto: (req, res)=>{
-        if(req.file) {
+        if(req.files) {
             let nuevoProducto = req.body;
-        imagenes = req.files
-        nuevoProducto.imagenes = [];
-        for(let i = 0 ; i< imagenes.length ; i++){
-            nuevoProducto.imagenes.push('/imagenes/' + imagenes[i].filename)
-        }
-        nuevoProducto.id = productos[productos.length -1].id +1;
-        productos.push(nuevoProducto);
-        let JSONNuevoProducto = JSON.stringify(productos);
-        fs.writeFileSync(listaProductos, JSONNuevoProducto)
-		res.redirect('/product/detail/'+ nuevoProducto.id)
+            imagenes = req.files
+            nuevoProducto.imagenes = [];
+            for(let i = 0 ; i< imagenes.length ; i++){
+                nuevoProducto.imagenes.push('/imagenes/' + imagenes[i].filename)
+            }
+            nuevoProducto.id = productos[productos.length -1].id +1;
+            productos.push(nuevoProducto);
+            fs.writeFileSync(listaProductos, JSON.stringify(productos, null, ' '));
+            res.redirect('/product/detail/'+ nuevoProducto.id)
         } else {
             res.render('./products/create')
         }
-		
     },
 
     editar: (req, res)=>{
@@ -54,24 +52,32 @@ const productosController = {
     },
 
     update: (req, res)=>{
-        let id = req.params.idProducto
-        let productosNuevos = productos;
-        let i=0;
-        for(let producto of productos){
-            if(producto.id== id){
-                productosNuevos[i]= req.body
-            }
-            i++
+        let producto = productosController.buscarProducto(req.params.id)
+        let actualizacion = req.body;
+        for(let propiedad in actualizacion){
+            if(propiedad !== ""){
+                producto.propiedad = req.body[propiedad];
+            }   
         }
-        let JSONNuevoProducto = JSON.stringify(productosNuevos);
-        fs.writeFileSync(listaProductos, JSONNuevoProducto)
-        res.redirect('/product/detail/'+ id)
+        console.log(req.body);
+        productos.push(producto)
+        fs.writeFileSync(listaProductos, JSON.stringify(productos, null, ' '));
+        res.redirect('/product/detail/'+ req.params.id)
     },
 
     cart: (req, res)=>{
         res.render('./products/cart');
     },
 
+    destroy : (req, res) => {
+        let id = req.params.id -1 ;
+        for(let imagen of productos[id].imagenes){
+            fs.unlinkSync(path.join(__dirname, '../../public' + imagen))
+        }
+		productos.splice((id), 1);
+        fs.writeFileSync(listaProductos, JSON.stringify(productos, null, ' '));
+        res.redirect('/')
+	}
 };
 
 module.exports = productosController;

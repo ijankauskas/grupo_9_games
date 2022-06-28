@@ -10,10 +10,10 @@ const mainController = {
     },
 
     search: (req, res) => {
-		let loQueBusca = req.query.query;
+		let loQueBusca = req.query.query.toLowerCase();
 		let arrayBuscado = []
 		for(let i = 0 ; i<productos.length ; i++)
-			if(productos[i].nombre.includes(loQueBusca)){
+			if(productos[i].nombre.toLowerCase().includes(loQueBusca)){
 				arrayBuscado.push(productos[i]);
 			}
 			res.render('./user/resultado' , {productos: arrayBuscado, loQueBusca})

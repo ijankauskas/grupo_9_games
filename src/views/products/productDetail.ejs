@@ -98,6 +98,9 @@
                     </ul>
                 </div>
             </div>
+            <form action="/product/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                <button type="submit" class="action-button delete">ELIMINAR</button>
+            </form>
         </div>
     </main>
     <%- include('../partials/footer') %>

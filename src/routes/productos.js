@@ -25,8 +25,10 @@ router.get('/create', productosController.create);
 router.post('/create', upload.array('imagenes', 10), productosController.nuevoProducto);
 
 router.get('/edit/:idProducto', productosController.editar); 
-router.put('/:idProducto', productosController.update); 
+router.put('/:idProducto', upload.array('imagenes', 10), productosController.update); 
 
 router.get('/cart', productosController.cart);
+
+router.delete('/:id', productosController.destroy); 
 
 module.exports = router
