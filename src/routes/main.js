@@ -7,9 +7,5 @@ const path = require('path');
 router.get('/', mainController.home);
 router.get('/search', mainController.search);
 
-router.get('/login', mainController.login);
-
-router.get('/register', mainController.register);
-
 
 module.exports = router;

@@ -31,4 +31,4 @@ router.get('/cart', productosController.cart);
 
 router.delete('/:id', productosController.destroy); 
 
-module.exports = router
+module.exports = router;

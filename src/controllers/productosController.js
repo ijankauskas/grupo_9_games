@@ -56,7 +56,7 @@ const productosController = {
         let actualizacion = req.body;
         for(let propiedad in actualizacion){
             if(propiedad !== ""){
-                producto.propiedad = req.body[propiedad];
+                producto[propiedad] = req.body[propiedad];
             }   
         }
         console.log(req.body);

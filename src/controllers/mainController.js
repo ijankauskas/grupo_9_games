@@ -6,7 +6,7 @@ const productos = JSON.parse(fs.readFileSync(listaProductos, 'utf-8'));
 
 const mainController = {
     home: (req, res)=>{
-        res.render('./user/home', {productos: productos});
+        res.render('./main/home', {productos: productos});
     },
 
     search: (req, res) => {
@@ -16,17 +16,8 @@ const mainController = {
 			if(productos[i].nombre.toLowerCase().includes(loQueBusca)){
 				arrayBuscado.push(productos[i]);
 			}
-			res.render('./user/resultado' , {productos: arrayBuscado, loQueBusca})
+			res.render('./main/resultado' , {productos: arrayBuscado, loQueBusca})
 	},
-
-    login: (req, res)=>{
-        res.render('./user/login');
-    },
-
-    register: (req, res)=>{
-        res.render('./user/register');
-    },
-
 }
 
 module.exports = mainController;

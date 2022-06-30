@@ -9,6 +9,7 @@ const methodOverride =  require('method-override');
 
 const rutasProductos = require('./routes/productos')
 const rutasMain = require('./routes/main')
+const rutasUsers = require('./routes/users')
 
 const app = express();
 
@@ -26,6 +27,8 @@ app.set('view engine', 'ejs')
 app.use('/', rutasMain)
 
 app.use('/product', rutasProductos);
+
+app.use('/users', rutasUsers)
 
 
 app.listen(3000, ()=>{
