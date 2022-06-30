@@ -13,10 +13,22 @@
             <div class="login-box">
                 <div class="login-paddin">
                     <p class="login-tittle">CREAR UNA CUENTA</p>
-                    <form action="/login" method="post">
+                    <% if(locals.errors) { %>
+                        <% for(let oneError in errors) { %>
+                            <p><%= errors[oneError].msg  %></p>
+                        <% } %>
+                    <% } %>
+                    <form action="/users/register" method="post" enctype="multipart/form-data">
                         <div class="input-formulario">
                             <label for="nombre">Nombre de Usuario</label></BR>
                             <input type="text" name="nombre" id="nombre" placeholder="Juan Perez"> 
+                            <div class="text-danger">
+                                Aca va el error
+                            </div>
+                        </div>
+                        <div class="input-formulario">
+                            <label for="nombre">Avatar</label></BR>
+                            <input type="file" name="imagenAvatar" id="imagenAvatar"> 
                         </div>
                         <div class="input-formulario">
                             <label for="contraseña">Contraseña</label></BR>

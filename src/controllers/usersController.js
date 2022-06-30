@@ -1,8 +1,10 @@
 const fs = require('fs');
 const path = require('path');
+const {validationResult} = require('express-validator')
 
-const listaProductos = path.join(__dirname, '../data/users.json');
-const productos = JSON.parse(fs.readFileSync(listaProductos, 'utf-8'));
+
+const JSONUsers = path.join(__dirname, '../data/users.json');
+const users = JSON.parse(fs.readFileSync(JSONUsers, 'utf-8'));
 
 const userController = {
 
@@ -13,6 +15,15 @@ const userController = {
     register: (req, res)=>{
         res.render('./user/register');
     },
+
+    processRegister: (req, res)=>{
+        const resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0){
+            return res.render('./user/register', {errors: resultValidation.mapped()});
+        }
+        res.send('ok');
+    },
+
 
 }
 

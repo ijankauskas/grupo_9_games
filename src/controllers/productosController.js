@@ -52,17 +52,16 @@ const productosController = {
     },
 
     update: (req, res)=>{
-        let producto = productosController.buscarProducto(req.params.id)
+        let producto = productosController.buscarProducto(req.params.idProducto)
         let actualizacion = req.body;
         for(let propiedad in actualizacion){
-            if(propiedad !== ""){
+            console.log(producto);
+            if(propiedad != ""){
                 producto[propiedad] = req.body[propiedad];
             }   
         }
-        console.log(req.body);
-        productos.push(producto)
         fs.writeFileSync(listaProductos, JSON.stringify(productos, null, ' '));
-        res.redirect('/product/detail/'+ req.params.id)
+        res.redirect('/product/detail/'+ req.params.idProducto)
     },
 
     cart: (req, res)=>{
