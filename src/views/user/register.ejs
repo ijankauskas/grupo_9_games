@@ -13,42 +13,103 @@
             <div class="login-box">
                 <div class="login-paddin">
                     <p class="login-tittle">CREAR UNA CUENTA</p>
-                    <% if(locals.errors) { %>
-                        <% for(let oneError in errors) { %>
-                            <p><%= errors[oneError].msg  %></p>
-                        <% } %>
-                    <% } %>
                     <form action="/users/register" method="post" enctype="multipart/form-data">
                         <div class="input-formulario">
                             <label for="nombre">Nombre de Usuario</label></BR>
-                            <input type="text" name="nombre" id="nombre" placeholder="Juan Perez"> 
-                            <div class="text-danger">
-                                Aca va el error
-                            </div>
+                            <input 
+                                type="text"
+                                name="nombre" 
+                                id="nombre" 
+                                class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : 'null' ? 'is-valid' : 'null' %>"
+                                value="<%= locals.oldData ? oldData.nombre : null %>"
+                            > 
+                            <% if(locals.errors && errors.nombre) { %>
+                                <div class="text-danger" style="color: red;">
+                                    <%= errors.nombre.msg %>
+                                </div>
+                            <%} %>
                         </div>
                         <div class="input-formulario">
                             <label for="nombre">Avatar</label></BR>
-                            <input type="file" name="imagenAvatar" id="imagenAvatar"> 
+                            <input 
+                                type="file" 
+                                name="imagenAvatar" 
+                                id="imagenAvatar"
+                            >
+                            <% if(locals.errors && errors.imagenAvatar) { %>
+                                <div class="text-danger" style="color: red;">
+                                    <%= errors.imagenAvatar.msg %>
+                                </div>
+                            <%} %>
                         </div>
                         <div class="input-formulario">
                             <label for="contraseña">Contraseña</label></BR>
-                            <input type="password" name="contraseña" id="contraseña">
+                            <input 
+                                type="password" 
+                                name="contraseña" 
+                                id="contraseña"
+                                class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : 'null' ? 'is-valid' : 'null' %>"> 
+                            <% if(locals.errors && errors.contraseña) { %>
+                                <div class="text-danger" style="color: red;">
+                                    <%= errors.contraseña.msg %>
+                                </div>
+                            <%} %>
                         </div>
                         <div class="input-formulario">
                             <label for="contraseña">Confirmar Contraseña</label></BR>
-                            <input type="password" name="contraseña" id="contraseña"> 
+                            <input 
+                                type="password" 
+                                name="contraseña" 
+                                id="contraseña" 
+                                class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : 'null' ? 'is-valid' : 'null'  %>"> 
+                            <% if(locals.errors && errors.contraseña) { %>
+                                <div class="text-danger" style="color: red;">
+                                    <%= errors.contraseña.msg %>
+                                </div>
+                            <%} %>
                         </div>
                         <div class="input-formulario">
                             <label for="nombre">Dirección de Correo Electrónico</label></BR>
-                            <input type="email" name="email" id="email" placeholder="juanperez@gmail.com"> 
+                            <input 
+                                type="email" 
+                                name="email" 
+                                id="email" 
+                                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : 'null' ? 'is-valid' : 'null'  %>"
+                                value="<%= locals.oldData ? oldData.email : null %>"
+                            > 
+                            <% if(locals.errors && errors.email) { %>
+                                <div class="text-danger" style="color: red;">
+                                    <%= errors.email.msg %>
+                                </div>
+                            <%} %>
                         </div>
                         <div class="input-formulario">
                             <label for="nombre">Confirma Dirección de Correo Electrónico</label></BR>
-                            <input type="email" name="email" id="email" placeholder="juanperez@gmail.com"> 
+                            <input 
+                                type="email" 
+                                name="email2" 
+                                id="email"
+                                class="form-control <%= locals.errors && errors.email2 ? 'is-invalid' : 'null' ? 'is-valid' : 'null'  %>"
+                            > 
+                            <% if(locals.errors && errors.email) { %>
+                                <div class="text-danger" style="color: red;">
+                                    <%= errors.email.msg %>
+                                </div>
+                            <%} %>
                         </div>
                         <div class="input-formulario">
                             <label for="nombre">Fecha de Nacimiento</label></BR>
-                            <input type="date" name="fecha"> 
+                            <input 
+                                type="date" 
+                                name="fecha"
+                                class="form-control <%= locals.errors && errors.fecha ? 'is-invalid' : 'null' ? 'is-valid' : 'null'  %>"
+                                value="<%= locals.oldData ? oldData.fecha : null %>"
+                            > 
+                            <% if(locals.errors && errors.fecha) { %>
+                                <div class="text-danger" style="color: red;">
+                                    <%= errors.fecha.msg %>
+                                </div>
+                            <%} %>
                         </div>
                         <div class="checkbox-formulario">
                             <label for="nombre">

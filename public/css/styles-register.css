@@ -20,6 +20,10 @@
     color: #b8b5b4;
 }
 
+.input-formulario input:focus{
+    background: #6c6e72;
+}
+
 .checkbox-formulario{
     color:#b8b4b4;
     text-align: center;

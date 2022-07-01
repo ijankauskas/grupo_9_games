@@ -19,9 +19,12 @@ const userController = {
     processRegister: (req, res)=>{
         const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0){
-            return res.render('./user/register', {errors: resultValidation.mapped()});
+            return res.render('./user/register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
         }
-        res.send('ok');
+        res.redirect('/')
     },
 
 

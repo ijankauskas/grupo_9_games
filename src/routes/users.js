@@ -9,9 +9,31 @@ const {body} = require('express-validator')
 
 const validation = [
     body('nombre').notEmpty().withMessage('Tienes que escribir un nombre'),
-    body('contraseña').notEmpty().withMessage('Tienes que escribir un mail'),
-    body('email').notEmpty().withMessage('Tienes que escribir una contrasela'),
+    
+    body('contraseña').notEmpty().withMessage('Tienes que escribir una contraseña'),
+    
+    body('email')
+    .notEmpty().withMessage('Tienes que escribir un mail').bail()
+    .isEmail().withMessage('No es un formado de email correcto'),
+    
     body('fecha').notEmpty().withMessage('Tienes que poner una fecha'),
+    
+    body('imagenAvatar').custom((value, { req }) => {
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.png', 'gif']
+
+        if(!file) {
+            throw new Error('Tienes que subir una imagen');
+        } else {
+            let fileExtension =path.extname(file.originalname)
+            if(!acceptedExtensions.includes(fileExtension)){
+                throw new Error('No es un formato valido (jpg, png, gif)');
+            }
+            
+            return true
+
+        }
+    })
 ];
 
 const storage = multer.diskStorage({
