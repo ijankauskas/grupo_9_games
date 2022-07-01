@@ -20,14 +20,14 @@
                                 type="text"
                                 name="nombre" 
                                 id="nombre" 
-                                class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : 'null' ? 'is-valid' : 'null' %>"
+                                class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : locals.errors ? 'is-valid' : null  %>"
                                 value="<%= locals.oldData ? oldData.nombre : null %>"
                             > 
                             <% if(locals.errors && errors.nombre) { %>
                                 <div class="text-danger" style="color: red;">
                                     <%= errors.nombre.msg %>
                                 </div>
-                            <%} %>
+                            <% } %>
                         </div>
                         <div class="input-formulario">
                             <label for="nombre">Avatar</label></BR>
@@ -40,33 +40,33 @@
                                 <div class="text-danger" style="color: red;">
                                     <%= errors.imagenAvatar.msg %>
                                 </div>
-                            <%} %>
+                            <% } %>
                         </div>
                         <div class="input-formulario">
                             <label for="contraseña">Contraseña</label></BR>
                             <input 
                                 type="password" 
-                                name="contraseña" 
-                                id="contraseña"
-                                class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : 'null' ? 'is-valid' : 'null' %>"> 
-                            <% if(locals.errors && errors.contraseña) { %>
+                                name="password" 
+                                id="password"
+                                class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"> 
+                            <% if(locals.errors && errors.password) { %>
                                 <div class="text-danger" style="color: red;">
-                                    <%= errors.contraseña.msg %>
+                                    <%= errors.password.msg %>
                                 </div>
-                            <%} %>
+                            <% } %>
                         </div>
                         <div class="input-formulario">
                             <label for="contraseña">Confirmar Contraseña</label></BR>
                             <input 
                                 type="password" 
-                                name="contraseña" 
-                                id="contraseña" 
-                                class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : 'null' ? 'is-valid' : 'null'  %>"> 
-                            <% if(locals.errors && errors.contraseña) { %>
+                                name="passwordConfirm" 
+                                id="passwordConfirm" 
+                                class="form-control <%= locals.errors && errors.passwordConfirm ? 'is-invalid' : null %>"> 
+                            <% if(locals.errors && errors.passwordConfirm) { %>
                                 <div class="text-danger" style="color: red;">
-                                    <%= errors.contraseña.msg %>
+                                    <%= errors.passwordConfirm.msg %>
                                 </div>
-                            <%} %>
+                            <% } %>
                         </div>
                         <div class="input-formulario">
                             <label for="nombre">Dirección de Correo Electrónico</label></BR>
@@ -74,42 +74,43 @@
                                 type="email" 
                                 name="email" 
                                 id="email" 
-                                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : 'null' ? 'is-valid' : 'null'  %>"
+                                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
                                 value="<%= locals.oldData ? oldData.email : null %>"
                             > 
                             <% if(locals.errors && errors.email) { %>
                                 <div class="text-danger" style="color: red;">
                                     <%= errors.email.msg %>
                                 </div>
-                            <%} %>
+                            <% } %>
                         </div>
                         <div class="input-formulario">
                             <label for="nombre">Confirma Dirección de Correo Electrónico</label></BR>
                             <input 
-                                type="email" 
-                                name="email2" 
-                                id="email"
-                                class="form-control <%= locals.errors && errors.email2 ? 'is-invalid' : 'null' ? 'is-valid' : 'null'  %>"
+                                type="confirmarEmail" 
+                                name="confirmarEmail" 
+                                id="confirmarEmail"
+                                class="form-control <%= locals.errors && errors.confirmarEmail ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                                value="<%= locals.oldData ? oldData.confirmarEmail : null %>"
                             > 
-                            <% if(locals.errors && errors.email) { %>
+                            <% if(locals.errors && errors.confirmarEmail) { %>
                                 <div class="text-danger" style="color: red;">
-                                    <%= errors.email.msg %>
+                                    <%= errors.confirmarEmail.msg %>
                                 </div>
-                            <%} %>
+                            <% } %>
                         </div>
                         <div class="input-formulario">
                             <label for="nombre">Fecha de Nacimiento</label></BR>
                             <input 
                                 type="date" 
                                 name="fecha"
-                                class="form-control <%= locals.errors && errors.fecha ? 'is-invalid' : 'null' ? 'is-valid' : 'null'  %>"
+                                class="form-control <%= locals.errors && errors.fecha ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
                                 value="<%= locals.oldData ? oldData.fecha : null %>"
                             > 
                             <% if(locals.errors && errors.fecha) { %>
                                 <div class="text-danger" style="color: red;">
                                     <%= errors.fecha.msg %>
                                 </div>
-                            <%} %>
+                            <% } %>
                         </div>
                         <div class="checkbox-formulario">
                             <label for="nombre">

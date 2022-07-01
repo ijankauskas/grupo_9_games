@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {validationResult} = require('express-validator')
+const { validationResult } = require('express-validator');
 
 
 const JSONUsers = path.join(__dirname, '../data/users.json');

@@ -1,7 +1,7 @@
 [
  {
   "id": 1,
-  "nombre": "World of Warcraft",
+  "nombre": "",
   "imagenLogo": "/imagenes/world-of-warcraft.jpg",
   "imagenes": [
    "/imagenes/warcraft_1.jpg",
@@ -13,27 +13,20 @@
   "compatibilidad": [
    "fa-solid fa-desktop"
   ],
-  "precio": 4999,
-  "descuento": 40,
-  "descripcion": [
-   [
-    "La fórmula de Warcraft, con estrategia en tiempo real centrada en un héroe, es fácil de aprender, pero difícil de dominar. Reúne recursos, construye una base y forma un ejército. Recluta a poderosos héroes para que lideren a tus tropas y enfréntate a tus enemigos en el campo de batalla. ¡Destruye la base enemiga para ganar la partida!"
-   ],
-   [
-    "Desafía a oponentes con una asignación de partidas multijugador moderna, busca salas de juego personalizadas y conéctate con amigos a través de la aplicación Blizzard Battle.net. Con una interfaz actualizada y mejoras de accesibilidad, entrar en Warcraft nunca ha sido más sencillo."
-   ],
-   [
-    "Ademas descubre millones de partidas creadas por los jugadores, incluidas partidas tipo tower defense, MOBA, ARPG, supervivencia y mucho más. O crea las tuyas propias con un mejorado Editor del mundo."
-   ]
-  ],
+  "precio": "",
+  "descuento": "",
+  "descripcion": "",
   "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
   "so": "Windows 10 (November 2019 Update or higher), 8 or 7 (64-bit with the latest updates; some functionality not supported on Windows 7 and 8).",
-  "procesador": "Core i5 2.8GHz or equivalent.",
-  "memoria": "8 GB de RAM.",
-  "graficos": "NVIDIA GeForce GTX 660 or AMD Radeon HD 7870 or equivalent DX11 GPU.",
+  "procesador": "",
+  "memoria": "",
+  "graficos": "",
   "DirectX": "Versión 11.",
-  "almacenamiento": "8 GB de espacio disponible.",
-  "notasAdicionales": "Performance increases with higher-end systems. Not supported on Windows 10S."
+  "almacenamiento": "",
+  "notasAdicionales": "Performance increases with higher-end systems. Not supported on Windows 10S.",
+  "genero": "Accion",
+  "caregoria": "MasVendido",
+  "os": ""
  },
  {
   "id": 2,

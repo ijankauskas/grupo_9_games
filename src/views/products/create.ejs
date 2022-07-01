@@ -15,7 +15,18 @@
                     <form action="/product/create" method="POST" enctype="multipart/form-data">
                         <div class="input-create">
                             <label for="nombre">Nombre del Juego</label></BR>
-                            <input type="text" name="nombre" id="nombre"> 
+                            <input 
+                                type="text"
+                                name="nombre" 
+                                id="nombre" 
+                                class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                                value="<%= locals.oldData ? oldData.nombre : null %>"
+                            > 
+                            <% if(locals.errors && errors.nombre) { %>
+                                <div class="text-danger">
+                                    <%= errors.nombre.msg %>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="input-create">
                             <label for="nombre">Imagen logo</label></BR>
@@ -55,29 +66,56 @@
                         </div>
                         <div class="input-create">
                             <label for="precio">Precio</label></BR>
-                            <input type="number" name="precio" id="precio"> 
+                            <input 
+                                type="text"
+                                name="precio" 
+                                id="precio" 
+                                class="form-control <%= locals.errors && errors.precio ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                                value="<%= locals.oldData ? oldData.precio : null %>"
+                            > 
+                            <% if(locals.errors && errors.precio) { %>
+                                <div class="text-danger">
+                                    <%= errors.precio.msg %>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="input-create">
                             <label for="precio">Descuento</label></BR>
-                            <input type="number" name="descuento" id="descuento"> 
+                            <input 
+                                type="number" 
+                                name="descuento" 
+                                id="descuento"
+                                class="form-control"
+                                value="<%= locals.oldData ? oldData.descuento : null %>"
+                            > 
                         </div>
                         <div class="input-create">
                             <label for="descripcion">Descripcion del Juego</label></BR>
-                            <textarea type="text" name="descripcion" id="descripcion"></textarea>
+                            <textarea 
+                                type="text" 
+                                name="descripcion" 
+                                id="descripcion" 
+                                class="form-control <%= locals.errors && errors.descripcion ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                            ><%= locals.oldData ? oldData.descripcion : null %></textarea>
+                            <% if(locals.errors && errors.descripcion) { %>
+                                <div class="text-danger">
+                                    <%= errors.descripcion.msg %>
+                                </div>
+                            <% } %>
                         </div>
-                        <p>Formato</p>
                         <div class="checkbox-create">
                             <label for="text">Género:</label>
                             <select name="genero">
-                                <option>Accion</option>
-                                <option>Arcade</option>
-                                <option>Aventura</option>
-                                <option>Carerras</option>
-                                <option>Deportes</option>
-                                <option>Estrategia</option>
-                                <option>Infantil</option>
-                                <option>Roll</option>
-                                <option>Terror</option>
+                                
+                                <%
+                                    let generos= ['Accion', 'Arcade', 'Aventura' ,'Carerras' ,'Deportes' ,'Estrategia' ,'Infantil' ,'Roll' ,'Terror']
+                                %>
+                                <% for(let genero of generos) { %>
+                                    <option value="<%= genero %>"
+                                        <%= locals.oldData && (genero === oldData.genero) ? "selected" : null %>
+                                    > <%= genero %></option>
+                                <% } %>
+                            
                             </select>
                         </div>
                         <div class="checkbox-create">

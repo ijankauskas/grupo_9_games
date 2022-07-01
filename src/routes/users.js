@@ -5,16 +5,35 @@ const multer = require('multer');
 const router = express.Router();
 const path = require('path');
 
-const {body} = require('express-validator')
+const {body} = require('express-validator');
 
 const validation = [
     body('nombre').notEmpty().withMessage('Tienes que escribir un nombre'),
     
-    body('contraseña').notEmpty().withMessage('Tienes que escribir una contraseña'),
+    body('password')
+    .notEmpty().withMessage('Tienes que escribir una contraseña').bail()
+    .isLength({min: 8}).withMessage('Tiene que tener al menos 8 caracteres'),
     
+    body('passwordConfirm')
+    .custom((value, { req }) =>{
+        if(value !== req.body.password){
+            throw new Error('Las contraseñas tienen que ser iguales');
+        }
+        return true
+    }),
+
     body('email')
     .notEmpty().withMessage('Tienes que escribir un mail').bail()
     .isEmail().withMessage('No es un formado de email correcto'),
+
+    body('confirmarEmail')
+    .notEmpty().withMessage('Tienes que escribir un mail').bail()
+    .custom((value, { req }) =>{
+        if(value !== req.body.email){
+            throw new Error('Los emails tiene que ser iguales');
+        }
+        return true
+    }),
     
     body('fecha').notEmpty().withMessage('Tienes que poner una fecha'),
     

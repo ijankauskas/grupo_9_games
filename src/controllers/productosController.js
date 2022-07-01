@@ -1,6 +1,7 @@
 const { render } = require('ejs');
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator');
 
 const listaProductos = path.join(__dirname, '../data/listaProductos.json');
 const productos = JSON.parse(fs.readFileSync(listaProductos, 'utf-8'));
@@ -30,20 +31,28 @@ const productosController = {
         res.render('./products/create');
     },
 
-    nuevoProducto: (req, res)=>{
-        if(req.files) {
-            let nuevoProducto = req.body;
-            imagenes = req.files
-            nuevoProducto.imagenes = [];
-            for(let i = 0 ; i< imagenes.length ; i++){
-                nuevoProducto.imagenes.push('/imagenes/' + imagenes[i].filename)
-            }
-            nuevoProducto.id = productos[productos.length -1].id +1;
-            productos.push(nuevoProducto);
-            fs.writeFileSync(listaProductos, JSON.stringify(productos, null, ' '));
-            res.redirect('/product/detail/'+ nuevoProducto.id)
+    nuevoProducto: (req, res)=> {
+        const resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0){
+            return res.render('./products/create', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            })
         } else {
-            res.render('./products/create')
+            if(req.files) {
+                let nuevoProducto = req.body;
+                imagenes = req.files
+                nuevoProducto.imagenes = [];
+                for(let i = 0 ; i< imagenes.length ; i++){
+                    nuevoProducto.imagenes.push('/imagenes/' + imagenes[i].filename)
+                }
+                nuevoProducto.id = productos[productos.length -1].id +1;
+                productos.push(nuevoProducto);
+                fs.writeFileSync(listaProductos, JSON.stringify(productos, null, ' '));
+                res.redirect('/product/detail/'+ nuevoProducto.id)
+            } else {
+                res.render('./products/create')
+            }
         }
     },
 
