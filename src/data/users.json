@@ -1,33 +1,29 @@
 [
-{
-    "id": 1,
-    "nombre":"Kevin",
-    "apellido":"Breit",
-    "email":"kbreit32@gmail.com", 
-    "contraseña":"O8XVCDp",
-    "categoría":"usuario",
-    "avatar":"/imagenes/avatar_1"
-},
-
-
-{
-    "id": 2,
-    "nombre":"Ignacio",
-    "apellido":"Jankauskas",
-    "email":"ignacio.jankauskas@gmail.com", 
-    "contraseña":"YqzKHJf",
-    "categoría":"usuario",
-    "avatar":"/imagenes/avatar_2"    
-},
-
-
-{
-    "id": 3,
-    "nombre":"Daniel",
-    "apellido":"Lopez",
-    "email":"daniel.ivan.lopez92@gmail.com", 
-    "contraseña":"24NybErXp",
-    "categoría":"usuario",
-    "avatar":"/imagenes/avatar_3"    
-}
+ {
+  "id": 1,
+  "nombre": "Kevin",
+  "apellido": "Breit",
+  "email": "kbreit32@gmail.com",
+  "contraseña": "O8XVCDp",
+  "categoría": "usuario",
+  "avatar": "/imagenes/avatar_1"
+ },
+ {
+  "id": 2,
+  "nombre": "Ignacio",
+  "apellido": "Jankauskas",
+  "email": "ignacio.jankauskas@gmail.com",
+  "contraseña": "YqzKHJf",
+  "categoría": "usuario",
+  "avatar": "/imagenes/avatar_2"
+ },
+ {
+  "id": 3,
+  "nombre": "Daniel",
+  "apellido": "Lopez",
+  "email": "daniel.ivan.lopez92@gmail.com",
+  "contraseña": "24NybErXp",
+  "categoría": "usuario",
+  "avatar": "/imagenes/avatar_3"
+ }
 ]

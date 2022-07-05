@@ -64,8 +64,7 @@ const productosController = {
         let producto = productosController.buscarProducto(req.params.idProducto)
         let actualizacion = req.body;
         for(let propiedad in actualizacion){
-            console.log(producto);
-            if(propiedad != ""){
+            if(actualizacion[propiedad] != ""){
                 producto[propiedad] = req.body[propiedad];
             }   
         }

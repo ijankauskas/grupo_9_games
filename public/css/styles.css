@@ -411,6 +411,7 @@ footer .copyright{
 
     .button-iniciar-sesion:hover{
         background: #a4d007;
+        color: white;
     }
 
     .login-paddin .button-submit button:hover{

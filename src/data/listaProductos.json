@@ -1,7 +1,7 @@
 [
  {
   "id": 1,
-  "nombre": "",
+  "nombre": "World of Warcraft",
   "imagenLogo": "/imagenes/world-of-warcraft.jpg",
   "imagenes": [
    "/imagenes/warcraft_1.jpg",
@@ -13,16 +13,16 @@
   "compatibilidad": [
    "fa-solid fa-desktop"
   ],
-  "precio": "",
-  "descuento": "",
+  "precio": "3200",
+  "descuento": "15",
   "descripcion": "",
   "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
   "so": "Windows 10 (November 2019 Update or higher), 8 or 7 (64-bit with the latest updates; some functionality not supported on Windows 7 and 8).",
-  "procesador": "",
-  "memoria": "",
-  "graficos": "",
+  "procesador": "Intel Core i5 2.6GHz or similar.",
+  "memoria": "6 GB de RAM.",
+  "graficos": "GeForce GTX 700 series or similar.",
   "DirectX": "Versión 11.",
-  "almacenamiento": "",
+  "almacenamiento": "3 GB de espacio disponible.",
   "notasAdicionales": "Performance increases with higher-end systems. Not supported on Windows 10S.",
   "genero": "Accion",
   "caregoria": "MasVendido",

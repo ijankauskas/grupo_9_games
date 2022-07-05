@@ -1,3 +1,4 @@
+const { render } = require('ejs');
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
@@ -23,6 +24,17 @@ const userController = {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
+        }else {
+            if(req.file) {
+                let newUser = req.body;
+                newUser.avatar = '/imagenes/' + req.file.filename;
+                newUser.id = users[users.length -1].id +1;
+                users.push(newUser);
+                fs.writeFileSync(JSONUsers, JSON.stringify(users, null, ' '));
+                res.redirect('/')
+            } else {
+                res.render('./products/create')
+            }
         }
         res.redirect('/')
     },
