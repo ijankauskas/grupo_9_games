@@ -21,14 +21,32 @@
             <div class="login-box">
                 <div class="login-paddin">
                     <p class="login-tittle">Iniciar sesión</p>
+                    <% if(locals.errors) { %>
+                        <% for(let error in errors) { %>
+                        <div class="text-danger">
+                            <%= errors[error].msg %>
+                        </div>
+                        <% } %>
+                    <% } %>
                     <form action="/users/login" method="post">
                         <div class="input-login">
-                            <label for="nombre">Nombre de la cuenta</label></BR>
-                            <input type="text" name="nombre" id="nombre"> 
+                            <label for="email">Email de la cuenta</label></BR>
+                            <input 
+                                type="text" 
+                                name="email" 
+                                id="email" 
+                                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
+                                value="<%= locals.oldData ? oldData.email : null %>"
+                            > 
                         </div>
                         <div class="input-login">
-                            <label for="contraseña">Contraseña</label></br>
-                            <input type="password" name="contraseña" id="contraseña">
+                            <label for="password">Contraseña</label></br>
+                            <input 
+                                type="password" 
+                                name="password" 
+                                id="password" 
+                                class="form-control <%= locals.errors ? 'is-invalid' : null %>" 
+                            >
                         </div>
                         <div class="button-submit">
                             <button type="submit" class="submit-iniciar-sesion"><span>Iniciar sesión</span></button>

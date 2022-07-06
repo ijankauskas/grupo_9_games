@@ -1,7 +1,10 @@
 const { render } = require('ejs');
+const bcryptjs = require ('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
+
+const User = require('../models/User')
 
 
 const JSONUsers = path.join(__dirname, '../data/users.json');
@@ -11,6 +14,33 @@ const userController = {
 
     login: (req, res)=>{
         res.render('./user/login');
+    },
+
+    processLogin: (req, res)=>{
+        let userToLogin = User.findByField('email', req.body.email)
+        if(userToLogin){
+            let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password)
+            if(passwordOk){
+                return res.send('ok')
+            }else{
+                return res.render('./user/login', {
+                    errors: {
+                        password: {
+                            msg: 'Credecianles invalidas'
+                        }
+                    },
+                    oldData: req.body
+                });
+            }
+        }
+        return res.render('./user/login', {
+            errors: {
+                email: {
+                    msg: 'Email no registrado'
+                }
+            },
+            oldData: req.body
+        });
     },
 
     register: (req, res)=>{
@@ -24,19 +54,30 @@ const userController = {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
-        }else {
-            if(req.file) {
-                let newUser = req.body;
-                newUser.avatar = '/imagenes/' + req.file.filename;
-                newUser.id = users[users.length -1].id +1;
-                users.push(newUser);
-                fs.writeFileSync(JSONUsers, JSON.stringify(users, null, ' '));
-                res.redirect('/')
-            } else {
-                res.render('./products/create')
-            }
         }
-        res.redirect('/')
+
+        let userInDb = User.findByField('email', req.body.email);
+        if(userInDb){
+            return res.render('./user/register', {
+                errors: {
+                    email: {
+                        msg: 'este mail ya esta en uso'
+                    }
+                },
+                oldData: req.body
+            }); 
+        }
+
+        let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password),
+            passwordConfirm: bcryptjs.hashSync(req.body.passwordConfirm),
+            avatar: '/imagenes/avatars/' + req.file.filename,
+            cart: []
+        }
+
+        let userCreated = User.create(userToCreate);
+        res.redirect('/users/login')
     },
 
 

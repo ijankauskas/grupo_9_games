@@ -13,7 +13,7 @@ const validation = require('../middleware/validRegisterMiddleware');
 
 //rutas
 router.get('/login', usersController.login);
-router.post('/login', usersController.login);
+router.post('/login', usersController.processLogin);
 
 router.get('/register', usersController.register);
 router.post('/register',upload.single('imagenAvatar') , validation , usersController.processRegister);
