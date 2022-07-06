@@ -3,6 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 
+const Product = require('../models/Products')
+
+
 const listaProductos = path.join(__dirname, '../data/listaProductos.json');
 const productos = JSON.parse(fs.readFileSync(listaProductos, 'utf-8'));
 
@@ -38,22 +41,20 @@ const productosController = {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })
-        } else {
-            if(req.files) {
-                let nuevoProducto = req.body;
-                imagenes = req.files
-                nuevoProducto.imagenes = [];
-                for(let i = 0 ; i< imagenes.length ; i++){
-                    nuevoProducto.imagenes.push('/imagenes/' + imagenes[i].filename)
-                }
-                nuevoProducto.id = productos[productos.length -1].id +1;
-                productos.push(nuevoProducto);
-                fs.writeFileSync(listaProductos, JSON.stringify(productos, null, ' '));
-                res.redirect('/product/detail/'+ nuevoProducto.id)
-            } else {
-                res.render('./products/create')
-            }
+        } 
+        
+        let imagenes = [];
+        for(let i = 0 ; i< req.body.length ; i++){
+            imagenes.push('/imagenes/' + req.body[i].filename)
         }
+
+        let productToCreate = {
+            ...req.body,
+            imagenes: imagenes,
+        }
+
+        let productCreate = Product.create(productToCreate);
+        res.redirect('/product/detail/'+ productCreate.id)
     },
 
     editar: (req, res)=>{
@@ -76,13 +77,9 @@ const productosController = {
         res.render('./products/cart');
     },
 
-    destroy : (req, res) => {
-        let id = req.params.id -1 ;
-        for(let imagen of productos[id].imagenes){
-            fs.unlinkSync(path.join(__dirname, '../../public' + imagen))
-        }
-		productos.splice((id), 1);
-        fs.writeFileSync(listaProductos, JSON.stringify(productos, null, ' '));
+    destroy: (req, res) => {
+        let id = req.params.id;
+        Product.destroy(id)
         res.redirect('/')
 	}
 };

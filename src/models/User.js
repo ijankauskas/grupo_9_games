@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path');
-const { destroy } = require('../controllers/productosController');
 
 
 const User = {
@@ -48,7 +47,7 @@ const User = {
 
     destroy: function(id){
         let users = this.findAll();
-        let finalUser = users.filter(oneUser => oneUser.id !== id);
+        let finalUser = users.filter(oneUser => oneUser.id != id);
         fs.writeFileSync(this.fielName, JSON.stringify(finalUser, null, ' '))
         return true
     }
