@@ -3,11 +3,15 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 
-const Product = require('../models/Products')
+const Product = require('../models/Products');
+const User = require('../models/User');
 
 
 const listaProductos = path.join(__dirname, '../data/listaProductos.json');
 const productos = JSON.parse(fs.readFileSync(listaProductos, 'utf-8'));
+
+const listaUsers = path.join(__dirname, '../data/users.json');
+const users = JSON.parse(fs.readFileSync(listaUsers, 'utf-8'));
 
 
 const productosController = {
@@ -52,7 +56,7 @@ const productosController = {
             ...req.body,
             imagenes: imagenes,
         }
-
+        log
         let productCreate = Product.create(productToCreate);
         res.redirect('/product/detail/'+ productCreate.id)
     },
@@ -70,17 +74,22 @@ const productosController = {
             }   
         }
         fs.writeFileSync(listaProductos, JSON.stringify(productos, null, ' '));
-        res.redirect('/product/detail/'+ req.params.idProducto)
+        res.redirect('/product/detail/'+ req.params.idProducto);
     },
 
     cart: (req, res)=>{
         res.render('./products/cart');
     },
 
+    cartPush: (req, res)=>{
+        User.update(req.session.userLogged.id, req.params.idProducto);        
+        res.redirect('/product/cart');
+    },
+
     destroy: (req, res) => {
         let id = req.params.id;
-        Product.destroy(id)
-        res.redirect('/')
+        Product.destroy(id);
+        res.redirect('/');
 	}
 };
 

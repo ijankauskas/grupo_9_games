@@ -34,16 +34,16 @@ const Product = {
             ...userData
         };
         allProducts.push(newProduct);
-        fs.writeFileSync(this.fielName, JSON.stringify(allProducts, null, ' '))
+        fs.writeFileSync(this.fielName, JSON.stringify(allProducts, null, ' '));
         return newProduct
     },
 
     destroy: function(id){
         let allProducts = this.findAll();
         let finalProduct = allProducts.filter(oneProduct => oneProduct.id != id);
-        fs.writeFileSync(this.fielName, JSON.stringify(finalProduct, null, ' '))
+        fs.writeFileSync(this.fielName, JSON.stringify(finalProduct, null, ' '));
         return true
-    }
+    },
 }
 
 

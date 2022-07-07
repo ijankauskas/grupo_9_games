@@ -50,8 +50,17 @@ const User = {
         let finalUser = users.filter(oneUser => oneUser.id != id);
         fs.writeFileSync(this.fielName, JSON.stringify(finalUser, null, ' '))
         return true
+    },
+
+    update: function(userId, idProduct){
+        let users = this.findAll();
+        for(let user of users){
+            if(user.id === userId){
+                user.cart.push(parseInt(idProduct));
+            }
+        }
+        fs.writeFileSync(this.fielName, JSON.stringify(users, null, ' '))
     }
-    
 }
 
 module.exports = User;

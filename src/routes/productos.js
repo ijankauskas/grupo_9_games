@@ -25,6 +25,7 @@ router.get('/edit/:idProducto', productosController.editar);
 router.put('/:idProducto', upload.array('imagenes', 10), productosController.update); 
 
 router.get('/cart', authMiddleware, productosController.cart);
+router.get('/cart/:idProducto', authMiddleware, productosController.cartPush)
 
 router.delete('/:id', productosController.destroy); 
 
