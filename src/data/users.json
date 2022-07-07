@@ -38,5 +38,14 @@
   "fecha": "2022-07-06",
   "avatar": "/imagenes/avatars/1657162502215_img.jpg",
   "cart": []
+ },
+ {
+  "id": 5,
+  "nombre": "ignacio martin",
+  "password": "$2a$10$XaYcssqmQj8yHzLgt09Kpe2Qw4OxICGDQKSHeMFPh9CZnRQ24aC7G",
+  "email": "ignacio.jankauskas@gmail.com",
+  "fecha": "1997-09-08",
+  "avatar": "/imagenes/avatars/1657230489550_img.jpg",
+  "cart": []
  }
 ]

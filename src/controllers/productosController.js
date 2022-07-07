@@ -46,17 +46,16 @@ const productosController = {
                 oldData: req.body
             })
         } 
-        
+        console.log(req.files)
         let imagenes = [];
-        for(let i = 0 ; i< req.body.length ; i++){
-            imagenes.push('/imagenes/' + req.body[i].filename)
+        for(let i = 0 ; i< req.files.length ; i++){
+            imagenes.push('/imagenes/' + req.files[i].filename)
         }
 
         let productToCreate = {
             ...req.body,
             imagenes: imagenes,
         }
-        log
         let productCreate = Product.create(productToCreate);
         res.redirect('/product/detail/'+ productCreate.id)
     },
