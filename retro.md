@@ -24,3 +24,12 @@ SPRINT 3
 4. Hacer menos: Nada.
 
 5. Dejar de hacer: Nada mas que agregar respecto del Sprint anterior. Siempre hay cosas por pulir, corregir o mejorar. Pero sin embargo, creemos que estamos haciendo todo lo medianamente correcto.
+
+
+
+SPRINT 4
+1-2. Comenzar hacer: En este sprint en particular, tuvimos una sola reunión donde se separaron los temas. Pero debimos haber tenido más reuniones, para seguir más de cerca como venía cada compañero.
+
+3. Continuar haciendo: Como mencionamos en el Sprint anterior, nos dio mucho resultado el uso de Trello para separar las actividades.
+
+4-5. Dejar de hacer: Por la falta de comunicación en el grupo, en este Sprint hubo atrasados y demoras en las tareas. Porque habían actividades que dependian de una persona, para que despues pueda avanzar el siguiente compañero. Y debido a la NO comunicación, hubo mucha pérdida de tiempo.
