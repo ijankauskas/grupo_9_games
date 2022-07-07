@@ -15,10 +15,28 @@
   "nombre": "nacho",
   "password": "$2a$10$QATkjkVKMUQbkO.fwK3toOKbUYxLqAMDNBnElEmVCic7S9yuJ1Ioi",
   "passwordConfirm": "$2a$10$EOhJCscb//Q4OCPwJu4diuHEJzH1QfTxeFkHDoguSPzMKW8CVshSK",
-  "email": "prueba@gmail.com",
+  "email": "ignacio.martin.97@hotmail.com",
   "confirmarEmail": "prueba@gmail.com",
   "fecha": "1997-09-08",
   "avatar": "/imagenes/avatars/1657078158134_img.jpg",
+  "cart": []
+ },
+ {
+  "id": 3,
+  "nombre": "prueba",
+  "password": "$2a$10$TYOy9O0RkzYnh6ADlagZN.ct/xiC67dcKy27g6ORZ3953gDT6SZTS",
+  "email": "prueba@gmail.com",
+  "fecha": "1997-09-08",
+  "avatar": "/imagenes/avatars/1657136632789_img.jpg",
+  "cart": []
+ },
+ {
+  "id": 4,
+  "nombre": "nacho",
+  "password": "$2a$10$31hNNKlRQ.sHcOz.s.GCne6lyG7HuSEslbDvYrwVTBfhrQhF9/CDa",
+  "email": "ijankauskas@frba.utn.edu.ar",
+  "fecha": "2022-07-06",
+  "avatar": "/imagenes/avatars/1657162502215_img.jpg",
   "cart": []
  }
 ]

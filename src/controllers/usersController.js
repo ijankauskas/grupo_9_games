@@ -1,14 +1,9 @@
 const { render } = require('ejs');
 const bcryptjs = require ('bcryptjs');
-const fs = require('fs');
-const path = require('path');
 const { validationResult } = require('express-validator');
 
 const User = require('../models/User')
 
-
-const JSONUsers = path.join(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(JSONUsers, 'utf-8'));
 
 const userController = {
 
@@ -21,7 +16,9 @@ const userController = {
         if(userToLogin){
             let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password)
             if(passwordOk){
-                return res.send('ok')
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                return res.redirect('/')
             }else{
                 return res.render('./user/login', {
                     errors: {
@@ -67,11 +64,11 @@ const userController = {
                 oldData: req.body
             }); 
         }
-
+        delete req.body.passwordConfirm;
+        delete req.body.confirmarEmail;
         let userToCreate = {
             ...req.body,
             password: bcryptjs.hashSync(req.body.password),
-            passwordConfirm: bcryptjs.hashSync(req.body.passwordConfirm),
             avatar: '/imagenes/avatars/' + req.file.filename,
             cart: []
         }
@@ -80,7 +77,10 @@ const userController = {
         res.redirect('/users/login')
     },
 
-
+    logout: function(req, res){
+        req.session.destroy();
+        res.redirect('/')
+    }
 }
 
 module.exports = userController;

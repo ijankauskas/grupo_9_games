@@ -7,11 +7,25 @@
             <a href="/">
                 <img src="/imagenes/imagen-logo.jpg" alt="imagen del logo" class="logo">
             </a>
-            <ul>
-                <li><a href="/users/register"> Crear cuenta </a></li>
-                <li><a href="/users/login"> Iniciar Sesión </a></li>
-                <li><a href="/create"> Carrito de Compras </a></li>
-            </ul>
+            <% if(locals.isLogged) { %>
+                <ul>
+                    <li class="header-user">
+                        <div><%= locals.userLogged.nombre %></div>
+                        <div>
+                            <img src="<%= locals.userLogged.avatar %>" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/users/logout">Logout</a>
+                    </li>
+                    <li><a href="/product/cart"> Carrito de Compras </a></li>
+                </ul>
+            <% }else{ %>
+                <ul>
+                    <li><a href="/users/register"> Crear cuenta </a></li>
+                    <li><a href="/users/login"> Iniciar Sesión </a></li>
+                </ul>
+            <% } %>
         </section>
     </div>
     <nav>

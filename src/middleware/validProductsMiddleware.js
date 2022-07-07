@@ -10,8 +10,6 @@ const validation = [
     body('descripcion').notEmpty().withMessage('Tiene que tener una descripcion'),
 
     body('genero').notEmpty().withMessage('Tienes que elegir un genero'),
-
-
 ];
 
 module.exports = validation ;

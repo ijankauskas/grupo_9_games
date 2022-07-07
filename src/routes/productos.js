@@ -8,7 +8,9 @@ const productosController = require('../controllers/productosController');
 
 //middleware
 const upload = require('../middleware/multerProductsMiddleware');
-const validation = require('../middleware/validProductsMiddleware')
+const validation = require('../middleware/validProductsMiddleware');
+const authMiddleware = require('../middleware/authMiddleware');
+
 
 
 //rutas
@@ -22,7 +24,7 @@ router.post('/create', upload.array('imagenes', 10) ,validation ,productosContro
 router.get('/edit/:idProducto', productosController.editar); 
 router.put('/:idProducto', upload.array('imagenes', 10), productosController.update); 
 
-router.get('/cart', productosController.cart);
+router.get('/cart', authMiddleware, productosController.cart);
 
 router.delete('/:id', productosController.destroy); 
 

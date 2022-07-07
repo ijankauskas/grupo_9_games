@@ -7,6 +7,8 @@ const logger = require('morgan');
 const path = require('path');
 const methodOverride =  require('method-override');
 
+//middleware
+const userLoggedMiddleware = require('./middleware/userLoggedMiddleware');
 
 //require de rutas
 const rutasProductos = require('./routes/productos')
@@ -27,6 +29,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
+app.use(userLoggedMiddleware);
 
 app.set('view engine', 'ejs')
 
