@@ -1,6 +1,6 @@
 //requires
 const createError = require('http-errors');
-const cookieParser = require('cookie-parser');
+const cookie = require('cookie-parser');
 const express = require('express');
 const session = require('express-session');
 const logger = require('morgan');
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookie());
 app.use(methodOverride('_method'));
 app.use(session({
     secret: 'It is a secret',
