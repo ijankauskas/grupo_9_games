@@ -10,28 +10,47 @@
     <main>
         <div class="total">
             <div class="cart-left">
-                <h1>Tu carro de compras</h1>
+                <h1 class="cartTittle">Tu carro de compras</h1>
                 <section class="cart">
-                    <article class="venta">
-                        <div class="foto-venta">
-                            <a href=""><img src="/imagenes/counter-strike.jpg"></a>
-                        </div>
-                        <div class="main-venta">
-                            <div class="title">
-                                <p>Counter Strike: Global Ofensive</p>
-                                <p class="cart-plataform"><i class="fa-solid fa-desktop"></i></p>
-                            </div>
-                            <div>
-                                <p class="price">ARS $1.400</p>
-                                <a class="remove_link" href="">Remover</a>
-                            </div>
-                        </div>
-                    </article>
+                    <% if(cart.length>0){ %>
+                        <% for(let product of cart) { %>
+                            <article class="venta">
+                                <div class="foto-venta">
+                                    <a href=""><img src="<%= product.imagenLogo %>"></a>
+                                </div>
+                                <div class="main-venta">
+                                    <div class="title">
+                                        <p><%= product.nombre %></p>
+                                        <div class="plataformas"> 
+                                            <% for(let compatibilidad of product.compatibilidad) { %>
+                                                <p><i class="<%= compatibilidad %>"></i></p>
+                                            <%} %>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="price">ARS $<%= product.precio %></p>
+                                        <a class="remove_link" href="">Remover</a>
+                                    </div>
+                                </div>
+                            </article>
+                        <% } %>
+                    <% } else { %>
+                        <p>Tu carrito esta Vacio</p>
+                    <% } %>
+                    
                 </section>
                 <section class="cart-suma">
                     <div class="price-sum">
                         <p>Total estimado</p>
-                        <p>ARS $1.400</p>
+                        <% if(cart.length > 0){ %>
+                            <% let sum = 0 %>
+                            <% for(let product of cart) { %>
+                                <% sum += product.precio %>
+                            <% } %>
+                            <p>ARS $<%= sum %></p>
+                        <% } else { %>
+                            <p>ARS $0</p>
+                        <% } %>
                     </div>
                     <div class="button-buy">
                         <a href="#" class="button-iniciar-sesion"><span>Comprar para mi</span></a>

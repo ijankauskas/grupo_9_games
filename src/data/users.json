@@ -8,7 +8,11 @@
   "confirmarEmail": "ignacio.jankauskas60@gmail.com",
   "fecha": "1997-09-08",
   "avatar": "/imagenes/avatars/1657077894780_img.jpg",
-  "cart": []
+  "cart": [
+   8,
+   4,
+   5
+  ]
  },
  {
   "id": 2,

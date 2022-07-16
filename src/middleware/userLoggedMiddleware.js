@@ -5,7 +5,6 @@ function userLoggedMiddleware(req, res, next){
 
     let cookieEmail = req.cookies.userEmail;
     let userFromCookie = User.findByField("email", cookieEmail);
-    console.log(userFromCookie);
 
     if(userFromCookie){
         req.session.userLogged = userFromCookie;
@@ -15,8 +14,7 @@ function userLoggedMiddleware(req, res, next){
         res.locals.isLogged = true;
         res.locals.userLogged = req.session.userLogged;
     }
-    
-    
+
     next();
 }
 
