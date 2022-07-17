@@ -47,5 +47,21 @@
   "fecha": "1997-09-08",
   "avatar": "/imagenes/avatars/1657230489550_img.jpg",
   "cart": []
+ },
+ {
+  "id": 6,
+  "nombre": "Kevin Ivan",
+  "password": "$2a$10$xWMYmoJQqZhJQFN3OqYJaOTh6QkbVt8V/IlJGvhGO2W24P9rY9CFO",
+  "email": "kbreit32@gmail.com",
+  "fecha": "1993-03-26",
+  "formulario": [
+   "terminos",
+   "recibir"
+  ],
+  "avatar": "/imagenes/avatars/1657589236375_img.jpg",
+  "cart": [
+   5,
+   3
+  ]
  }
 ]
