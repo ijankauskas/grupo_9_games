@@ -77,7 +77,13 @@ const productosController = {
     },
 
     cart: (req, res)=>{
-        res.render('./products/cart');
+        let cartUser = req.session.userLogged.cart;
+        let cart = [];
+        for (let idProduct of cartUser){
+            let product = Product.findByPk(idProduct);
+            cart.push(product);
+        }
+        res.render('./products/cart', {cart});
     },
 
     cartPush: (req, res)=>{
