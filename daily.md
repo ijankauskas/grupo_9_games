@@ -18,3 +18,10 @@ Realizamos la primera reunión, separamos las actividades que le correspondia a 
 Todo estos temas quedaron separados en el tablero de Trello.
 
 Faltando dos días hubo pérdida de comunicación con un compañero. Lo que nos llevó a atrasarnos y demorarnos en las tareas. Por lo tanto, en el sprint 5 vamos a estar más pendiente uno del otro, para que no se vuelva a repetir y no perjudique al proyecto.
+
+
+SPRINT 5
+
+En esta parte del proyecto quedamos tan solo dos personas. Lo que resulta más sencillo la coordinación de los temas y los horarios para hacer las videollamadas. Cada vez hay mas comunicación, por lo tanto estamos bien como grupo.
+
+Realizamos dos o tres videollamadas por Team por cada Sprint, y luego todo lo demas es por Whatsapp. No hay mucho más por agregar.

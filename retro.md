@@ -33,3 +33,6 @@ SPRINT 4
 3. Continuar haciendo: Como mencionamos en el Sprint anterior, nos dio mucho resultado el uso de Trello para separar las actividades.
 
 4-5. Dejar de hacer: Por la falta de comunicación en el grupo, en este Sprint hubo atrasados y demoras en las tareas. Porque habían actividades que dependian de una persona, para que despues pueda avanzar el siguiente compañero. Y debido a la NO comunicación, hubo mucha pérdida de tiempo.
+
+
+
