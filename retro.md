@@ -36,3 +36,10 @@ SPRINT 4
 
 
 
+
+SPRINT 5
+1-2. Comenzar hacer: Quedamos dos personas en el grupo, por lo que ya nos conocemos bastante y sabemos en que horarios comunicarnos. Que días hacer las dailys. Pero en resumen, hay mucha más comunicación que al comienzo.
+
+3. Continuar haciendo: Seguir trabajando como equipo, ayudándonos y resolviendo los problemas que se plantean. Utilizamos mucho el tablero Trello para ver que actividades tiene cada uno.
+
+4-5. Dejar de hacer: Saber como esta cada integrante del equipo durante el sprint, si lo esta pudiendo llevar a cabo o no a la actividad.
