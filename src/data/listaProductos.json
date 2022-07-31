@@ -455,32 +455,5 @@
   "Red": "Conexión de banda ancha a Internet.",
   "Almacenamiento": "15 GB de espacio disponible.",
   "TarjetaSonido": "Compatible con DirectX."
- },
- {
-  "id": 13,
-  "nombre": "prueba",
-  "compatibilidad": [
-   "fa-solid fa-desktop",
-   "fa-brands fa-playstation",
-   "fa-brands fa-xbox",
-   "fa-brands fa-apple"
-  ],
-  "precio": "1000",
-  "descuento": "10",
-  "descripcion": "descripcion",
-  "genero": "Accion",
-  "caregoria": "MasVendido",
-  "os": "",
-  "procesador": "",
-  "memoria": "",
-  "graficos": "",
-  "almacenamiento": "",
-  "imagenes": [
-   "/imagenes/1657231502794-imagenes.jpg",
-   "/imagenes/1657231502795-imagenes.jpg",
-   "/imagenes/1657231502799-imagenes.jpg",
-   "/imagenes/1657231502801-imagenes.jpg",
-   "/imagenes/1657231502803-imagenes.jpg"
-  ]
  }
 ]

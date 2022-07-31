@@ -2,6 +2,8 @@ const { render } = require('ejs');
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
+const db = require('../database/models')
+
 
 const Product = require('../models/Products');
 const User = require('../models/User');
@@ -39,25 +41,40 @@ const productosController = {
     },
 
     nuevoProducto: (req, res)=> {
-        const resultValidation = validationResult(req);
+        /*const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0){
             return res.render('./products/create', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })
-        } 
-        console.log(req.files)
-        let imagenes = [];
+        };
+        let imagenes = '';
         for(let i = 0 ; i< req.files.length ; i++){
-            imagenes.push('/imagenes/' + req.files[i].filename)
-        }
-
-        let productToCreate = {
-            ...req.body,
-            imagenes: imagenes,
-        }
-        let productCreate = Product.create(productToCreate);
-        res.redirect('/product/detail/'+ productCreate.id)
+            imagenes += (',/imagenes/' + req.files[i].filename)
+        };
+        let compatibility = '';
+        for(let i = 0 ; i< req.body.compatibilidad.length ; i++){
+            compatibility += (',' + req.body.compatibilidad[i])
+        };*/
+        db.Genre.create({
+            nombre: 'prueba',
+            categoria_id: 1,
+            genero_id: 2,
+            compatibilidad_id: 3,
+            imagenLogo: 'prueba',
+            imagenes: 'prueba',
+            precio: 'prueba',
+            descuento: 'prueba',
+            descripcion: 'prueba',
+            minimo: "Requiere un procesador y un sistema operativo de 64 bits.",
+            so: 'prueba',
+            procesador: 'prueba',
+            memoria: 'prueba',
+            graficos: 'prueba',
+            almacenamiento: 'prueba',
+            notasAdicionales: 'prueba',
+        });
+        res.redirect('/');
     },
 
     editar: (req, res)=>{
