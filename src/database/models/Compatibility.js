@@ -9,6 +9,9 @@ module.exports = function(sequelize, dataTypes){
         },
         plataforma: {
             type: dataTypes.STRING,
+        },
+        icono: {
+            type: dataTypes.STRING,
         }
     }
         

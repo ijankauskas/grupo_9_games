@@ -47,32 +47,32 @@ const productosController = {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })
-        };
+        };*/
         let imagenes = '';
         for(let i = 0 ; i< req.files.length ; i++){
             imagenes += (',/imagenes/' + req.files[i].filename)
         };
-        let compatibility = '';
+        /*let compatibility = '';
         for(let i = 0 ; i< req.body.compatibilidad.length ; i++){
             compatibility += (',' + req.body.compatibilidad[i])
         };*/
-        db.Genre.create({
-            nombre: 'prueba',
+        db.Game.create({
+            nombre: req.body.nombre,
             categoria_id: 1,
-            genero_id: 2,
+            genero_id: req.body.genero,
             compatibilidad_id: 3,
-            imagenLogo: 'prueba',
-            imagenes: 'prueba',
-            precio: 'prueba',
-            descuento: 'prueba',
-            descripcion: 'prueba',
+            imagenLogo: req.body.genero,
+            imagenes: imagenes,
+            precio: req.body.precio,
+            descuento: req.body.descuento,
+            descripcion: req.body.descripcion,
             minimo: "Requiere un procesador y un sistema operativo de 64 bits.",
-            so: 'prueba',
-            procesador: 'prueba',
-            memoria: 'prueba',
-            graficos: 'prueba',
-            almacenamiento: 'prueba',
-            notasAdicionales: 'prueba',
+            so: req.body.os,
+            procesador: req.body.procesador,
+            memoria: req.body.memoria,
+            graficos: req.body.graficos,
+            almacenamiento: req.body.almacenamiento,
+            notasAdicionales: req.body.notasAdicionales,
         });
         res.redirect('/');
     },

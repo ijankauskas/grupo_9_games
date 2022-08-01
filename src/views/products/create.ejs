@@ -67,7 +67,7 @@
                         <div class="input-create">
                             <label for="precio">Precio</label></BR>
                             <input 
-                                type="text"
+                                type="number"
                                 name="precio" 
                                 id="precio" 
                                 class="form-control <%= locals.errors && errors.precio ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
@@ -110,17 +110,17 @@
                                 <%
                                     let generos= ['Accion', 'Arcade', 'Aventura' ,'Carerras' ,'Deportes' ,'Estrategia' ,'Infantil' ,'Roll' ,'Terror']
                                 %>
-                                <% for(let genero of generos) { %>
-                                    <option value="<%= genero %>"
+                                <% for(let i=0 ; i< generos.length ; i++) { %> 
+                                    <option value="<%= i+1 %>"
                                         <%= locals.oldData && (genero === oldData.genero) ? "selected" : null %>
-                                    > <%= genero %></option>
+                                    > <%= generos[i] %></option>
                                 <% } %>
                             
                             </select>
                         </div>
                         <div class="checkbox-create">
-                            <label for="text">Caregoria:</label>
-                            <select name="caregoria">
+                            <label for="text">Categoria:</label>
+                            <select name="categoria">
                                 <option value="">Elegi una categoria</option>
                                 <option>MasVendido</option>
                                 <option>Novedades</option>
