@@ -74,9 +74,12 @@ module.exports = function(sequelize, dataTypes){
             as: 'genre',
             foreingKey: 'genero_id'
         });
-        Game.belongsTo(models.Compatibility, {
+        Game.belongsToMany(models.Compatibility, {
             as: 'compatibility',
-            foreingKey: 'compatibilidad_id'
+            through: 'juegos_compatibilidad',
+            foreingKey: 'juegos_id',
+            otherKey: 'compatibilidad_id',
+            timestamps: false
         });
     }
 

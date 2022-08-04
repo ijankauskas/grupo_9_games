@@ -23,9 +23,12 @@ module.exports = function(sequelize, dataTypes){
     let Compatibility = sequelize.define(alias, cols, config);
 
     Compatibility.associate = function(models){
-        Compatibility.hasMany(models.Game, {
-            as: 'games',
-            foreingKey: 'compatibilidad_id'
+        Compatibility.belongsToMany(models.Game, {
+            as: 'compatibility',
+            through: 'juegos_compatibilidad',
+            foreingKey: 'compatibilidad_id',
+            otherKey: 'juegos_id',
+            timestamps: false
         });
     }
 

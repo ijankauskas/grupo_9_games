@@ -43,25 +43,26 @@ const productosController = {
     nuevoProducto: (req, res)=> {
         /*const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0){
+            fs.unlinkSync('req.body.file.filename')
             return res.render('./products/create', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })
         };*/
-        let imagenes = '';
-        for(let i = 0 ; i< req.files.length ; i++){
-            imagenes += (',/imagenes/' + req.files[i].filename)
+        let imagenes = req.files['imagenes'][0].filename;
+        for(let i = 1 ; i< req.files['imagenes'].length ; i++){
+            imagenes += (',/imagenes/' + req.files['imagenes'][i].filename)
         };
         /*let compatibility = '';
         for(let i = 0 ; i< req.body.compatibilidad.length ; i++){
             compatibility += (',' + req.body.compatibilidad[i])
-        };*/
+        };
         db.Game.create({
             nombre: req.body.nombre,
             categoria_id: 1,
             genero_id: req.body.genero,
             compatibilidad_id: 3,
-            imagenLogo: req.body.genero,
+            imagenLogo: req.files['imagenLogo'][0].filename,
             imagenes: imagenes,
             precio: req.body.precio,
             descuento: req.body.descuento,
@@ -73,8 +74,9 @@ const productosController = {
             graficos: req.body.graficos,
             almacenamiento: req.body.almacenamiento,
             notasAdicionales: req.body.notasAdicionales,
-        });
-        res.redirect('/');
+        });*/
+        console.log(imagenes);
+        res.redirect('/product/create');
     },
 
     editar: (req, res)=>{
