@@ -1,3 +1,4 @@
+
 module.exports = function(sequelize, dataTypes){
     let alias = "Compatibility";
 
@@ -26,7 +27,7 @@ module.exports = function(sequelize, dataTypes){
         Compatibility.belongsToMany(models.Game, {
             as: 'compatibility',
             through: 'juegos_compatibilidad',
-            foreingKey: 'compatibilidad_id',
+            foreignKey: 'compatibilidad_id',
             otherKey: 'juegos_id',
             timestamps: false
         });

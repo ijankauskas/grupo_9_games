@@ -2,7 +2,7 @@ const { render } = require('ejs');
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
-const db = require('../database/models')
+const db = require('../database/models');
 
 
 const Product = require('../models/Products');
@@ -49,34 +49,35 @@ const productosController = {
                 oldData: req.body
             })
         };*/
-        let imagenes = req.files['imagenes'][0].filename;
-        for(let i = 1 ; i< req.files['imagenes'].length ; i++){
-            imagenes += (',/imagenes/' + req.files['imagenes'][i].filename)
-        };
-        /*let compatibility = '';
-        for(let i = 0 ; i< req.body.compatibilidad.length ; i++){
-            compatibility += (',' + req.body.compatibilidad[i])
-        };
-        db.Game.create({
-            nombre: req.body.nombre,
-            categoria_id: 1,
-            genero_id: req.body.genero,
-            compatibilidad_id: 3,
-            imagenLogo: req.files['imagenLogo'][0].filename,
-            imagenes: imagenes,
-            precio: req.body.precio,
-            descuento: req.body.descuento,
-            descripcion: req.body.descripcion,
-            minimo: "Requiere un procesador y un sistema operativo de 64 bits.",
-            so: req.body.os,
-            procesador: req.body.procesador,
-            memoria: req.body.memoria,
-            graficos: req.body.graficos,
-            almacenamiento: req.body.almacenamiento,
-            notasAdicionales: req.body.notasAdicionales,
-        });*/
-        console.log(imagenes);
-        res.redirect('/product/create');
+        // let imagenes = req.files['imagenes'][0].filename;
+        // for(let i = 1 ; i< req.files['imagenes'].length ; i++){
+        //     imagenes += (',/imagenes/' + req.files['imagenes'][i].filename)
+        // };
+        
+        // db.Game.create({
+        //     nombre: req.body.nombre,
+        //     categoria_id: 1,
+        //     genero_id: req.body.genero,
+        //     imagenLogo: req.files['imagenLogo'][0].filename,
+        //     imagenes: imagenes,
+        //     precio: req.body.precio,
+        //     descuento: req.body.descuento,
+        //     descripcion: req.body.descripcion,
+        //     minimo: "Requiere un procesador y un sistema operativo de 64 bits.",
+        //     so: req.body.os,
+        //     procesador: req.body.procesador,
+        //     memoria: req.body.memoria,
+        //     graficos: req.body.graficos,
+        //     almacenamiento: req.body.almacenamiento,
+        //     notasAdicionales: req.body.notasAdicionales,
+        // }).then(function(){
+        //     res.send('ok');
+        // });
+        db.Game.findByPk(6)
+            .then((game)=>{
+                res.send(game);
+            })
+            .catch((error)=>console.log(error))
     },
 
     editar: (req, res)=>{

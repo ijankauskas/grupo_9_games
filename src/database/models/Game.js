@@ -16,9 +16,6 @@ module.exports = function(sequelize, dataTypes){
         genero_id:{
             type: dataTypes.INTEGER,
         },
-        compatibilidad_id:{
-            type: dataTypes.INTEGER,
-        },
         imagenLogo:{
             type: dataTypes.STRING,
         },
@@ -63,21 +60,21 @@ module.exports = function(sequelize, dataTypes){
         timestamps: false,
     }
 
-    let Game = sequelize.define(alias, cols, config);
+    const Game = sequelize.define(alias, cols, config);
 
     Game.associate = function(models){
         Game.belongsTo(models.Category, {
             as: 'category',
-            foreingKey: 'categoria_id'
+            foreignKey: 'categoria_id'
         });
         Game.belongsTo(models.Genre, {
             as: 'genre',
-            foreingKey: 'genero_id'
+            foreignKey: "genero_id"
         });
         Game.belongsToMany(models.Compatibility, {
             as: 'compatibility',
             through: 'juegos_compatibilidad',
-            foreingKey: 'juegos_id',
+            foreignKey: 'juegos_id',
             otherKey: 'compatibilidad_id',
             timestamps: false
         });
