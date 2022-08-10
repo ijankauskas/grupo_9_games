@@ -65,7 +65,7 @@
                             </div>
                             <div class="checkbox-create">
                                 <label for="nombre">
-                                    <input type="checkbox" name="compatibilidad" value="fa-brands fa-android">Nintendo
+                                    <input type="checkbox" name="compatibilidad" value="fa-solid fa-game-console-handheld">Nintendo
                                 </label>
                             </div>
                         </div>
@@ -120,17 +120,20 @@
                                         <%= locals.oldData && (genero === oldData.genero) ? "selected" : null %>
                                     > <%= generos[i] %></option>
                                 <% } %>
-                            
                             </select>
                         </div>
                         <div class="checkbox-create">
                             <label for="text">Categoria:</label>
                             <select name="categoria">
                                 <option value="">Elegi una categoria</option>
-                                <option>MasVendido</option>
-                                <option>Novedades</option>
-                                <option>Proximamente</option>
-                                <option>Oferta</option>
+                                <%
+                                    let categoria = ['Mas Vendido', 'Novedades', 'Proximamente', 'Oferta']
+                                %>
+                                <% for(let j=0 ; j< categoria.length ; j++) { %> 
+                                    <option value="<%= j+1 %>"
+                                        <%= locals.oldData && (categoria === oldData.categoria) ? "selected" : null %>
+                                    > <%= categoria[j] %></option>
+                                <% } %>
                             </select>
                         </div><br><br>
                         <div class="input-create">
@@ -168,8 +171,3 @@
     <%- include('../partials/footer') %>
 </body>
 </html>
-
-<div class="input-create">
-    <label for="name">Nombre del Juego</label></BR>
-    <input type="text" name="name" id="name"> 
-</div>

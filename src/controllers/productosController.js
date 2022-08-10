@@ -33,7 +33,11 @@ const productosController = {
     },
 
     detalle: (req, res)=>{
-        res.render('./products/productDetail', {producto: productosController.buscarProducto(req.params.idProducto)});
+        db.Game.findByPk(req.params.idProducto)
+            .then((producto) =>{
+                producto.imagenes = producto.imagenes.split(',')
+                res.render('./products/productDetail', {producto});
+            });
     },
 
     create: (req, res)=>{
@@ -41,60 +45,88 @@ const productosController = {
     },
 
     nuevoProducto: (req, res)=> {
-        /*const resultValidation = validationResult(req);
+        const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0){
             fs.unlinkSync('req.body.file.filename')
             return res.render('./products/create', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })
-        };*/
-        // let imagenes = req.files['imagenes'][0].filename;
-        // for(let i = 1 ; i< req.files['imagenes'].length ; i++){
-        //     imagenes += (',/imagenes/' + req.files['imagenes'][i].filename)
-        // };
+        };
+
+        let imagenes = '/imagenes/' + req.files['imagenes'][0].filename;
+        for(let i = 1 ; i< req.files['imagenes'].length ; i++){
+            imagenes += (',/imagenes/' + req.files['imagenes'][i].filename)
+        };
         
-        // db.Game.create({
-        //     nombre: req.body.nombre,
-        //     categoria_id: 1,
-        //     genero_id: req.body.genero,
-        //     imagenLogo: req.files['imagenLogo'][0].filename,
-        //     imagenes: imagenes,
-        //     precio: req.body.precio,
-        //     descuento: req.body.descuento,
-        //     descripcion: req.body.descripcion,
-        //     minimo: "Requiere un procesador y un sistema operativo de 64 bits.",
-        //     so: req.body.os,
-        //     procesador: req.body.procesador,
-        //     memoria: req.body.memoria,
-        //     graficos: req.body.graficos,
-        //     almacenamiento: req.body.almacenamiento,
-        //     notasAdicionales: req.body.notasAdicionales,
-        // }).then(function(){
-        //     res.send('ok');
-        // });
-        db.Game.findByPk(6)
-            .then((game)=>{
-                res.send(game);
-            })
-            .catch((error)=>console.log(error))
+        db.Game.create({
+            nombre: req.body.nombre,
+            categoria_id: req.body.categoria,
+            genero_id: req.body.genero,
+            imagenLogo: req.files['imagenLogo'][0].filename,
+            imagenes: imagenes,
+            precio: req.body.precio,
+            descuento: req.body.descuento,
+            descripcion: req.body.descripcion,
+            minimo: "Requiere un procesador y un sistema operativo de 64 bits.",
+            so: req.body.os,
+            procesador: req.body.procesador,
+            memoria: req.body.memoria,
+            graficos: req.body.graficos,
+            almacenamiento: req.body.almacenamiento,
+            notasAdicionales: req.body.notasAdicionales,
+        }).then(game => {
+
+            console.log(game.dataValues.id);
+        });
     },
 
     editar: (req, res)=>{
-        res.render('./products/edit' ,{producto: productosController.buscarProducto(req.params.idProducto)});
+        db.Game.findByPk(req.params.idProducto)
+            .then((producto) =>{
+                producto.imagenes = producto.imagenes.split(',')
+                res.render('./products/edit', {producto});
+            });
     },
 
     update: (req, res)=>{
-        let producto = productosController.buscarProducto(req.params.idProducto)
-        let actualizacion = req.body;
-        for(let propiedad in actualizacion){
-            if(actualizacion[propiedad] != ""){
-                producto[propiedad] = req.body[propiedad];
-            }   
-        }
-        fs.writeFileSync(listaProductos, JSON.stringify(productos, null, ' '));
-        res.redirect('/product/detail/'+ req.params.idProducto);
+        let imagenes = req.files['imagenes'][0].filename;
+        for(let i = 1 ; i< req.files['imagenes'].length ; i++){
+            imagenes += (',/imagenes/' + req.files['imagenes'][i].filename)
+        };
+
+        db.Game.update(
+            {
+            nombre: req.body.nombre,
+            categoria_id: req.body.categoria,
+            genero_id: req.body.genero,
+            imagenLogo: req.files['imagenLogo'][0].filename,
+            imagenes: imagenes,
+            precio: req.body.precio,
+            descuento: req.body.descuento,
+            descripcion: req.body.descripcion,
+            minimo: "Requiere un procesador y un sistema operativo de 64 bits.",
+            so: req.body.os,
+            procesador: req.body.procesador,
+            memoria: req.body.memoria,
+            graficos: req.body.graficos,
+            almacenamiento: req.body.almacenamiento,
+            notasAdicionales: req.body.notasAdicionales,
+            },
+            {
+                where: {id: req.params.idProducto}
+            }
+        );
+        res.redirect('/product/' + req.params.idProducto);
     },
+
+    destroy: (req, res) => {
+        db.Game.destroy({
+            where: {id: req.params.id}
+        }).then(function(){
+            res.redirect('/');
+        })
+	},
 
     cart: (req, res)=>{
         let cartUser = req.session.userLogged.cart;
@@ -110,12 +142,6 @@ const productosController = {
         User.update(req.session.userLogged.id, req.params.idProducto);        
         res.redirect('/product/cart');
     },
-
-    destroy: (req, res) => {
-        let id = req.params.id;
-        Product.destroy(id);
-        res.redirect('/');
-	}
 };
 
 module.exports = productosController;

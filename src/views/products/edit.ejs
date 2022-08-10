@@ -15,7 +15,7 @@
                     <form action="/product/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                         <div class="input-create">
                             <label for="nombre">Nombre del Juego</label></BR>
-                            <input type="text" name="nombre" id="nombre"> 
+                            <input type="text" name="nombre" id="nombre" value="<%= producto.nombre %>"> 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Imagen logo</label></BR>
@@ -52,62 +52,77 @@
                                     <input type="checkbox" name="compatibilidad" value="fa-brands fa-android">Android
                                 </label>
                             </div>
+                            <div class="checkbox-create">
+                                <label for="nombre">
+                                    <input type="checkbox" name="compatibilidad" value="fa-solid fa-game-console-handheld">Nintendo
+                                </label>
+                            </div>
                         </div>
                         <div class="input-create">
                             <label for="precio">Precio</label></BR>
-                            <input type="number" name="precio" id="precio"> 
+                            <input type="number" name="precio" id="precio" value="<%= producto.precio %>"> 
                         </div>
                         <div class="input-create">
                             <label for="precio">Descuento</label></BR>
-                            <input type="number" name="descuento" id="descuento"> 
+                            <input type="number" name="descuento" id="descuento" value="<%= producto.descuento %>"> 
                         </div>
                         <div class="input-create">
                             <label for="descripcion">Descripcion del Juego</label></BR>
-                            <textarea type="text" name="descripcion" id="descripcion"></textarea>
+                            <textarea type="text" name="descripcion" id="descripcion">
+                                <%=producto.descripcion %>
+                            </textarea>
                         </div>
-                        <p>Formato</p>
                         <div class="checkbox-create">
                             <label for="text">Género:</label>
                             <select name="genero">
-                                <option>Accion</option>
-                                <option>Arcade</option>
-                                <option>Aventura</option>
-                                <option>Carerras</option>
-                                <option>Deportes</option>
-                                <option>Estrategia</option>
-                                <option>Infantil</option>
-                                <option>Roll</option>
-                                <option>Terror</option>
+                                <option value="">Elegi un genero</option>
+                                <%
+                                    let generos= ['Accion', 'Arcade', 'Aventura' ,'Carerras' ,'Deportes' ,'Estrategia' ,'Infantil' ,'Roll' ,'Terror']
+                                %>
+                                <% for(let i=0 ; i< generos.length ; i++) { %> 
+                                    <option value="<%= i+1 %>"
+                                        <%= (generos === producto.genero) ? "selected" : null %>
+                                    > <%= generos[i] %></option>
+                                <% } %>
                             </select>
                         </div>
                         <div class="checkbox-create">
                             <label for="text">Caregoria:</label>
-                            <select name="caregoria">
-                                <option>MasVendido</option>
-                                <option>Novedades</option>
-                                <option>Proximamente</option>
-                                <option>Oferta</option>
+                            <select name="categoria">
+                                <option value="">Elegi una categoria</option>
+                                <%
+                                    let categoria = ['Mas Vendido', 'Novedades', 'Proximamente', 'Oferta']
+                                %>
+                                <% for(let j=0 ; j< categoria.length ; j++) { %> 
+                                    <option value="<%= j+1 %>"
+                                        <%= (categoria === producto.categoria) ? "selected" : null %>
+                                    > <%= categoria[j] %></option>
+                                <% } %>
                             </select>
                         </div><br><br>
                         <div class="input-create">
                             <label for="nombre">Sistema Operativo</label></BR>
-                            <input type="text" name="os" id="os"> 
+                            <input type="text" name="os" id="os" value="<%= producto.so %>"> 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Procesador</label></BR>
-                            <input type="text" name="procesador" id="procesador"> 
+                            <input type="text" name="procesador" id="procesador" value="<%= producto.procesador %>" >  
                         </div>
                         <div class="input-create">
                             <label for="nombre">Memoria RAM</label></BR>
-                            <input type="text" name="memoria" id="memoria"> 
+                            <input type="text" name="memoria" id="memoria" value="<%= producto.memoria %>" > 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Graficos</label></BR>
-                            <input type="text" name="graficos" id="graficos"> 
+                            <input type="text" name="graficos" id="graficos" value="<%= producto.graficos %>"> 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Almacenamiento</label></BR>
-                            <input type="text" name="almacenamiento" id="almacenamiento"> 
+                            <input type="text" name="almacenamiento" id="almacenamiento" value="<%= producto.almacenamiento %>"> 
+                        </div>
+                        <div class="input-create">
+                            <label for="nombre">Notas adicionales</label></BR>
+                            <input type="text" name="notasAdicionales" id="notasAdicionales" value="<%= producto.notasAdicionales %>"> 
                         </div>
                         <div class="button-submit">
                             <button type="submit" class="submit-agregar-producto"><span>Editar Producto</span></button>
