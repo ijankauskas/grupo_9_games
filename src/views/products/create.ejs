@@ -138,23 +138,48 @@
                         </div><br><br>
                         <div class="input-create">
                             <label for="nombre">Sistema Operativo</label></BR>
-                            <input type="text" name="os" id="os"> 
+                            <input 
+                                type="text" 
+                                name="os" 
+                                id="os"
+                                class="form-control <%= locals.errors && errors.os ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                            > 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Procesador</label></BR>
-                            <input type="text" name="procesador" id="procesador"> 
+                            <input 
+                                type="text" 
+                                name="procesador" 
+                                id="procesador"
+                                class="form-control <%= locals.errors && errors.procesador ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                            > 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Memoria RAM</label></BR>
-                            <input type="text" name="memoria" id="memoria"> 
+                            <input 
+                                type="text" 
+                                name="memoria" 
+                                id="memoria"
+                                class="form-control <%= locals.errors && errors.memoria ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                            > 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Graficos</label></BR>
-                            <input type="text" name="graficos" id="graficos"> 
+                            <input 
+                                type="text" 
+                                name="graficos" 
+                                id="graficos"
+                                class="form-control <%= locals.errors && errors.graficos ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                            > 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Almacenamiento</label></BR>
-                            <input type="text" name="almacenamiento" id="almacenamiento"> 
+                            <input 
+                                type="text" 
+                                name="almacenamiento" 
+                                id="almacenamiento"
+                                class="form-control <%= locals.errors && errors.almacenamiento ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                            > 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Notas adicionales</label></BR>
