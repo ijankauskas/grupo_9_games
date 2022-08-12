@@ -76,7 +76,12 @@ const productosController = {
             almacenamiento: req.body.almacenamiento,
             notasAdicionales: req.body.notasAdicionales,
         }).then(game => {
-
+            for(let compatibilidad of req.body.compatibilidad){
+                db.Game_compatibility.create({
+                    juegos_id: game.id,
+                    compatibilidad_id: compatibilidad
+                })
+            }
             console.log(game.dataValues.id);
         });
     },
@@ -124,6 +129,9 @@ const productosController = {
         db.Game.destroy({
             where: {id: req.params.id}
         }).then(function(){
+            db.Game_compatibility.destroy({
+                where: {juegos_id: req.params.id}
+            })
             res.redirect('/');
         })
 	},

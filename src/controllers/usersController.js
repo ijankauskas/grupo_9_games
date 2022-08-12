@@ -2,7 +2,8 @@ const { render } = require('ejs');
 const bcryptjs = require ('bcryptjs');
 const { validationResult } = require('express-validator');
 
-const User = require('../models/User')
+const User = require('../models/User');
+const db = require('../database/models');
 
 
 const userController = {
@@ -12,35 +13,30 @@ const userController = {
     },
 
     processLogin: (req, res)=>{
-        let userToLogin = User.findByField('email', req.body.email)
-        if(userToLogin){
-            let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password)
-            if(passwordOk){
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-                if(req.body.recordarme){
-                    res.cookie('userEmail', req.body.email, {maxAge: (((1000 * 60) * 60) * 24) * 7 })
+        db.User.findOne({
+            where: {email: req.body.email}
+        }).then(userToLogin => {
+            if(userToLogin){
+                let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
+                if(passwordOk){
+                    delete userToLogin.password;
+                    req.session.userLogged = userToLogin;
+                    if(req.body.recordarme){
+                        res.cookie('userEmail', req.body.email, {maxAge: (((1000 * 60) * 60) * 24) * 7 })
+                    }
+                    return res.redirect('/')
+                }else{
+                    return res.render('./user/login', {
+                        errors: {
+                            password: {
+                                msg: 'Credecianles invalidas'
+                            }
+                        },
+                        oldData: req.body
+                    });
                 }
-                return res.redirect('/')
-            }else{
-                return res.render('./user/login', {
-                    errors: {
-                        password: {
-                            msg: 'Credecianles invalidas'
-                        }
-                    },
-                    oldData: req.body
-                });
             }
-        }
-        return res.render('./user/login', {
-            errors: {
-                email: {
-                    msg: 'Email no registrado'
-                }
-            },
-            oldData: req.body
-        });
+        })
     },
 
     register: (req, res)=>{
@@ -56,28 +52,28 @@ const userController = {
             });
         }
 
-        let userInDb = User.findByField('email', req.body.email);
-        if(userInDb){
-            return res.render('./user/register', {
-                errors: {
-                    email: {
-                        msg: 'este mail ya esta en uso'
-                    }
-                },
-                oldData: req.body
-            }); 
-        }
-        delete req.body.passwordConfirm;
-        delete req.body.confirmarEmail;
-        let userToCreate = {
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password),
-            avatar: '/imagenes/avatars/' + req.file.filename,
-            cart: []
-        }
+        db.User.findOne({
+            where: {email: req.body.email}
+        }).then(userInDb => {
+            if(userInDb){
+                return res.render('./user/register', {
+                    errors: {
+                        email: {
+                            msg: 'este mail ya esta en uso'
+                        }
+                    },
+                    oldData: req.body
+                })
+            }
+        })
 
-        let userCreated = User.create(userToCreate);
-        res.redirect('/users/login')
+        db.User.create({
+            nombre: req.body.nombre,
+            password: bcryptjs.hashSync(req.body.password),
+            email: req.body.email,
+            fecha: req.body.fecha,
+            avatar: '/imagenes/avatars/' + req.file.filename,
+        })
     },
 
     logout: function(req, res){
