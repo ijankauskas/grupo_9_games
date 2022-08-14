@@ -455,5 +455,41 @@
   "Red": "Conexión de banda ancha a Internet.",
   "Almacenamiento": "15 GB de espacio disponible.",
   "TarjetaSonido": "Compatible con DirectX."
+ },
+ {
+  "id": 13,
+  "nombre": "Dota 2",
+  "imagenLogo": "/imagenes/dota-2.jpg",
+  "imagenes": [
+   "/imagenes/dota_1.jpg",
+   "/imagenes/dota_2.jpg",
+   "/imagenes/dota_3.jpg",
+   "/imagenes/dota_4.jpg",
+   "/imagenes/dota_5.jpg"
+  ],
+  "compatibilidad": [
+   "fa-solid fa-desktop",
+   "fa-brands fa-playstation",
+   "fa-brands fa-xbox"
+  ],
+  "precio": 7949,
+  "descuento": 5,
+  "descripcion": [
+   [
+    "Cada día, millones de jugadores de todo el mundo entran en batalla como uno de los más de cien héroes de Dota. Y no importa si es su décima hora de juego o la milésima, siempre hay algo nuevo que descubrir. Con frecuentes actualizaciones que garantizan una evolución constante de jugabilidad, características y héroes, Dota 2 realmente ha cobrado vida propia. Cuando se trata de variedad de héroes, habilidades y poderosos objetos, Dota no tiene límite. No hay dos partidas iguales. Cada héroe puede desempeñar varios roles, y hay multitud de objetos para ayudar a satisfacer las necesidades de cada partida. Dota no pone límites a tu forma de jugar, te da el poder de expresar tu propio estilo."
+   ],
+   [
+    "El equilibrio competitivo es la joya de la corona de Dota, y para garantizar que todo el mundo juegue en un campo de batalla equilibrado, el contenido principal del juego está disponible para todos los jugadores. Los fans pueden coleccionar objetos cosméticos para los héroes y divertidos complementos para el mundo en que estos habitan, pero todo lo necesario para jugar ya está ahí antes de que te unas a tu primera partida."
+   ]
+  ],
+  "minimo": "Requiere un procesador y un sistema operativo de 64 bits.",
+  "so": "Windows 7 o posterior.",
+  "procesador": "Intel o AMD de doble núcleo a 2,8 GHz.",
+  "memoria": "4 GB de RAM.",
+  "graficos": "'NVIDIA GeForce 8600/9600GT, ATI/AMD Radeon HD2600/3600.",
+  "DirectX": "Versión 9.0c.",
+  "Red": "Conexión de banda ancha a Internet.",
+  "Almacenamiento": "15 GB de espacio disponible.",
+  "TarjetaSonido": "Compatible con DirectX."
  }
 ]
