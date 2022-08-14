@@ -107,6 +107,10 @@ h3{
     flex-direction:column;
 }
 
+.detalle-producto p{
+    color:#b8b4b4;
+}
+
 .nombre-producto {
     padding: 10px 0;
     font-size: 20px;

@@ -33,9 +33,16 @@ const productosController = {
     },
 
     detalle: (req, res)=>{
-        db.Game.findByPk(req.params.idProducto)
+        db.Game.findByPk(req.params.idProducto, {
+            include: [
+                {association: 'genre'},
+                {association: 'category'},
+                {association: 'compatibility'},
+            ]
+        })
             .then((producto) =>{
-                producto.imagenes = producto.imagenes.split(',')
+                let arrayImagenes = producto.imagenes.split(',');
+                producto.imagenes = arrayImagenes;
                 res.render('./products/productDetail', {producto});
             });
     },
@@ -63,7 +70,7 @@ const productosController = {
             nombre: req.body.nombre,
             categoria_id: req.body.categoria,
             genero_id: req.body.genero,
-            imagenLogo: req.files['imagenLogo'][0].filename,
+            imagenLogo: '/imagenes/' + req.files['imagenLogo'][0].filename,
             imagenes: imagenes,
             precio: req.body.precio,
             descuento: req.body.descuento,
@@ -82,7 +89,7 @@ const productosController = {
                     compatibilidad_id: compatibilidad
                 })
             }
-            console.log(game.dataValues.id);
+            res.redirect('/product/detail/' + game.id);
         });
     },
 
@@ -105,7 +112,7 @@ const productosController = {
             nombre: req.body.nombre,
             categoria_id: req.body.categoria,
             genero_id: req.body.genero,
-            imagenLogo: req.files['imagenLogo'][0].filename,
+            imagenLogo: '/imagenes/' + req.files['imagenLogo'][0].filename,
             imagenes: imagenes,
             precio: req.body.precio,
             descuento: req.body.descuento,

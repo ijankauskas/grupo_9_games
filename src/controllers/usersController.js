@@ -44,28 +44,28 @@ const userController = {
     },
 
     processRegister: (req, res)=>{
-        const resultValidation = validationResult(req);
-        if(resultValidation.errors.length > 0){
-            return res.render('./user/register', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
-        }
+        // const resultValidation = validationResult(req);
+        // if(resultValidation.errors.length > 0){
+        //     return res.render('./user/register', {
+        //         errors: resultValidation.mapped(),
+        //         oldData: req.body
+        //     });
+        // }
 
-        db.User.findOne({
-            where: {email: req.body.email}
-        }).then(userInDb => {
-            if(userInDb){
-                return res.render('./user/register', {
-                    errors: {
-                        email: {
-                            msg: 'este mail ya esta en uso'
-                        }
-                    },
-                    oldData: req.body
-                })
-            }
-        })
+        // db.User.findOne({
+        //     where: {email: req.body.email}
+        // }).then(userInDb => {
+        //     if(userInDb){
+        //         return res.render('./user/register', {
+        //             errors: {
+        //                 email: {
+        //                     msg: 'este mail ya esta en uso'
+        //                 }
+        //             },
+        //             oldData: req.body
+        //         })
+        //     }
+        // })
 
         db.User.create({
             nombre: req.body.nombre,
@@ -73,6 +73,8 @@ const userController = {
             email: req.body.email,
             fecha: req.body.fecha,
             avatar: '/imagenes/avatars/' + req.file.filename,
+        }).then( () =>{
+            return res.redirect('/user/login')
         })
     },
 

@@ -26,11 +26,11 @@ module.exports = function(sequelize, dataTypes){
     Game_compatibility.associate = function(models){
         Game_compatibility.hasMany(models.Game, {
             as: 'games',
-            foreignKey: 'juegos_id'
+            foreignKey: 'id'
         });
         Game_compatibility.hasMany(models.Compatibility, {
             as: 'compatibility',
-            foreignKey: 'compatibilidad_id'
+            foreignKey: 'id'
         });
     }
 
