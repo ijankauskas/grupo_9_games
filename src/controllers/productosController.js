@@ -17,16 +17,6 @@ const users = JSON.parse(fs.readFileSync(listaUsers, 'utf-8'));
 
 
 const productosController = {
-    buscarProducto : (id)=>{
-        let productoFinal;
-        let idProducto= id
-        for(let producto of productos){
-            if(idProducto == producto.id){
-                productoFinal = producto;
-            }
-        }
-        return productoFinal
-    },
 
     listar: (req, res)=>{
         res.render('./products/productDetail');
@@ -142,6 +132,14 @@ const productosController = {
             res.redirect('/');
         })
 	},
+
+    search: (req,res)=>{
+        db.Game.findAll({
+            where: {nombre: req.query.query.toLowerCase()}
+        }).then(productos=>{
+            res.render('./main/resultado', {productos});
+        })
+    },
 
     cart: (req, res)=>{
         let cartUser = req.session.userLogged.cart;

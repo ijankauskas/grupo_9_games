@@ -14,20 +14,9 @@ const mainController = {
                 {association: 'compatibility'},
             ]
 		}).then(productos => {
-			// res.json(productos[4])
 			res.render('./main/home', {productos});
 		})
-    },
-
-    search: (req, res) => {
-		let loQueBusca = req.query.query.toLowerCase();
-		let arrayBuscado = []
-		for(let i = 0 ; i<productos.length ; i++)
-			if(productos[i].nombre.toLowerCase().includes(loQueBusca)){
-				arrayBuscado.push(productos[i]);
-			}
-			res.render('./main/resultado' , {productos: arrayBuscado, loQueBusca})
-	},
+    }
 }
 
 module.exports = mainController;

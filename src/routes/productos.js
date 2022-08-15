@@ -15,7 +15,7 @@ const authMiddleware = require('../middleware/authMiddleware');
 
 
 //rutas
-router.get('/', productosController.listar);
+router.get('/search', productosController.search);
 
 router.get('/detail/:idProducto', productosController.detalle);
 
