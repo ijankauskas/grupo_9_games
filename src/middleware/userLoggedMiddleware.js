@@ -5,20 +5,21 @@ function userLoggedMiddleware(req, res, next){
 
     let cookieEmail = req.cookies.userEmail;
     db.User.findOne({
-        where: {email : cookieEmail}
+        where: {nombre: cookieEmail}
     }).then(userFound => {
         if(userFound){
             req.session.userLogged = userFound
         }
 
-        if(req.session.userLogged){
-            res.locals.isLogged = true;
-            res.locals.userLogged = req.session.userLogged;
-        }
-
-        next();
     })
 
+    if(req.session && req.session.userLogged){
+        res.locals.isLogged = true;
+        res.locals.userLogged = req.session.userLogged;
+    }
+
+    next();
+    
 }
 
 module.exports = userLoggedMiddleware;

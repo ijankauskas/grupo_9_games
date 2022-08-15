@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes){
-    let alias = "Users";
+    let alias = "User";
 
     let cols= {
         id: {
@@ -32,13 +32,13 @@ module.exports = function(sequelize, dataTypes){
         timestamps: false,
     }
 
-    let Users = sequelize.define(alias, cols, config);
+    const User = sequelize.define(alias, cols, config);
 
-    Users.associate = function(models){
-        Users.hasMany(models.Game, {
+    User.associate = function(models){
+        User.hasMany(models.Game, {
             as: 'games',
             foreignKey: 'genero_id'
         });
     }
-    return Users;
+    return User;
 }

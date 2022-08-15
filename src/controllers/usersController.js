@@ -73,6 +73,7 @@ const userController = {
             email: req.body.email,
             fecha: req.body.fecha,
             avatar: '/imagenes/avatars/' + req.file.filename,
+            admin_id: 1
         }).then( () =>{
             return res.redirect('/user/login')
         })

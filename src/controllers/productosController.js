@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
+const Op = db.Sequelize.Op;
 
 
 const Product = require('../models/Products');
@@ -134,8 +135,15 @@ const productosController = {
 	},
 
     search: (req,res)=>{
-        db.Game.findAll({
-            where: {nombre: req.query.query.toLowerCase()}
+        let buscar = '%' + req.query.query + '%'
+        db.Game.findAll(
+            {
+            where: {nombre: {[Op.like]: buscar}},
+            include: [
+                {association: 'genre'},
+                {association: 'category'},
+                {association: 'compatibility'},
+            ]
         }).then(productos=>{
             res.render('./main/resultado', {productos});
         })
