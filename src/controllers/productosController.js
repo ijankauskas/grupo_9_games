@@ -145,6 +145,7 @@ const productosController = {
                 {association: 'compatibility'},
             ]
         }).then(productos=>{
+            // res.json(productos)
             res.render('./main/resultado', {productos});
         })
     },
