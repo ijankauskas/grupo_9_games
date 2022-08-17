@@ -19,8 +19,8 @@ const userController = {
             if(userToLogin){
                 let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
                 if(passwordOk){
-                    delete userToLogin.password;
-                    req.session.userLogged = userToLogin;
+                    delete userToLogin.dataValues.password;
+                    req.session.userLogged = userToLogin.dataValues;
                     if(req.body.recordarme){
                         res.cookie('userEmail', req.body.email, {maxAge: (((1000 * 60) * 60) * 24) * 7 })
                     }
@@ -35,6 +35,15 @@ const userController = {
                         oldData: req.body
                     });
                 }
+            }else{
+                return res.render('./user/login', {
+                    errors: {
+                        password: {
+                            msg: 'Credecianles invalidas'
+                        }
+                    },
+                    oldData: req.body
+                });
             }
         })
     },
@@ -44,28 +53,28 @@ const userController = {
     },
 
     processRegister: (req, res)=>{
-        // const resultValidation = validationResult(req);
-        // if(resultValidation.errors.length > 0){
-        //     return res.render('./user/register', {
-        //         errors: resultValidation.mapped(),
-        //         oldData: req.body
-        //     });
-        // }
+        const resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0){
+            return res.render('./user/register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
 
-        // db.User.findOne({
-        //     where: {email: req.body.email}
-        // }).then(userInDb => {
-        //     if(userInDb){
-        //         return res.render('./user/register', {
-        //             errors: {
-        //                 email: {
-        //                     msg: 'este mail ya esta en uso'
-        //                 }
-        //             },
-        //             oldData: req.body
-        //         })
-        //     }
-        // })
+        db.User.findOne({
+            where: {email: req.body.email}
+        }).then(userInDb => {
+            if(userInDb){
+                return res.render('./user/register', {
+                    errors: {
+                        email: {
+                            msg: 'este mail ya esta en uso'
+                        }
+                    },
+                    oldData: req.body
+                })
+            }
+        })
 
         db.User.create({
             nombre: req.body.nombre,
@@ -75,7 +84,7 @@ const userController = {
             avatar: '/imagenes/avatars/' + req.file.filename,
             admin_id: 1
         }).then( () =>{
-            return res.redirect('/user/login')
+            return res.redirect('/users/login')
         })
     },
 
