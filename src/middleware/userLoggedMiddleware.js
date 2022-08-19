@@ -9,15 +9,18 @@ function userLoggedMiddleware(req, res, next){
             where: {email: cookieEmail}
         }).then(userFound => {
             if(userFound){
-                res.locals.userLogged = userFound;
-                res.locals.isLogged = true;
+                req.session.userLogged = userFound;
             }
-     
+            
+            if(req.session.userLogged){
+                res.locals.isLogged = true;
+                res.locals.userLogged = req.session.userLogged;
+            }  
             return next();
             })
     }else{
         
-        if(req.session && req.session.userLogged){
+        if(req.session.userLogged){
             res.locals.isLogged = true;
             res.locals.userLogged = req.session.userLogged;
         }  

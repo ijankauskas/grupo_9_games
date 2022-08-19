@@ -25,7 +25,7 @@ module.exports = function(sequelize, dataTypes){
 
     Compatibility.associate = function(models){
         Compatibility.belongsToMany(models.Game, {
-            as: 'compatibility',
+            as: 'games',
             through: 'juegos_compatibilidad',
             foreignKey: 'compatibilidad_id',
             otherKey: 'juegos_id',

@@ -78,6 +78,14 @@ module.exports = function(sequelize, dataTypes){
             otherKey: 'compatibilidad_id',
             timestamps: false
         });
+        Game.belongsToMany(models.Cart, {
+            as: 'users',
+            through: 'carrito',
+            foreignKey: 'juego_id',
+            otherKey: 'usuario_id',
+            timestamps: false
+        });
+
     }
 
     return Game;

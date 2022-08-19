@@ -25,8 +25,8 @@ router.post('/create', cpUpload, validation ,productosController.nuevoProducto);
 router.get('/edit/:idProducto', productosController.editar); 
 router.put('/:idProducto', cpUpload, productosController.update); 
 
-router.get('/cart', authMiddleware, productosController.cart);
-router.get('/cart/:idProducto', authMiddleware, productosController.cartPush)
+router.get('/cart',  productosController.cart); //authMiddleware
+router.get('/cart/:idProducto',  productosController.cartPush); //authMiddleware
 
 router.delete('/:id', productosController.destroy); 
 

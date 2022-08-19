@@ -145,24 +145,51 @@ const productosController = {
                 {association: 'compatibility'},
             ]
         }).then(productos=>{
-            // res.json(productos)
             res.render('./main/resultado', {productos});
         })
     },
 
     cart: (req, res)=>{
-        let cartUser = req.session.userLogged.cart;
-        let cart = [];
-        for (let idProduct of cartUser){
-            let product = Product.findByPk(idProduct);
-            cart.push(product);
-        }
-        res.render('./products/cart', {cart});
+        // let cartUser = req.session.userLogged.cart;
+        db.Game.findAll(
+            {
+                include: [
+                    {
+                        association: 'compatibility',
+                        where: {id: 6}
+                    }
+                ]
+            }).then(games=>{
+                res.json(games);
+            })
+
+        // let cart = [];
+        // db.Cart.findAll({
+        //     where: {usuario_id: 9},
+        //     include: [
+        //         {   
+        //             association: 'games',
+        //             where: {
+        //             }
+        //         }
+        //     ]
+        // }).then((games)=>{
+        //     res.json(games);
+            // res.render('./products/cart', {cart});
+        // })
+        // for (let idProduct of cartUser){
+        //     let product = Product.findByPk(idProduct);
+        //     cart.push(product);
+        // }
     },
 
     cartPush: (req, res)=>{
-        User.update(req.session.userLogged.id, req.params.idProducto);        
-        res.redirect('/product/cart');
+        db.Cart.create({
+            usuario_id: req.session.userLogged.id,
+            juego_id: parseInt(req.params.idProducto)
+        }).then(()=>{
+            res.redirect('/product/cart');
+        })
     },
 };
 
