@@ -4,9 +4,10 @@
     <div class="main-class">
         <h3><%= producto.nombre %></h3>
         <div class="plataformas"> 
-            <% for(let compatibilidad of producto.compatibilidad) { %>
-                <p><i class="<%= compatibilidad %>"></i></p>
+            <% for(let compatibilidad of producto.compatibility) { %>
+                <p><i class="<%= compatibilidad.icono %>"></i></p>
             <%} %>
+            <p><i class="fa-solid fa-bow-arrow"></i></p>
         </div>
         <div class="descuento-precio">
             <p class="descuento"><%= producto.descuento %>%</p>

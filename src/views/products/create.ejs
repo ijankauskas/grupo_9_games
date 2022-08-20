@@ -40,34 +40,39 @@
                         <div class="plataformas">
                             <div class="checkbox-create">
                                 <label for="nombre">
-                                    <input type="checkbox" name="compatibilidad" value="fa-solid fa-desktop">Pc
+                                    <input type="checkbox" name="compatibilidad" value="1">Pc
                                 </label>
                             </div>
                             <div class="checkbox-create">
                                 <label for="nombre">
-                                    <input type="checkbox" name="compatibilidad" value="fa-brands fa-playstation">Playstation
+                                    <input type="checkbox" name="compatibilidad" value="2">Playstation
                                 </label>
                             </div>
                             <div class="checkbox-create">
                                 <label for="nombre">                            
-                                    <input type="checkbox" name="compatibilidad" value="fa-brands fa-xbox">Xbox
+                                    <input type="checkbox" name="compatibilidad" value="3">Xbox
                                 </label>
                             </div>
                             <div class="checkbox-create">
                                 <label for="nombre">
-                                    <input type="checkbox" name="compatibilidad" value="fa-brands fa-apple">Ios
+                                    <input type="checkbox" name="compatibilidad" value="4">Ios
                                 </label>
                             </div>
                             <div class="checkbox-create">
                                 <label for="nombre">
-                                    <input type="checkbox" name="compatibilidad" value="fa-brands fa-android">Android
+                                    <input type="checkbox" name="compatibilidad" value="5">Android
+                                </label>
+                            </div>
+                            <div class="checkbox-create">
+                                <label for="nombre">
+                                    <input type="checkbox" name="compatibilidad" value="6">Nintendo
                                 </label>
                             </div>
                         </div>
                         <div class="input-create">
                             <label for="precio">Precio</label></BR>
                             <input 
-                                type="text"
+                                type="number"
                                 name="precio" 
                                 id="precio" 
                                 class="form-control <%= locals.errors && errors.precio ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
@@ -110,43 +115,75 @@
                                 <%
                                     let generos= ['Accion', 'Arcade', 'Aventura' ,'Carerras' ,'Deportes' ,'Estrategia' ,'Infantil' ,'Roll' ,'Terror']
                                 %>
-                                <% for(let genero of generos) { %>
-                                    <option value="<%= genero %>"
+                                <% for(let i=0 ; i< generos.length ; i++) { %> 
+                                    <option value="<%= i+1 %>"
                                         <%= locals.oldData && (genero === oldData.genero) ? "selected" : null %>
-                                    > <%= genero %></option>
+                                    > <%= generos[i] %></option>
                                 <% } %>
-                            
                             </select>
                         </div>
                         <div class="checkbox-create">
-                            <label for="text">Caregoria:</label>
-                            <select name="caregoria">
+                            <label for="text">Categoria:</label>
+                            <select name="categoria">
                                 <option value="">Elegi una categoria</option>
-                                <option>MasVendido</option>
-                                <option>Novedades</option>
-                                <option>Proximamente</option>
-                                <option>Oferta</option>
+                                <%
+                                    let categoria = ['Mas Vendido', 'Novedades', 'Proximamente', 'Oferta']
+                                %>
+                                <% for(let j=0 ; j< categoria.length ; j++) { %> 
+                                    <option value="<%= j+1 %>"
+                                        <%= locals.oldData && (categoria === oldData.categoria) ? "selected" : null %>
+                                    > <%= categoria[j] %></option>
+                                <% } %>
                             </select>
                         </div><br><br>
                         <div class="input-create">
                             <label for="nombre">Sistema Operativo</label></BR>
-                            <input type="text" name="os" id="os"> 
+                            <input 
+                                type="text" 
+                                name="os" 
+                                id="os"
+                                class="form-control <%= locals.errors && errors.os ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                            > 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Procesador</label></BR>
-                            <input type="text" name="procesador" id="procesador"> 
+                            <input 
+                                type="text" 
+                                name="procesador" 
+                                id="procesador"
+                                class="form-control <%= locals.errors && errors.procesador ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                            > 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Memoria RAM</label></BR>
-                            <input type="text" name="memoria" id="memoria"> 
+                            <input 
+                                type="text" 
+                                name="memoria" 
+                                id="memoria"
+                                class="form-control <%= locals.errors && errors.memoria ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                            > 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Graficos</label></BR>
-                            <input type="text" name="graficos" id="graficos"> 
+                            <input 
+                                type="text" 
+                                name="graficos" 
+                                id="graficos"
+                                class="form-control <%= locals.errors && errors.graficos ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                            > 
                         </div>
                         <div class="input-create">
                             <label for="nombre">Almacenamiento</label></BR>
-                            <input type="text" name="almacenamiento" id="almacenamiento"> 
+                            <input 
+                                type="text" 
+                                name="almacenamiento" 
+                                id="almacenamiento"
+                                class="form-control <%= locals.errors && errors.almacenamiento ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
+                            > 
+                        </div>
+                        <div class="input-create">
+                            <label for="nombre">Notas adicionales</label></BR>
+                            <input type="text" name="notasAdicionales" id="notasAdicionales"> 
                         </div>
                         <div class="button-submit">
                             <button type="submit" class="submit-agregar-producto"><span>Agregar Producto</span></button>
@@ -159,8 +196,3 @@
     <%- include('../partials/footer') %>
 </body>
 </html>
-
-<div class="input-create">
-    <label for="name">Nombre del Juego</label></BR>
-    <input type="text" name="name" id="name"> 
-</div>

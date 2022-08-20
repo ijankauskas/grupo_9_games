@@ -48,7 +48,7 @@
                             <div class="imagenes-visuales">
                                 <% for(let i=0 ; i<producto.imagenes.length ; i++) { %>
                                 <div id="img<%= i %>">
-                                    <img src="<%= producto.imagenes[i] %>" alt="">
+                                    <img src=<%= producto.imagenes[i] %> alt="">
                                 </div>
                                 <% } %>
                             </div>
@@ -56,7 +56,7 @@
                         <div class="mas-imagenes">
                             <% for(let i=0 ; i<producto.imagenes.length ; i++) { %>
                             <div>
-                                <a href="#img<%= i %>"><img src="<%= producto.imagenes[i] %>" alt=""></a>
+                                <a href="#img<%= i %>"><img src= <%=producto.imagenes[i]%> alt=""></a>
                             </div>
                             <% } %>
                         </div>
@@ -71,10 +71,7 @@
             <div class="contenedor-2">
                 <div class="detalle-producto">
                     <h2>ACERCA DE ESTE JUEGO</h2>
-                    <% for(let descripcion of producto.descripcion) { %>
-                        <h3><%= descripcion%></h3>
-                        <br>
-                    <% } %>
+                    <p><%=producto.descripcion%></p>
                 </div>
                 <div class="system">
                     <p>SYSTEM REQUIREMENTS</p>

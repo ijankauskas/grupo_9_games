@@ -2,6 +2,9 @@ const { render } = require('ejs');
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
+
 
 const Product = require('../models/Products');
 const User = require('../models/User');
@@ -15,23 +18,24 @@ const users = JSON.parse(fs.readFileSync(listaUsers, 'utf-8'));
 
 
 const productosController = {
-    buscarProducto : (id)=>{
-        let productoFinal;
-        let idProducto= id
-        for(let producto of productos){
-            if(idProducto == producto.id){
-                productoFinal = producto;
-            }
-        }
-        return productoFinal
-    },
 
     listar: (req, res)=>{
         res.render('./products/productDetail');
     },
 
     detalle: (req, res)=>{
-        res.render('./products/productDetail', {producto: productosController.buscarProducto(req.params.idProducto)});
+        db.Game.findByPk(req.params.idProducto, {
+            include: [
+                {association: 'genre'},
+                {association: 'category'},
+                {association: 'compatibility'},
+            ]
+        })
+            .then((producto) =>{
+                let arrayImagenes = producto.imagenes.split(',');
+                producto.imagenes = arrayImagenes;
+                res.render('./products/productDetail', {producto});
+            });
     },
 
     create: (req, res)=>{
@@ -41,61 +45,152 @@ const productosController = {
     nuevoProducto: (req, res)=> {
         const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0){
+            fs.unlinkSync('req.body.file.filename')
             return res.render('./products/create', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })
-        } 
-        console.log(req.files)
-        let imagenes = [];
-        for(let i = 0 ; i< req.files.length ; i++){
-            imagenes.push('/imagenes/' + req.files[i].filename)
-        }
+        };
 
-        let productToCreate = {
-            ...req.body,
+        let imagenes = '/imagenes/' + req.files['imagenes'][0].filename;
+        for(let i = 1 ; i< req.files['imagenes'].length ; i++){
+            imagenes += (',/imagenes/' + req.files['imagenes'][i].filename)
+        };
+        
+        db.Game.create({
+            nombre: req.body.nombre,
+            categoria_id: req.body.categoria,
+            genero_id: req.body.genero,
+            imagenLogo: '/imagenes/' + req.files['imagenLogo'][0].filename,
             imagenes: imagenes,
-        }
-        let productCreate = Product.create(productToCreate);
-        res.redirect('/product/detail/'+ productCreate.id)
+            precio: req.body.precio,
+            descuento: req.body.descuento,
+            descripcion: req.body.descripcion,
+            minimo: "Requiere un procesador y un sistema operativo de 64 bits.",
+            so: req.body.os,
+            procesador: req.body.procesador,
+            memoria: req.body.memoria,
+            graficos: req.body.graficos,
+            almacenamiento: req.body.almacenamiento,
+            notasAdicionales: req.body.notasAdicionales,
+        }).then(game => {
+            for(let compatibilidad of req.body.compatibilidad){
+                db.Game_compatibility.create({
+                    juegos_id: game.id,
+                    compatibilidad_id: compatibilidad
+                })
+            }
+            res.redirect('/product/detail/' + game.id);
+        });
     },
 
     editar: (req, res)=>{
-        res.render('./products/edit' ,{producto: productosController.buscarProducto(req.params.idProducto)});
+        db.Game.findByPk(req.params.idProducto)
+            .then((producto) =>{
+                producto.imagenes = producto.imagenes.split(',')
+                res.render('./products/edit', {producto});
+            });
     },
 
     update: (req, res)=>{
-        let producto = productosController.buscarProducto(req.params.idProducto)
-        let actualizacion = req.body;
-        for(let propiedad in actualizacion){
-            if(actualizacion[propiedad] != ""){
-                producto[propiedad] = req.body[propiedad];
-            }   
-        }
-        fs.writeFileSync(listaProductos, JSON.stringify(productos, null, ' '));
-        res.redirect('/product/detail/'+ req.params.idProducto);
-    },
+        let imagenes = req.files['imagenes'][0].filename;
+        for(let i = 1 ; i< req.files['imagenes'].length ; i++){
+            imagenes += (',/imagenes/' + req.files['imagenes'][i].filename)
+        };
 
-    cart: (req, res)=>{
-        let cartUser = req.session.userLogged.cart;
-        let cart = [];
-        for (let idProduct of cartUser){
-            let product = Product.findByPk(idProduct);
-            cart.push(product);
-        }
-        res.render('./products/cart', {cart});
-    },
-
-    cartPush: (req, res)=>{
-        User.update(req.session.userLogged.id, req.params.idProducto);        
-        res.redirect('/product/cart');
+        db.Game.update(
+            {
+            nombre: req.body.nombre,
+            categoria_id: req.body.categoria,
+            genero_id: req.body.genero,
+            imagenLogo: '/imagenes/' + req.files['imagenLogo'][0].filename,
+            imagenes: imagenes,
+            precio: req.body.precio,
+            descuento: req.body.descuento,
+            descripcion: req.body.descripcion,
+            minimo: "Requiere un procesador y un sistema operativo de 64 bits.",
+            so: req.body.os,
+            procesador: req.body.procesador,
+            memoria: req.body.memoria,
+            graficos: req.body.graficos,
+            almacenamiento: req.body.almacenamiento,
+            notasAdicionales: req.body.notasAdicionales,
+            },
+            {
+                where: {id: req.params.idProducto}
+            }
+        );
+        res.redirect('/product/' + req.params.idProducto);
     },
 
     destroy: (req, res) => {
-        let id = req.params.id;
-        Product.destroy(id);
-        res.redirect('/');
-	}
+        db.Game.destroy({
+            where: {id: req.params.id}
+        }).then(function(){
+            db.Game_compatibility.destroy({
+                where: {juegos_id: req.params.id}
+            })
+            res.redirect('/');
+        })
+	},
+
+    search: (req,res)=>{
+        let buscar = '%' + req.query.query + '%'
+        db.Game.findAll(
+            {
+            where: {nombre: {[Op.like]: buscar}},
+            include: [
+                {association: 'genre'},
+                {association: 'category'},
+                {association: 'compatibility'},
+            ]
+        }).then(productos=>{
+            res.render('./main/resultado', {productos});
+        })
+    },
+
+    cart: (req, res)=>{
+        // let cartUser = req.session.userLogged.cart;
+        db.Game.findAll(
+            {
+                include: [
+                    {
+                        association: 'compatibility',
+                        where: {id: 6}
+                    }
+                ]
+            }).then(games=>{
+                res.json(games);
+            })
+
+        // let cart = [];
+        // db.Cart.findAll({
+        //     where: {usuario_id: 9},
+        //     include: [
+        //         {   
+        //             association: 'games',
+        //             where: {
+        //             }
+        //         }
+        //     ]
+        // }).then((games)=>{
+        //     res.json(games);
+            // res.render('./products/cart', {cart});
+        // })
+        // for (let idProduct of cartUser){
+        //     let product = Product.findByPk(idProduct);
+        //     cart.push(product);
+        // }
+    },
+
+    cartPush: (req, res)=>{
+        db.Cart.create({
+            usuario_id: req.session.userLogged.id,
+            juego_id: parseInt(req.params.idProducto)
+        }).then(()=>{
+            res.redirect('/product/cart');
+        })
+    },
 };
 
 module.exports = productosController;
