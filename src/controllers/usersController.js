@@ -84,6 +84,10 @@ const userController = {
         res.clearCookie('userEmail');
         req.session.destroy();
         res.redirect('/')
+    },
+
+    profile: function(req, res){
+        res.render('./user/profile')
     }
 }
 

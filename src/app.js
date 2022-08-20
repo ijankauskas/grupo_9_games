@@ -40,7 +40,6 @@ app.use('/product', rutasProductos);
 
 app.use('/users', rutasUsers)
 
-//app.use('/profile',rutasProfiles)
 
 app.listen(3000, ()=>{
     console.log('servidor corriendo')

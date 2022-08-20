@@ -20,6 +20,7 @@ router.post('/register',upload.single('imagenAvatar') , validation , usersContro
 
 router.get('/logout', usersController.logout);
 
+router.get ('/profile',usersController.profile);
 
 //exports
 module.exports = router;
