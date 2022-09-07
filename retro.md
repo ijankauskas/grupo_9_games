@@ -46,3 +46,9 @@ SPRINT 5
 
 
 Sprint 6 
+1-2. Comenzar hacer: Ya estamos casi al final del proyecto, no hay algo nuevo que que cambiar o comenzar hacer. Tenemos comunicación fluida, hacemos videollamadas para hacer consultas o resolver dudas o sino utilizamos mucho comunicación por celu.
+
+3. Continuar haciendo: Como mencionamos en el Sprint anterior, seguir ayudándonos entre nosotros como equipo. (Aunque el que más ayuda es Ignacio, que me da una mano en todas las dudas que me surgen o cuando me trabo).
+
+4-5. Dejar de hacer: En particular esta semana, no hubo mucha comunicación porque uno de los integrantes del grupo estaba de vacaciones. Pero fue algo aislado, sino la comunicación es seguida y estamos al día uno del otro.
+
