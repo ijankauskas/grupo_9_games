@@ -25,3 +25,9 @@ SPRINT 5
 En esta parte del proyecto quedamos tan solo dos personas. Lo que resulta más sencillo la coordinación de los temas y los horarios para hacer las videollamadas. Cada vez hay mas comunicación, por lo tanto estamos bien como grupo.
 
 Realizamos dos o tres videollamadas por Team por cada Sprint, y luego todo lo demas es por Whatsapp. No hay mucho más por agregar.
+
+SPRINT 6
+
+Como mencionamos en el Sprint anterior, somos dos personas en el grupo. Por lo tanto, tenemos buena comunicación.
+En este sprint en particular hubo un poco menos de comunicación, porque hubo uno del grupo de vacaciones una semana (Kevin).
+Pero aun así, tenemos mucha comunicación por videollamadas o Whatsapp.
