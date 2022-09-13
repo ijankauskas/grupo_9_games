@@ -52,3 +52,10 @@ Sprint 6
 
 4-5. Dejar de hacer: En particular esta semana, no hubo mucha comunicación porque uno de los integrantes del grupo estaba de vacaciones. Pero fue algo aislado, sino la comunicación es seguida y estamos al día uno del otro.
 
+Sprint 7
+1-2. Comenzar hacer: Ya en el séptimo sprint, no hay algo que debamos a comenzar hacer o cambiar algo en particular. 
+
+3. Continuar haciendo: Tan solo somos dos integrantes del grupo, asique hay comunicación constante. Eso es lo bueno del equipo. Por lo que lo seguiremos haciendo hasta finalizar el proyecto integrador
+
+4-5. Dejar de hacer: Siempre hay cosas por corregir o mejorar. Pero sin embargo, creemos que estamos haciendo todo lo medianamente correcto.
+
