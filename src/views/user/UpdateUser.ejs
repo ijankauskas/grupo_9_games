@@ -12,8 +12,8 @@
         <div class="login-body">
             <div class="login-box">
                 <div class="login-paddin">
-                    <p class="login-tittle">CREAR UNA CUENTA</p>
-                    <form action="/users/register" method="post" enctype="multipart/form-data" id="form">
+                    <p class="login-tittle">Editar tu Usuario</p>
+                    <form action="/users/edit?_method=PUT" method="post" enctype="multipart/form-data" id="form">
                         <ul class="errors"></ul>
                         <div class="input-formulario">
                             <label for="nombre">Nombre de Usuario</label></BR>
@@ -22,7 +22,7 @@
                                 name="nombre" 
                                 class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : locals.errors ? 'is-valid' : null  %>"
                                 id="username"
-                                value="<%= locals.oldData ? oldData.nombre : null %>"
+                                value="<%= user.nombre %>"
                             > 
                             <% if(locals.errors && errors.nombre) { %>
                                 <div class="text-danger" style="color: red;">
@@ -36,6 +36,7 @@
                                 type="file" 
                                 name="imagenAvatar" 
                                 id="imagenAvatar"
+                                value="<%= user.avatar %>"
                             >
                             <% if(locals.errors && errors.imagenAvatar) { %>
                                 <div class="text-danger" style="color: red;">
@@ -76,26 +77,11 @@
                                 name="email" 
                                 id="email" 
                                 class="form-control <%= locals.errors && errors.email ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
-                                value="<%= locals.oldData ? oldData.email : null %>"
+                                value="<%= user.email %>"
                             > 
                             <% if(locals.errors && errors.email) { %>
                                 <div class="text-danger" style="color: red;">
                                     <%= errors.email.msg %>
-                                </div>
-                            <% } %>
-                        </div>
-                        <div class="input-formulario">
-                            <label for="nombre">Confirma Dirección de Correo Electrónico</label></BR>
-                            <input 
-                                type="confirmarEmail" 
-                                name="confirmarEmail" 
-                                id="confirmarEmail"
-                                class="form-control <%= locals.errors && errors.confirmarEmail ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
-                                value="<%= locals.oldData ? oldData.confirmarEmail : null %>"
-                            > 
-                            <% if(locals.errors && errors.confirmarEmail) { %>
-                                <div class="text-danger" style="color: red;">
-                                    <%= errors.confirmarEmail.msg %>
                                 </div>
                             <% } %>
                         </div>
@@ -105,28 +91,17 @@
                                 type="date" 
                                 name="fecha"
                                 class="form-control <%= locals.errors && errors.fecha ? 'is-invalid' : locals.errors ? 'is-valid' : null %>"
-                                value="<%= locals.oldData ? oldData.fecha : null %>"
+                                value="<%= user.fecha %>"
                             > 
                             <% if(locals.errors && errors.fecha) { %>
                                 <div class="text-danger" style="color: red;">
                                     <%= errors.fecha.msg %>
                                 </div>
                             <% } %>
-                        </div>
-                        <div class="checkbox-formulario">
-                            <label for="nombre">
-                                <input type="checkbox" name="formulario" value="terminos">Acepto los Términos de Uso, Términos de Venta y la política de privacidad.</input>
-                            </label></BR>
-                        </div>
-                        </BR>
-                        <div class="checkbox-formulario">
-                            <label for="nombre">
-                                <input type="checkbox" name="formulario" value="recibir">Recibir información exclusiva, ofertas y novedades.</input>
-                            </label></BR>
-                        </div>
+                        </div> 
                         </BR>
                         <div class="button-submit">
-                            <button type="submit" class="submit-iniciar-sesion"><span>CREAR CUENTA</span></button>
+                            <button type="submit" class="submit-iniciar-sesion"><span>EDITAR CUENTA</span></button>
                         </div>
                     </form>
                 </div>                       

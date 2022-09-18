@@ -87,7 +87,7 @@ const productosController = {
     editar: (req, res)=>{
         db.Game.findByPk(req.params.idProducto)
             .then((producto) =>{
-                producto.imagenes = producto.imagenes.split(',')
+                console.log(res.locals.userLogged);
                 res.render('./products/edit', {producto});
             });
     },
@@ -150,37 +150,19 @@ const productosController = {
     },
 
     cart: (req, res)=>{
-        // let cartUser = req.session.userLogged.cart;
-        db.Game.findAll(
-            {
-                include: [
-                    {
-                        association: 'compatibility',
-                        where: {id: 6}
+        let cartUser = req.session.userLogged.id;
+        db.Cart.findAll({
+            where: {usuario_id: cartUser},
+            include: [
+                {   
+                    association: 'games', include:{association: 'compatibility'},
+                    where: {
                     }
-                ]
-            }).then(games=>{
-                res.json(games);
-            })
-
-        // let cart = [];
-        // db.Cart.findAll({
-        //     where: {usuario_id: 9},
-        //     include: [
-        //         {   
-        //             association: 'games',
-        //             where: {
-        //             }
-        //         }
-        //     ]
-        // }).then((games)=>{
-        //     res.json(games);
-            // res.render('./products/cart', {cart});
-        // })
-        // for (let idProduct of cartUser){
-        //     let product = Product.findByPk(idProduct);
-        //     cart.push(product);
-        // }
+                }
+            ]
+        }).then((games)=>{
+            res.render('./products/cart', {cart:games});
+        })
     },
 
     cartPush: (req, res)=>{

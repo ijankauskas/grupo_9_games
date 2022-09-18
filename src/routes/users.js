@@ -20,8 +20,11 @@ router.get('/register', guestMiddleware, usersController.register);
 router.post('/register',upload.single('imagenAvatar') , validation , usersController.processRegister);
 
 router.get('/logout', usersController.logout);
+router.get('/edit', usersController.edit);
+router.put('/edit',upload.single('imagenAvatar') , validation,  usersController.update);
 
-router.get ('/profile',usersController.profile);
+
+router.get('/profile',usersController.profile);
 
 //exports
 module.exports = router;

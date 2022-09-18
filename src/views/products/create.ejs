@@ -12,7 +12,8 @@
             <div class="create-box">
                 <div class="create-paddin">
                     <p class="create-tittle">AGREGAR UN NUEVO PRODUCTO</p>
-                    <form action="/product/create" method="POST" enctype="multipart/form-data">
+                    <form action="/product/create" method="POST" enctype="multipart/form-data" id="form">
+                        <ul class="errors"></ul>
                         <div class="input-create">
                             <label for="nombre">Nombre del Juego</label></BR>
                             <input 
@@ -194,5 +195,6 @@
         </div>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/productFrontValidations.js"></script> 
 </body>
 </html>

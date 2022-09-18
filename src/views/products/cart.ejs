@@ -16,19 +16,19 @@
                         <% for(let product of cart) { %>
                             <article class="venta">
                                 <div class="foto-venta">
-                                    <a href=""><img src="<%= product.imagenLogo %>"></a>
+                                    <a href=""><img src="<%= product.games.imagenLogo %>"></a>
                                 </div>
                                 <div class="main-venta">
                                     <div class="title">
-                                        <p><%= product.nombre %></p>
+                                        <p><%= product.games.nombre %></p>
                                         <div class="plataformas"> 
-                                            <% for(let compatibilidad of product.compatibilidad) { %>
-                                                <p><i class="<%= compatibilidad %>"></i></p>
+                                            <% for(let compatibilidad of product.games.compatibility) { %>
+                                                <p><i class="<%= compatibilidad.icono %>"></i></p>
                                             <%} %>
                                         </div>
                                     </div>
                                     <div>
-                                        <p class="price">ARS $<%= product.precio %></p>
+                                        <p class="price">ARS $<%= product.games.precio %></p>
                                         <a class="remove_link" href="">Remover</a>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                         <% if(cart.length > 0){ %>
                             <% let sum = 0 %>
                             <% for(let product of cart) { %>
-                                <% sum += product.precio %>
+                                <% sum += product.games.precio %>
                             <% } %>
                             <p>ARS $<%= sum %></p>
                         <% } else { %>

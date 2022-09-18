@@ -12,6 +12,33 @@ const userController = {
         res.render('./user/login');
     },
 
+    edit: (req, res)=>{
+        console.log(req.session.userLogged.id);
+        db.User.findByPk(req.session.userLogged.id)
+            .then((user) =>{
+                console.log(user);
+                res.render('./user/UpdateUser', {user});
+            });
+    },
+
+    update: (req, res)=>{
+        console.log(req.file.filename);
+        db.User.update(
+            {
+                nombre: req.body.nombre,
+                password: bcryptjs.hashSync(req.body.password),
+                email: req.body.email,
+                fecha: req.body.fecha,
+                avatar: '/imagenes/avatars/' + req.file.filename,
+                admin_id: 1
+            },
+            {
+                where: {id: req.session.userLogged.dataValues.id}
+            }
+        );
+        res.redirect('/');
+    },
+
     processLogin: (req, res)=>{
         db.User.findOne({
             where: {email: req.body.email}
