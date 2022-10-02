@@ -1,0 +1,23 @@
+.navbar{
+    list-style:none;
+    margin: 0;
+    display: flex;
+    background: linear-gradient(90deg, rgba(35, 109, 193, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%);  
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    justify-content: space-around;
+}
+
+li{
+    padding: 20px;
+
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+}
+
+span{
+    font-size: 18px;
+}

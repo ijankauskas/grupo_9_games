@@ -6,6 +6,7 @@ const session = require('express-session');
 const logger = require('morgan');
 const path = require('path');
 const methodOverride =  require('method-override');
+const cors = require('cors')
 
 //middleware
 const userLoggedMiddleware = require('./middleware/userLoggedMiddleware');
@@ -14,6 +15,11 @@ const userLoggedMiddleware = require('./middleware/userLoggedMiddleware');
 const rutasProductos = require('./routes/productos')
 const rutasMain = require('./routes/main')
 const rutasUsers = require('./routes/users')
+
+//require de apis
+const apiProductos = require('./routes/api/apiProductos')
+// const apiUsers = require('./routes/api/apiUsers')
+// const apiGeneros = require('./routes/api/apiGeneros')
 
 const app = express();
 
@@ -31,6 +37,7 @@ app.use(session({
     saveUninitialized: false,
 }));
 app.use(userLoggedMiddleware);
+app.use(cors())
 
 app.set('view engine', 'ejs')
 
@@ -41,7 +48,11 @@ app.use('/product', rutasProductos);
 
 app.use('/users', rutasUsers)
 
+//apis
+app.use('/api/productos', apiProductos);
+// app.use('/api/users', apiUsers);
+// app.use('/api/generos', apiGeneros);
 
-app.listen(3000, ()=>{
+app.listen(3001, ()=>{
     console.log('servidor corriendo')
 })
