@@ -1,0 +1,10 @@
+.genero{
+    color: white;
+    font-size: 32px;
+}
+
+.juegos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

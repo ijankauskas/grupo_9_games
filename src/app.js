@@ -18,8 +18,8 @@ const rutasUsers = require('./routes/users')
 
 //require de apis
 const apiProductos = require('./routes/api/apiProductos')
-// const apiUsers = require('./routes/api/apiUsers')
-// const apiGeneros = require('./routes/api/apiGeneros')
+const apiUsers = require('./routes/api/apiUsers')
+const apiGeneros = require('./routes/api/apiGeneros')
 
 const app = express();
 
@@ -50,8 +50,8 @@ app.use('/users', rutasUsers)
 
 //apis
 app.use('/api/productos', apiProductos);
-// app.use('/api/users', apiUsers);
-// app.use('/api/generos', apiGeneros);
+app.use('/api/usuarios', apiUsers);
+app.use('/api/generos', apiGeneros);
 
 app.listen(3001, ()=>{
     console.log('servidor corriendo')
