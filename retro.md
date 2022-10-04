@@ -59,3 +59,9 @@ Sprint 7
 
 4-5. Dejar de hacer: Siempre hay cosas por corregir o mejorar. Pero sin embargo, creemos que estamos haciendo todo lo medianamente correcto.
 
+Sprint 8
+1-2. Comenzar hacer: Estamos en el último Sprint ya. No hay nada para comenzar hacer.
+
+3. Continuar haciendo: Espero que esta amistad que se formó continue luego del proyecto, ya que aprendí mucho de Nacho.
+
+4-5. Dejar de hacer: Tratamos siempre de estar al día con las actividades, asique no hay mucho por corregir.
